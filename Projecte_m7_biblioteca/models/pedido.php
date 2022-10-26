@@ -5,11 +5,13 @@ class Pedido extends Database{
     //atributos
     private $id;
     private $correoElectronico;
-    private $isbn;
     private $estado;
     private $fechaCompra;
     private $fechaEnvio;
     private $fechaEntrega;
+    //atributo array
+    private $libros=[];
+    private $cantidades=[];
 
     //gets y sets
     public function getId(){
@@ -26,14 +28,6 @@ class Pedido extends Database{
  
     public function setCorreoElectronico($correoElectronico){
         $this->correoElectronico = $correoElectronico;
-    }
-
-    public function getIsbn(){
-        return $this->isbn;
-    }
-
-    public function setIsbn($isbn){
-        $this->isbn = $isbn;
     }
 
     public function getEstado(){
@@ -65,6 +59,22 @@ class Pedido extends Database{
     }
     public function setFechaEntrega($fechaEntrega){
         $this->fechaEntrega = $fechaEntrega;
+    }
+    //Array de libros
+    public function getLibros(){
+        return $this->libros;
+    }
+
+    public function setLibros($libros){
+        $this->libros = $libros;
+    }
+    //Array cantidad de libros
+    public function getCantidades(){
+        return $this->cantidades;
+    }
+
+    public function setCantidades($cantidades){
+        $this->cantidades = $cantidades;
     }
 }
 

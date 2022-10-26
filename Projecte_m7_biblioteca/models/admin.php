@@ -32,5 +32,6 @@ class Admin extends Database{
         $this->logeado = $logeado;
     }
     //metodos
+
 }
 ?>

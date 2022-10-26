@@ -1,26 +1,26 @@
 <?php
 require_once '../config/database.php';
 
-class Pedido extends Database{
+class Categoria extends Database{
     //atributos
     private $id;
     private $nombre;
     //gets y sets
     //id categoria
-    public function getNomUsuari(){
-        return $this->nomUsuari;
+    public function getId(){
+        return $this->id;
     }
 
-    public function setNomUsuari($nomUsuari){
-        $this->nomUsuari = $nomUsuari;
+    public function setId($id){
+        $this->id = $id;
     }
     //nombre categoria
-    public function getNomUsuari(){
-        return $this->nomUsuari;
+    public function getNombre(){
+        return $this->nombre;
     }
 
-    public function setNomUsuari($nomUsuari){
-        $this->nomUsuari = $nomUsuari;
+    public function setNombre($nombre){
+        $this->nombre = $nombre;
     }
     //metodos
 }
