@@ -76,6 +76,13 @@ class Pedido extends Database{
     public function setCantidades($cantidades){
         $this->cantidades = $cantidades;
     }
+    //metodos
+    //muestra todos los pedidos
+    public function mostrarTodosPedidos(){
+        $sql = "SELECT * FROM pedidos INNER JOIN lineapedidos ON id = idPedido";
+        $rows = $this->db->query($sql);
+        return $rows;
+    }
 }
 
 ?>
