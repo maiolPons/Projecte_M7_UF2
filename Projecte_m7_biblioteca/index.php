@@ -1,6 +1,4 @@
-<?php
-    require_once 'autoload.php';
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +9,26 @@
 </head>
 <body>
     <?php
-        
+        require_once "autoload.php";
+        require_once "views/admin/general/menu.php";
+        if (isset($_GET['controller'])){
+            $nombreController = $_GET['controller']."Controller";
+        }
+        else{
+            echo "<p>placeHolder</p>";
+        }
+        if (class_exists($nombreController)){
+            $controlador = new $nombreController(); 
+        if(isset($_GET['action'])){
+            $action = $_GET['action'];
+        }
+        else{
+            echo "<p>placeHolder</p>";
+        }
+            $controlador->$action();   
+        }else{
+            echo "No existe el controlador";
+        }
     ?>
 </body>
 </html>
