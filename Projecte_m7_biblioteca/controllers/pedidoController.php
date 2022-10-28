@@ -10,6 +10,8 @@ class PedidoController{
         require_once "models/pedido.php";
         $pedido = new Pedido();
         $pedido->setId($_GET["idPedido"]);
+        $pedido->mostrarDetallesPedidos();
+        require_once "views/admin/pedidos/mostrarDetalles.php";
     }
 }
 ?>

@@ -4,11 +4,12 @@ require_once 'config/database.php';
 class Pedido extends Database{
     //atributos
     private $id;
-    private $correoElectronico;
+    private $idCliente;
     private $estado;
     private $fechaCompra;
-    private $fechaEnvio;
-    private $fechaEntrega;
+    //private $fechaEnvio;
+    //private $fechaEntrega;
+    private $importe;
     //atributo array
     private $libros=[];
     private $cantidades=[];
@@ -22,12 +23,12 @@ class Pedido extends Database{
         $this->id = $id;
     }
 
-    public function getCorreoElectronico(){
-        return $this->correoElectronico;
+    public function getIdCliente(){
+        return $this->idCliente;
     }
  
-    public function setCorreoElectronico($correoElectronico){
-        $this->correoElectronico = $correoElectronico;
+    public function setIdCliente($idCliente){
+        $this->idCliente = $idCliente;
     }
 
     public function getEstado(){
@@ -41,11 +42,11 @@ class Pedido extends Database{
     public function getFechaCompra(){
         return $this->fechaCompra;
     }
-
+    
     public function setFechaCompra($fechaCompra){
         $this->fechaCompra = $fechaCompra;
     }
-
+    /*
     public function getFechaEnvio(){
         return $this->fechaEnvio;
     }
@@ -59,6 +60,13 @@ class Pedido extends Database{
     }
     public function setFechaEntrega($fechaEntrega){
         $this->fechaEntrega = $fechaEntrega;
+    }
+    */
+    public function getImporte(){
+        return $this->importe;
+    }
+    public function setImporte($importe){
+        $this->importe = $importe;
     }
     //Array de libros
     public function getLibros(){
@@ -82,6 +90,20 @@ class Pedido extends Database{
         $sql = "SELECT * FROM pedidos INNER JOIN lineapedidos ON id = idPedido";
         $rows = $this->db->query($sql);
         return $rows;
+    }
+    public function mostrarDetallesPedidos(){
+        $sql = "SELECT * FROM pedidos INNER JOIN lineapedidos ON id = idPedido WHERE id='".$this->getId()."'";
+        $rows = $this->db->query($sql);
+        foreach ($rows as $info) {
+            $this->setidCliente($info["idCliente"]);
+            $this->setEstado($info["estado"]);
+            $this->setFechaCompra($info["fechaPeticion"]);
+            //$this->setFechaEnvio($info[]);
+            //$this->setFechaEntrega($info[]);
+            $this->setImporte($info["ImporteTotal"]);
+            //$this->getLibros();
+            //$this->getCantidades();
+        }
     }
 }
 

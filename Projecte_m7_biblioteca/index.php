@@ -15,7 +15,7 @@
             $nombreController = $_GET['controller']."Controller";
         }
         else{
-            echo "<p>placeHolder</p>";
+            $nombreController="";
         }
         if (class_exists($nombreController)){
             $controlador = new $nombreController(); 
@@ -29,6 +29,7 @@
         }else{
             echo "No existe el controlador";
         }
+
     ?>
 </body>
 </html>
