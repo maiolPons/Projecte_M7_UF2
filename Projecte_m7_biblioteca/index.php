@@ -10,6 +10,8 @@
 <body>
     <?php
         require_once "autoload.php";
+        require_once "views/admin/commonAdmin/header.html";
+
         require_once "views/admin/general/menu.php";
         if (isset($_GET['controller'])){
             $nombreController = $_GET['controller']."Controller";
