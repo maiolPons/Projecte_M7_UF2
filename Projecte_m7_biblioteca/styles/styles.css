@@ -85,3 +85,19 @@ header a{
     font-size:26px; 
     text-decoration: none;
 }
+
+body{
+    height:100%;
+}
+/******************************************************* FOOTER **************************************************/
+footer p{
+    text-align: center;
+    background-color:#2e518b;
+    color:#fff;
+    padding:1% 0;
+}
+footer{
+    bottom:0;
+    position:fixed;
+    width:100%;
+}

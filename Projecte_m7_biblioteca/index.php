@@ -33,6 +33,7 @@
             echo "No existe el controlador";
         }
 
+        require_once "views/admin/commonAdmin/footer.html";
     ?>
 </body>
 </html>
