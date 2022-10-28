@@ -1,5 +1,5 @@
 <?php
-require_once '../config/database.php';
+require_once 'config/database.php';
 
 class Categoria extends Database{
     //atributos
@@ -22,5 +22,11 @@ class Categoria extends Database{
     public function setNombre($nombre){
         $this->nombre = $nombre;
     }
+
     //metodos
+    public function mostrarDatosCategorias(){
+        $sql = "SELECT * FROM categorias";
+        $rows = $this->db->query($sql);
+        return $rows;
+    }
 }
