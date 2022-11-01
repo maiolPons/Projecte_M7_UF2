@@ -68,4 +68,9 @@ class Cliente extends Database{
         $this->contrasenya = $contrasenya;
     }
     //metodos
+    public function mostrarCliente(){
+        $sql = "SELECT * FROM clientes WHERE id='".$this->getId()."'";
+        $rows = $this->db->query($sql);
+        return($rows);
+    }
 }

@@ -8,7 +8,6 @@ class Libro extends Database{
     private $autor;
     private $editorial;
     private $descripcion;
-    private $numPaginas;
     private $foto;
     private $stock;
     private $precioUni;
@@ -56,14 +55,7 @@ class Libro extends Database{
     public function setDescripcion($descripcion){
         $this->descripcion = $descripcion;
     }
-    //numero paginas libro
-    public function getNumPaginas(){
-        return $this->numPaginas;
-    }
 
-    public function setNumPaginas($numPaginas){
-        $this->numPaginas = $numPaginas;
-    }
     //foto libro
     public function getFoto(){
         return $this->foto;
@@ -113,5 +105,26 @@ class Libro extends Database{
         $this->novedades = $novedades;
     }
     //metodos
+
+    public function mostrarLibros(){
+        $sql = "SELECT * FROM libros";
+        $rows = $this->db->query($sql);
+        return $rows;
+    }
+
+    public function infoLibro(){
+        $sql = "SELECT * FROM libros INNER JOIN categorias ON idCategoria = id WHERE ISBN = '".$this ->getIsbn()."'";
+        $rows = $this->db->query($sql);
+        return $rows;
+    }
+    public function insertar(){
+        $sql = "INSERT INTO libros(ISBN,titulo,autor,editorial,descripcion,foto,stock,precioUni,idCategoria,destacado,novedades) VALUES ('".$this->getIsbn()."','".$this->getTitulo()."','".$this->getAutor()."','".$this->getEditorial()."','".$this->getDescripcion()."','".$this->getFoto()."','".$this->getStock()."','".$this->getPrecioUni()."','".$this->getCategoria()."','".$this->getDestacado()."','".$this->getNovedades()."')";
+        $rows = $this->db->query($sql);
+    }
+
+    public function modificar(){
+        $sql = "UPDATE libros SET titulo='".$this->getTitulo()."',autor='".$this->getAutor()."',editorial='".$this->getEditorial()."',descripcion='".$this->getDescripcion()."',stock='".$this->getStock()."',precioUni='".$this->getPrecioUni()."',idCategoria='".$this->getCategoria()."',destacado='".$this->getDestacado()."' WHERE ISBN='".$this->getIsbn()."'";
+        $rows = $this->db->query($sql);
+    }
 }
 ?>
