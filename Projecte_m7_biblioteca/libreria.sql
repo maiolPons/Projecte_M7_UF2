@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-10-2022 a las 10:49:55
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 7.4.29
+-- Tiempo de generación: 01-11-2022 a las 16:34:41
+-- Versión del servidor: 10.4.25-MariaDB
+-- Versión de PHP: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -47,17 +47,19 @@ INSERT INTO `administrador` (`nombreUsuario`, `contraseña`) VALUES
 
 CREATE TABLE `categorias` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(20) NOT NULL
+  `nombre` varchar(20) NOT NULL,
+  `activo` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `categorias`
 --
 
-INSERT INTO `categorias` (`id`, `nombre`) VALUES
-(1, 'Historia'),
-(2, 'Romantico'),
-(3, 'Terror');
+INSERT INTO `categorias` (`id`, `nombre`, `activo`) VALUES
+(1, 'gas', 1),
+(5, 'ola k ase', 1),
+(6, 'amor', 1),
+(7, 'terror', 1);
 
 -- --------------------------------------------------------
 
@@ -83,7 +85,7 @@ CREATE TABLE `clientes` (
 
 CREATE TABLE `libros` (
   `ISBN` varchar(20) NOT NULL,
-  `titulo` varchar(50) NOT NULL,
+  `titulo` varchar(20) NOT NULL,
   `autor` varchar(20) NOT NULL,
   `editorial` varchar(20) NOT NULL,
   `descripcion` varchar(50) NOT NULL,
@@ -92,19 +94,19 @@ CREATE TABLE `libros` (
   `precioUni` int(10) NOT NULL,
   `idCategoria` int(11) NOT NULL,
   `destacado` tinyint(1) NOT NULL DEFAULT 0,
-  `novedades` date NOT NULL
+  `novedades` date NOT NULL,
+  `activo` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `libros`
 --
 
-INSERT INTO `libros` (`ISBN`, `titulo`, `autor`, `editorial`, `descripcion`, `foto`, `stock`, `precioUni`, `idCategoria`, `destacado`, `novedades`) VALUES
-('456', 'rgtreewr', 'df', 'werw', 'df', '', 456, 2453, 3, 1, '2022-10-28'),
-('4564564', 'rgtreewr', 'df', 'werw', 'df', '', 456, 2453, 3, 1, '2022-10-28'),
-('45699', 'rgtreewr', 'df', 'werw', 'df', '', 456, 2453, 3, 1, '2022-10-28'),
-('5647', 'mama', 'h', 'edit2', 'rr', '', 34, 12, 3, 1, '2022-10-28'),
-('740488', 'El tiempo de las cer', 'Martin Lopez', 'edit3', 'des', '', 200, 16, 1, 0, '2022-10-28');
+INSERT INTO `libros` (`ISBN`, `titulo`, `autor`, `editorial`, `descripcion`, `foto`, `stock`, `precioUni`, `idCategoria`, `destacado`, `novedades`, `activo`) VALUES
+('11111', 'Boulevard', 'Flor', 'edit1', 'Buen libro', 'img/boulevard.jpeg', 50, 16, 5, 1, '2022-10-30', 0),
+('22222', 'El hijo', 'Cramen', 'edit2', 'Buen libro', 'img/libro.jpg', 100, 15, 1, 0, '2022-10-30', 1),
+('33333', 'Amor prohibido', 'Lidia', 'edit3', 'buen libro', 'img/libro.jpg', 250, 10, 1, 0, '2022-10-30', 0),
+('44444', 'Pineda', 'Salma', 'edit5', 'Ins la pineda', 'img/libro.jpg', 20, 5, 7, 1, '2022-10-30', 1);
 
 -- --------------------------------------------------------
 
@@ -115,7 +117,6 @@ INSERT INTO `libros` (`ISBN`, `titulo`, `autor`, `editorial`, `descripcion`, `fo
 CREATE TABLE `lineapedidos` (
   `idPedido` int(11) NOT NULL,
   `ISBN` varchar(20) NOT NULL,
-  `idCliente` int(11) NOT NULL,
   `cantidad` int(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -127,6 +128,7 @@ CREATE TABLE `lineapedidos` (
 
 CREATE TABLE `pedidos` (
   `id` int(11) NOT NULL,
+  `idCliente` int(11) NOT NULL,
   `fechaPeticion` date NOT NULL,
   `estado` varchar(20) NOT NULL DEFAULT 'pendiente',
   `ImporteTotal` float DEFAULT NULL
@@ -166,15 +168,15 @@ ALTER TABLE `libros`
 -- Indices de la tabla `lineapedidos`
 --
 ALTER TABLE `lineapedidos`
-  ADD PRIMARY KEY (`idPedido`,`ISBN`,`idCliente`),
-  ADD KEY `ISBN` (`ISBN`),
-  ADD KEY `idCliente` (`idCliente`);
+  ADD PRIMARY KEY (`idPedido`,`ISBN`) USING BTREE,
+  ADD KEY `lineapedidos_ibfk_1` (`ISBN`);
 
 --
 -- Indices de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idCliente` (`idCliente`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -184,19 +186,19 @@ ALTER TABLE `pedidos`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
@@ -213,8 +215,13 @@ ALTER TABLE `libros`
 --
 ALTER TABLE `lineapedidos`
   ADD CONSTRAINT `lineapedidos_ibfk_1` FOREIGN KEY (`ISBN`) REFERENCES `libros` (`ISBN`),
-  ADD CONSTRAINT `lineapedidos_ibfk_2` FOREIGN KEY (`idCliente`) REFERENCES `clientes` (`id`),
   ADD CONSTRAINT `lineapedidos_ibfk_3` FOREIGN KEY (`idPedido`) REFERENCES `pedidos` (`id`);
+
+--
+-- Filtros para la tabla `pedidos`
+--
+ALTER TABLE `pedidos`
+  ADD CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `clientes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

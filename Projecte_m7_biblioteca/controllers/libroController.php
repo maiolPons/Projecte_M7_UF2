@@ -27,10 +27,11 @@ class LibroController{
     }
 
     public function formAñadir(){
-        //Para mostrar las categorias
+        //---------Para mostrar las categorias------
         require_once "models/categoria.php";
         $categorias = new Categoria;
         $rows = $categorias->mostrar();
+        //-----------------------------------------
         require_once "views/admin/productos/añadir.php";
     }
 
@@ -92,6 +93,7 @@ class LibroController{
         }
     }
 
+    //Editar datos
     public function editar(){
         if(isset($_POST)){
             $libro = new Libro();
@@ -120,6 +122,41 @@ class LibroController{
         }
     }
 
+    //-------------------------------//
+    public function formEditFoto(){
+        if(isset($_GET['isbn'])){
+            $isbn = $_GET['isbn'];
+            require_once "views/admin/productos/editFoto.php";
+            return $isbn;
+        }
+    }
+
+    //Editar imagen
+    public function editarFoto(){
+        if(isset($_POST)){
+            
+
+            $libro = new Libro();
+
+            //----------------------------Imagen------------------------------------------//
+            if (is_uploaded_file ($_FILES['archivo']['tmp_name'])){
+                $nombreDirectorio = "img/";
+                $archivo=$_FILES['archivo']['name'];
+                move_uploaded_file ($_FILES['archivo']['tmp_name'],$nombreDirectorio .$archivo );
+            }
+            else{
+                print ("No se ha podido subir el fichero\n");
+            }
+            $ruta = $nombreDirectorio.$archivo;
+            //---------------------------------------------------------------------------//
+            $libro->setIsbn($_POST['isbn']);
+            $libro->setFoto($ruta);
+            $libro->modificarFoto();
+            ?>
+            <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=libro&action=mostrarLibros">
+            <?php
+        }
+    }
 
 }
 ?>

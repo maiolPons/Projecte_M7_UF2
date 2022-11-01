@@ -126,5 +126,10 @@ class Libro extends Database{
         $sql = "UPDATE libros SET titulo='".$this->getTitulo()."',autor='".$this->getAutor()."',editorial='".$this->getEditorial()."',descripcion='".$this->getDescripcion()."',stock='".$this->getStock()."',precioUni='".$this->getPrecioUni()."',idCategoria='".$this->getCategoria()."',destacado='".$this->getDestacado()."' WHERE ISBN='".$this->getIsbn()."'";
         $rows = $this->db->query($sql);
     }
+
+    public function modificarFoto(){
+        $sql = "UPDATE libros SET foto='".$this->getFoto()."' WHERE ISBN='".$this->getIsbn()."'";
+        $rows = $this->db->query($sql);
+    }
 }
 ?>

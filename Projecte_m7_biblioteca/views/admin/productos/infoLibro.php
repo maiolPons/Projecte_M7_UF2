@@ -20,6 +20,8 @@
     
     foreach ($rows as $row) {
         $isbn = $row['ISBN'];
+        //var_dump($row);
+        echo $row['activo'];
         echo "<tr>";
             echo "<td>". $row['ISBN'] . "</td>";
             echo "<td>".$row['titulo'] . "</td>";
@@ -34,6 +36,7 @@
             echo "<td>".$row['stock'] . "</td>";
             echo "<td>".$row['precioUni'] . "</td>";
             echo "<td>".$row['nombre'] . "</td>";
+
             if($row['destacado']==0){
                 echo "<td>No</td>";
             }
@@ -41,12 +44,21 @@
                 echo "<td>Sí</td>"; 
             }
             
-
             echo "<td>
-                <a href='index.php?controller=libro&action=formEditar&isbn=$isbn'><img class='edit' src='pic/datos.png'</a>
-                <a href='index.php?controller=libro&action=editarFoto&isbn=$isbn'><img class='edit' src='pic/image.png'</a>
+                <a href='index.php?controller=libro&action=formEditar&isbn=$isbn'><img class='edit' src='pic/datos.png'></a>
+                <a href='index.php?controller=libro&action=formEditFoto&isbn=$isbn'><img class='edit' src='pic/image.png'></a>
             </td>";
-            echo "<td><a href='index.php?controller=libro&action=desactivar'>Desactivar</a></td>";
+
+            if($row['activo']==1){?>
+                <td>
+                    <a href="#"><img class="edit" src="pic/activado.png"></a>
+                </td><?php
+            }
+            else{?>
+                <td>
+                    <a href="#"><img class="edit" src="pic/desactivado.png"></a>
+                </td><?php
+            }
         echo "</tr>";
     }
     ?>

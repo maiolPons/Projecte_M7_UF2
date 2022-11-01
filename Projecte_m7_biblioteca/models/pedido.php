@@ -49,11 +49,9 @@ class Pedido extends Database{
     public function getFechaEnvio(){
         return $this->fechaEnvio;
     }
-
     public function setFechaEnvio($fechaEnvio){
         $this->fechaEnvio = $fechaEnvio;
     }
-
     public function getFechaEntrega(){
         return $this->fechaEntrega;
     }
