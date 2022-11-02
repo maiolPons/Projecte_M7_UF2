@@ -3,7 +3,13 @@
         public function mostrarCategorias(){
             require_once "models/categoria.php";
             $categoria = new Categoria();
-            $categorias = $categoria->mostrarDatosCategorias();
+            if(isset($_POST['buscar'])){
+                $categoria -> setNombre($_POST['nombre']);
+                $categorias = $categoria->Buscador();
+            }
+            else{
+                $categorias = $categoria->mostrarDatosCategorias();
+            }
             require_once "views/admin/categorias/tablaPrincipal.php";
         }
 
@@ -17,9 +23,24 @@
             }
         }
 
-        public function desactivarCategoria(){
-            require_once "models/categoria.php";
-            var_dump($_GET);
+        public function estadoCategoria(){
+            if (isset($_GET['id'])){
+                require_once "models/categoria.php";
+                $categoria = new Categoria();
+                $categoria ->setId($_GET['id']);
+                if($_GET['estado']==0){
+                    $categoria ->setActivo(1);
+                }
+                if($_GET['estado']==1){
+                    $categoria ->setActivo(0);
+                }
+                $categoria ->estadoCategoria();
+
+                //redirect
+                ?>
+                    <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=categoria&action=mostrarCategorias">
+                <?php
+            } 
         }
     }
 ?>

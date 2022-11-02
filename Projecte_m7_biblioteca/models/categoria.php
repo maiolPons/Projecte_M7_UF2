@@ -5,6 +5,8 @@ class Categoria extends Database{
     //atributos
     private $id;
     private $nombre;
+    private $activo;
+
     //gets y sets
     //id categoria
     public function getId(){
@@ -22,6 +24,16 @@ class Categoria extends Database{
     public function setNombre($nombre){
         $this->nombre = $nombre;
     }
+
+    //activo 
+    public function getActivo(){
+        return $this->activo;
+    }
+
+    public function setActivo($activo){
+        $this->activo = $activo;
+    }
+
     //metodos
     public function mostrar(){
         $sql = "SELECT * FROM categorias";
@@ -40,4 +52,17 @@ class Categoria extends Database{
         $rows = $this->db->query($consult);
         return $rows;
     }
+
+    public function estadoCategoria(){
+        $query="UPDATE categorias SET activo='$this->activo' WHERE id='$this->id'";
+        $rows = $this->db->query($query);
+        return $rows;
+    }
+
+    public function Buscador(){
+        $query="SELECT * FROM categorias WHERE nombre LIKE '%$this->nombre%'";
+        $rows = $this->db->query($query);
+        return $rows;
+    }
+    
 }
