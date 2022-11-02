@@ -42,5 +42,16 @@
                 <?php
             } 
         }
+
+        public function editarCategoria(){
+            require_once "views/admin/categorias/editarCategoria.php";
+            if (isset ($_POST['envio'])){
+                require_once "models/categoria.php";
+                $categoria = new Categoria();
+                $categoria -> setNombre($_POST['nombre']);
+                $categoria->setId($_GET['id']);
+                $categoria ->editarCategoria();
+            }
+        }
     }
 ?>

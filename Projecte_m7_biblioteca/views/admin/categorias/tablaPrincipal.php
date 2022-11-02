@@ -20,6 +20,7 @@
     echo "<tr>";
     echo "<td> Id </td>";
     echo "<td> Nombre </td>";
+    echo "<td> Editar </td>";
     echo "<td> Eliminar </td>";
     echo "</tr>";
 
@@ -30,6 +31,9 @@
 
         $id=$categoria['id'];
         $estado=$categoria['activo'];
+        $nombre=$categoria['nombre'];
+
+        echo "<td> <a href='index.php?controller=categoria&action=editarCategoria&nombre=$nombre&estado=$estado'> Editar </a> </td>"; 
 
         if($categoria['activo']==1){
             echo "<td> <a href='index.php?controller=categoria&action=estadoCategoria&id=$id&estado=$estado'> Desactivar </a> </td>"; 

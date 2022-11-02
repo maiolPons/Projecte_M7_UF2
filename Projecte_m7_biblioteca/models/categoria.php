@@ -65,4 +65,9 @@ class Categoria extends Database{
         return $rows;
     }
     
+    public function editarCategoria(){
+        $query="UPDATE categorias SET nombre='$this->activo' WHERE id='$this->id'";
+        $rows = $this->db->query($query);
+        return $rows;
+    }
 }
