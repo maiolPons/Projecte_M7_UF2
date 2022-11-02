@@ -33,7 +33,7 @@
         $estado=$categoria['activo'];
         $nombre=$categoria['nombre'];
 
-        echo "<td> <a href='index.php?controller=categoria&action=editarCategoria&nombre=$nombre&estado=$estado'> Editar </a> </td>"; 
+        echo "<td> <a href='index.php?controller=categoria&action=editarCategoria&id=$id&nombre=$nombre'> Editar </a> </td>"; 
 
         if($categoria['activo']==1){
             echo "<td> <a href='index.php?controller=categoria&action=estadoCategoria&id=$id&estado=$estado'> Desactivar </a> </td>"; 
