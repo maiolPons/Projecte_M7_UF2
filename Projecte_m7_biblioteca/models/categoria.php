@@ -66,7 +66,7 @@ class Categoria extends Database{
     }
     
     public function editarCategoria(){
-        $query="UPDATE categorias SET nombre='$this->activo' WHERE id='$this->id'";
+        $query="UPDATE categorias SET nombre='$this->nombre' WHERE id='$this->id'";
         $rows = $this->db->query($query);
         return $rows;
     }

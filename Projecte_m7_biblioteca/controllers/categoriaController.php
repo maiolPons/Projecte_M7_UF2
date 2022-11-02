@@ -51,6 +51,9 @@
                 $categoria -> setNombre($_POST['nombre']);
                 $categoria->setId($_GET['id']);
                 $categoria ->editarCategoria();
+                ?>
+                    <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=categoria&action=mostrarCategorias">
+                <?php
             }
         }
     }
