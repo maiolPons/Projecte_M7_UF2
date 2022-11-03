@@ -14,20 +14,19 @@
         <th>Categoria</th>
         <th>Destacado</th>
         <th>Editar</th>
-        <th>Desactivar</th>
+        <th>Estado</th>
 
     <?php
     
     foreach ($rows as $row) {
         $isbn = $row['ISBN'];
-        //var_dump($row);
-        echo $row['activo'];
+
         echo "<tr>";
             echo "<td>". $row['ISBN'] . "</td>";
             echo "<td>".$row['titulo'] . "</td>";
             echo "<td>".$row['autor'] . "</td>";
             echo "<td>".$row['editorial'] . "</td>";
-            echo "<td>".$row['descripcion'] . "</td>";
+            echo "<td><a class='dd' href='index.php?controller=libro&action=mostrarDescripcion&isbn=$isbn'>Descripción detallada</a></td>";
             ?>
             <td>
                 <img class="pic" src="<?php echo $row['foto'] ?>"/>
@@ -35,8 +34,15 @@
             <?php
             echo "<td>".$row['stock'] . "</td>";
             echo "<td>".$row['precioUni'] . "</td>";
-            echo "<td>".$row['nombre'] . "</td>";
 
+            //mostrar la categoria
+            if($row['activo']==0){
+                echo "<td>Sin categoria</td>";
+            }
+            else{
+                echo "<td>".$row['nombre'] . "</td>";
+            }
+            //Destacado 
             if($row['destacado']==0){
                 echo "<td>No</td>";
             }
@@ -49,14 +55,14 @@
                 <a href='index.php?controller=libro&action=formEditFoto&isbn=$isbn'><img class='edit' src='pic/image.png'></a>
             </td>";
 
-            if($row['activo']==1){?>
+            if($row['estadoL']==1){?>
                 <td>
-                    <a href="#"><img class="edit" src="pic/activado.png"></a>
+                    <a href="index.php?controller=libro&action=desactivar&isbn=<?php echo $isbn ?>"><img class="act" src="pic/activado.png"></a>
                 </td><?php
             }
             else{?>
                 <td>
-                    <a href="#"><img class="edit" src="pic/desactivado.png"></a>
+                    <a href="index.php?controller=libro&action=activar&isbn=<?php echo $isbn ?>"><img class="desac" src="pic/desactivado.png"></a>
                 </td><?php
             }
         echo "</tr>";

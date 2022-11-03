@@ -7,3 +7,9 @@
     </div>
     <input type="submit" name="Modificar" value="Modificar"/>
 </form> 
+
+<div>
+    <p><a href="index.php?controller=libro&action=infoLibro&isbn=<?php echo $isbn ?>">Detalles libro</a></p>
+    <p><a href="index.php?controller=libro&action=mostrarLibros">Todos los libros</a></p>
+    <p><a href="index.php?controller=admin&action=salir">Cerrar sesión</a></p>
+</div>

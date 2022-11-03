@@ -160,4 +160,3 @@ class Libro extends Database{
     }
 }
 ?>
-

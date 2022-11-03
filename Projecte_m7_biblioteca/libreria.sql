@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-11-2022 a las 16:34:41
+-- Tiempo de generación: 03-11-2022 a las 08:09:31
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 7.4.30
 
@@ -85,28 +85,29 @@ CREATE TABLE `clientes` (
 
 CREATE TABLE `libros` (
   `ISBN` varchar(20) NOT NULL,
-  `titulo` varchar(20) NOT NULL,
+  `titulo` varchar(50) NOT NULL,
   `autor` varchar(20) NOT NULL,
   `editorial` varchar(20) NOT NULL,
-  `descripcion` varchar(50) NOT NULL,
+  `descripcion` varchar(200) NOT NULL,
   `foto` varchar(60) NOT NULL,
   `stock` int(5) NOT NULL,
   `precioUni` int(10) NOT NULL,
   `idCategoria` int(11) NOT NULL,
   `destacado` tinyint(1) NOT NULL DEFAULT 0,
   `novedades` date NOT NULL,
-  `activo` tinyint(1) NOT NULL DEFAULT 1
+  `estadoL` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `libros`
 --
 
-INSERT INTO `libros` (`ISBN`, `titulo`, `autor`, `editorial`, `descripcion`, `foto`, `stock`, `precioUni`, `idCategoria`, `destacado`, `novedades`, `activo`) VALUES
+INSERT INTO `libros` (`ISBN`, `titulo`, `autor`, `editorial`, `descripcion`, `foto`, `stock`, `precioUni`, `idCategoria`, `destacado`, `novedades`, `estadoL`) VALUES
 ('11111', 'Boulevard', 'Flor', 'edit1', 'Buen libro', 'img/boulevard.jpeg', 50, 16, 5, 1, '2022-10-30', 0),
 ('22222', 'El hijo', 'Cramen', 'edit2', 'Buen libro', 'img/libro.jpg', 100, 15, 1, 0, '2022-10-30', 1),
 ('33333', 'Amor prohibido', 'Lidia', 'edit3', 'buen libro', 'img/libro.jpg', 250, 10, 1, 0, '2022-10-30', 0),
-('44444', 'Pineda', 'Salma', 'edit5', 'Ins la pineda', 'img/libro.jpg', 20, 5, 7, 1, '2022-10-30', 1);
+('44444', 'Pineda', 'Salma', 'edit5', 'Ins la pineda', 'img/libro.jpg', 20, 5, 7, 1, '2022-10-30', 1),
+('88888', 'Mochila para el universo', 'Elsa', 'edit8', '¿Cuánto debe durar un abrazo? ¿De qué sirve llorar? ¿Qué podemos hacer para cambiar nuestra suerte? ¿Tiene algún propósito el enamoramiento?', 'img/univers.jpeg', 50, 9, 6, 0, '2022-11-02', 1);
 
 -- --------------------------------------------------------
 
