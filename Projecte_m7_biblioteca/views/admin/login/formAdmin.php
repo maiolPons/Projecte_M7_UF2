@@ -3,11 +3,11 @@
     <h2>Login</h2>
     <form action="index.php?controller=admin&action=logear" method="post">
         <div class="user-box">
-            <input type="text" name="nom" required="">
+            <input type="text" name="nom" required>
             <label>Nombre de usuario</label>
         </div>
         <div class="user-box">
-            <input type="password" name="passwd" required="">
+            <input type="password" name="passwd" required>
             <label>Contraseña</label>
         </div>
         <div class="submit">
@@ -15,3 +15,4 @@
         </div>
     </form>
 </div>
+
