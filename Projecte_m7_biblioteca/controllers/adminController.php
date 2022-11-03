@@ -5,30 +5,30 @@
         public function logear(){
             if($_POST){
                 $admin = new Admin();
+                $user = $_POST['nom'];
+                $passwd = $_POST['passwd'];
                 //Si existe el usuario 
-                if($admin->existeAdmin($_POST['nom'],$_POST['passwd'])){
+                if($admin->existeAdmin($user,$passwd)==true){
                     //Crear variables de sessión 
-                    $_SESSION['nom'] = $_POST['nom'];//Nombre de usuario del admin
-                    $_SESSION['passwd'] = $_POST['passwd'];//La contraseña
-                    
-                    //Mostrar el menu
-                    require_once "views/admin/general/menu.php";
+                    $_SESSION['admin'] = $_POST['nom'];//Nombre de usuario del admin
+                    ?>
+                    <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php"> 
+                    <?php
+
                 }
                 
                 else{
-                    echo "usuario invalido";
+                    ?>
+                    <script>alert("Usuario inválido , intenta otra vez!")</script>
+                    <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=admin&action=logear">
+                    <?php
                 ?>
-                    <META HTTP-EQUIV="REFRESH" CONTENT="2;URL=index.php"> 
                      <?php
                 }
             }
             else{
                 require_once "views/admin/login/formAdmin.php";
             }
-        }
-
-        public function mostrarMenu(){
-            require_once "views/admin/login/menu.php";
         }
         
         //Cerrar sesion
