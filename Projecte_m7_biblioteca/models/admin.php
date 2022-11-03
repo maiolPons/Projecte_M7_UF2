@@ -22,21 +22,14 @@ class Admin extends Database{
     public function setContrasenya($contrasenya){
         $this->contrasenya = $contrasenya;
     }
-    //logeado
-    public function getLogeado(){
-        return $this->logeado;
-    }
 
-    public function setLogeado($logeado){
-        $this->logeado = $logeado;
-    }
 
-    //----------------------Metodos--------------
+    //----------------------Metodos----------------//
     public function existeAdmin( $user, $pass){
         $sql = "SELECT * FROM administrador WHERE nombreUsuario = '$user' and contraseña='$pass'";
         $ejecutar = $this->db->query($sql);
         $filas = $ejecutar->rowCount();
-		//Si el numero de filas es > 0 
+
         if ($filas>0){
             $existeAdmin = true;
         }
@@ -48,12 +41,7 @@ class Admin extends Database{
 
     
     public function salir(){
-        session_start();
         session_destroy();
     }
-
-    
-
-
 }
 ?>
