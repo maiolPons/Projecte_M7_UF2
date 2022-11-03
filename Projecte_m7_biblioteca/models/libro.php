@@ -14,6 +14,7 @@ class Libro extends Database{
     private $categoria;
     private $destacado;
     private $novedades;
+    private $estadoL;
     //gets y sets
     //isbn libro
     public function getIsbn(){
@@ -104,6 +105,15 @@ class Libro extends Database{
     public function setNovedades($novedades){
         $this->novedades = $novedades;
     }
+    //estado libro
+    public function getEstadoL(){
+        return $this->estadoL;
+    }
+
+    public function setEstadoL($estadoL){
+        $this->esatdoL = $estadoL;
+    }
+
     //metodos
 
     public function mostrarLibros(){
@@ -112,8 +122,15 @@ class Libro extends Database{
         return $rows;
     }
 
+    public function mostrarBuscador($buscador){
+        $query= "%".$buscador."%";
+        $sql = "SELECT * FROM libros INNER JOIN categorias ON id = idCategoria WHERE ISBN LIKE '$query' OR titulo LIKE '$query' OR autor LIKE '$query' OR editorial LIKE '$query' OR descripcion LIKE '$query' OR stock LIKE '$query' OR novedades LIKE '$query' OR idCategoria LIKE '$query' OR nombre LIKE '$query'";
+        $rows = $this->db->query($sql);
+        return $rows;
+    }
+
     public function infoLibro(){
-        $sql = "SELECT * FROM libros INNER JOIN categorias ON idCategoria = id WHERE ISBN = '".$this ->getIsbn()."'";
+        $sql = "SELECT * FROM libros AS l INNER JOIN categorias AS c ON idCategoria = id WHERE ISBN = '".$this ->getIsbn()."'";
         $rows = $this->db->query($sql);
         return $rows;
     }
@@ -131,5 +148,16 @@ class Libro extends Database{
         $sql = "UPDATE libros SET foto='".$this->getFoto()."' WHERE ISBN='".$this->getIsbn()."'";
         $rows = $this->db->query($sql);
     }
+
+    public function activarLibro(){
+        $sql = "UPDATE libros SET estadoL=1 WHERE ISBN='".$this->getIsbn()."'";
+        $rows = $this->db->query($sql);
+    }
+
+    public function desactivarLibro(){
+        $sql = "UPDATE libros SET estadoL=0 WHERE ISBN='".$this->getIsbn()."'";
+        $rows = $this->db->query($sql);
+    }
 }
 ?>
+
