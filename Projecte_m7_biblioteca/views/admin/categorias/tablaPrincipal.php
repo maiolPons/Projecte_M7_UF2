@@ -36,14 +36,15 @@
         echo "<td> <a href='index.php?controller=categoria&action=editarCategoria&id=$id&nombre=$nombre'> <img class='icon' src='pic/modificar.png'> </a> </td>"; 
 
         if($categoria['activo']==1){
-            echo "<td> <a href='index.php?controller=categoria&action=estadoCategoria&id=$id&estado=$estado'>  <img src='pic/desactivado.png'  class='icon'> </a> </td>"; 
+            echo "<td> <a href='index.php?controller=categoria&action=estadoCategoria&id=$id&estado=$estado'>  <img src='pic/activado.png'  class='icon'> </a> </td>"; 
         }
         else if ($categoria['activo']==0){
-            echo "<td> <a href='index.php?controller=categoria&action=estadoCategoria&id=$id&estado=$estado'> <img src='pic/activado.png' class='icon'> </a> </td>"; 
+            echo "<td> <a href='index.php?controller=categoria&action=estadoCategoria&id=$id&estado=$estado'> <img src='pic/desactivado.png' class='icon'> </a> </td>"; 
         }
         echo "</tr>";
     }
     echo "</table>";
 
     echo "<a href='index.php?controller=categoria&action=anyadirCategoria'> Añadir categoría </a>";
+    ?><p><a href="index.php?controller=admin&action=salir">Cerrar sesión</a></p><?php
 ?>
