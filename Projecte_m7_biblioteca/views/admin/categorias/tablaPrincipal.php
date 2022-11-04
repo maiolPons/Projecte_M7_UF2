@@ -46,4 +46,5 @@
     echo "</table>";
 
     echo "<a href='index.php?controller=categoria&action=anyadirCategoria'> Añadir categoría </a>";
+    ?><p><a href="index.php?controller=admin&action=salir">Cerrar sesión</a></p><?php
 ?>
