@@ -22,9 +22,9 @@
                         <img class="pict" src="<?php echo $row['foto'] ?>"/>
                     </div>
                     <div>
-                        <p><?php echo $row['titulo'] . " (titulo)"?></p>
+                        <p><?php echo "<h3>".$row['titulo'] . "</h3>"?></p>
                         <p><?php echo $row['autor'] . " (autor)"?></p>
-                        <p><?php echo $row['precioUni']." €" ?></p>
+                        <p><?php echo "<p style='color:blue'>".$row['precioUni']." €</p>" ?></p>
                     </div>
                 </a>
             </div>
