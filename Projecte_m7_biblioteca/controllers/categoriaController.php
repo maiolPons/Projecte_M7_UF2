@@ -1,4 +1,5 @@
 <?php
+if (isset ($_SESSION['admin'])){
     class categoriaController{
         public function mostrarCategorias(){
             require_once "models/categoria.php";
@@ -57,4 +58,11 @@
             }
         }
     }
+}
+else{
+    ?>
+    <script>alert("Tienes que logearte primero para ver esta página!")</script>
+    <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=admin&action=logear"> 
+    <?php
+}
 ?>
