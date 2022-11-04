@@ -37,7 +37,7 @@
         }
             $controlador->$action();   
         }else{
-            echo "<h1>Pagina principal</h1>";
+            echo "No existe el controlador";
         }
         ?>
         <?php

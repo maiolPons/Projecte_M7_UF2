@@ -20,7 +20,7 @@
         </div>
         <div>
             <p>Descripción</p>
-            <textarea name="descri" id="" cols="30" rows="10"></textarea>
+            <input type="text" name="descri" required>
         </div>
         
         <div>
