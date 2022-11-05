@@ -13,14 +13,23 @@
         require_once "autoload.php";
 
         //--------------------------------------------------------//
+
+            //Si el administrador se ha logeado , le muestra su menu
         if(isset($_SESSION['admin'])){
             require_once "views/admin/commonAdmin/headerAdmin.html";
         }
+            //Lo mismo con el cliente , le muestra un menu diferente
+        if(isset($_SESSION['cliente'])){
+            require_once "views/admin/commonAdmin/headerCliente.html";
+        }
+            //Sino se ha logeado ningun usuario , se muestra el menu general
         else{
             require_once "views/admin/commonAdmin/header.html";
         }
+        
         //--------------------------------------------------------//
 
+        
         if (isset($_GET['controller'])){
             $nombreController = $_GET['controller']."Controller";
         }

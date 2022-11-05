@@ -73,4 +73,24 @@ class Cliente extends Database{
         $rows = $this->db->query($sql);
         return($rows);
     }
+
+    public function existeCliente($email, $passwd){
+        $sql = "SELECT * FROM clientes WHERE email = '$email' and passwd='$passwd'";
+        $ejecutar = $this->db->query($sql);
+        $filas = $ejecutar->rowCount();
+
+        if ($filas>0){
+            $existeCliente = true;
+        }
+        else{
+            $existeCliente = false;
+        }
+        return $existeCliente;
+    }
+
+    public function salir(){
+        session_destroy();
+    }
+
+
 }
