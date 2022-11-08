@@ -30,6 +30,11 @@ class ClienteController{
             require_once "views/cliente/login/formCliente.php";
         }
     }
+
+    //Crear Cuenta
+    public function crearCliente(){
+        require_once "views/cliente/login/altaCliente.php";
+    }
     
     //Cerrar sesion
     public function salir(){

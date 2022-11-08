@@ -19,7 +19,7 @@
             require_once "views/admin/commonAdmin/headerAdmin.html";
         }
             //Lo mismo con el cliente , le muestra un menu diferente
-        if(isset($_SESSION['cliente'])){
+        else if(isset($_SESSION['cliente'])){
             require_once "views/admin/commonAdmin/headerCliente.html";
         }
             //Sino se ha logeado ningun usuario , se muestra el menu general

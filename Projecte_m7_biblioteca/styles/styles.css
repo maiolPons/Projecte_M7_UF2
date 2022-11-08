@@ -515,3 +515,26 @@ div > .pic{
 .hide{
     display: none;
 }
+
+
+/************************************************FORM ALTA CLIENTE***************************/
+.formAltaUsu h1{
+    display:flex;
+    justify-content: center;
+}
+
+.loginAltaUsu{
+    display:grid;
+    /*grid-template-columns: 50% 50%;
+    column-gap: 5%;*/
+    margin:0 auto;
+    row-gap:5%;
+    width:60%;
+}
+
+.loginAltaUsu input{
+    padding:2% 0;
+    text-align: center;
+    border:none;
+    border-bottom:1px solid black;
+}
