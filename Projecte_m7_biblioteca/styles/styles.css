@@ -128,8 +128,7 @@ footer{
     background-color:#386B41;
     width:100%;
     display: flex;
-    margin-bottom: 10px;
-    margin-right: 1%;
+    left:0;
 
 }
 
@@ -521,20 +520,40 @@ div > .pic{
 .formAltaUsu h1{
     display:flex;
     justify-content: center;
+    color:#fff;
+    padding-bottom:1%;
+}
+
+.formAltaUsu{
+    background-color:#386B41;
+    width: 40%;
+    margin: 0 auto;
+    padding-top: 1%;
+    margin-top:1%;
+    padding-bottom: 13%;
+    border-radius:5%;
+
 }
 
 .loginAltaUsu{
     display:grid;
-    /*grid-template-columns: 50% 50%;
-    column-gap: 5%;*/
     margin:0 auto;
-    row-gap:5%;
+    row-gap:10%;
     width:60%;
+}
+
+.loginAltaUsu p{
+    font-size:12px;
+    margin:0;
+    color:#fff;
 }
 
 .loginAltaUsu input{
     padding:2% 0;
     text-align: center;
-    border:none;
-    border-bottom:1px solid black;
+}
+
+.loginAltaUsu input:last-child{
+    width: 30%;
+    margin: 0 auto;
 }
