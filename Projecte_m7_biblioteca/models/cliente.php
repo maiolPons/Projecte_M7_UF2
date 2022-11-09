@@ -92,5 +92,32 @@ class Cliente extends Database{
         session_destroy();
     }
 
+    //Añadir cliente
+    public function anyadirCliente(){
+        $sql = "INSERT INTO clientes (email,nombre,apellido,direccion,dni,passwd) VALUES ('".$this->email."','".$this->nombre."','".$this->apellido."','".$this->direccion."','".$this->dni."','".$this->contrasenya."')";
+        $ejecutar = $this->db->query($sql);
+
+        if($ejecutar){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }   
+
+    //Comprobar repeticiones
+    public function comprobarDuplicados(){
+        $sql = "SELECT * FROM clientes WHERE email = '".$this->email."' OR dni='".$this->dni."' ";
+        $ejecutar = $this->db->query($sql);
+        $filas = $ejecutar->rowCount();
+
+        if ($filas>0){
+            $duplicado = true;
+        }
+        else{
+            $duplicado = false;
+        }
+        return $duplicado;
+    }
 
 }
