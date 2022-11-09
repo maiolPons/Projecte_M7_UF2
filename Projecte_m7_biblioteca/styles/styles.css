@@ -15,7 +15,13 @@ body{
    
 #menu ul li {
     background-color:#386B41;
-    width:20%;
+}
+
+.first_child{
+    width:80%;
+}
+.second-child{
+    width: 20%;
 }
    
 /* enlaces del menu */
@@ -99,8 +105,8 @@ header a{
 }
 
 .perfil{
-    width: 10%;
-    height: 10%;
+    width: 7%;
+    height: 7%;
     padding-bottom: 4px;
     padding-top: 6px;
     float: right;
@@ -120,7 +126,6 @@ footer a{
     text-align: center;
     color: black;
     font-weight: bold;
-
 }
 footer{
     bottom:0;
@@ -128,8 +133,7 @@ footer{
     background-color:#386B41;
     width:100%;
     display: flex;
-    left:0;
-
+    margin-bottom: 5px;
 }
 
 /*************************************************************************************** PARTE PRODUCTOS ************************************************************************************/
@@ -515,7 +519,6 @@ div > .pic{
     display: none;
 }
 
-
 /************************************************FORM ALTA CLIENTE***************************/
 .formAltaUsu h1{
     display:flex;
@@ -557,3 +560,54 @@ div > .pic{
     width: 30%;
     margin: 0 auto;
 }
+/******************************************* FAVORITOS **************************************************************************************/
+ul.menuVertival {
+    position:relative;
+    background:#fff;
+    width:250px;
+    margin-left: 20px;
+    margin-top: 60px;
+    padding:0;
+    list-style: none;
+    border-radius: 5px;	
+}
+
+.menuVertival li a {
+    width:225px;
+    padding-left:20px;
+    height:50px;
+    line-height:50px;
+    display:block;
+    position:relative;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-size:14px;
+    padding-bottom: 30px;
+    font-weight: bold;
+    color: #7a7a7a;	
+}
+
+
+.menuVertival li:first-child {
+    border:5px solid #008747;
+}
+
+.menuVertival li:nth-child(2){
+        border-left:5px solid #fecf54;
+}
+    
+.menuVertival li:nth-child(3) {
+        border-left:5px solid #cf2130;
+}
+
+.menuVertival li:nth-child(4) {
+    border-left:5px solid blue;
+}
+
+
+.menuVertival li img{
+    width: 15%;
+    height: 15%;
+    float: left;
+}
+
