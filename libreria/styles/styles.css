@@ -1,0 +1,749 @@
+body{
+    font-family: sans-serif;
+    height: 100%;
+    margin-bottom: 20%;
+    margin-top:0;
+}
+/**************************************************************************************HEADER*****************************************************************************/
+    /* Header general */
+#menu ul , #menuAd ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+   
+/* items del menu */
+   
+#menu ul li {
+    background-color:#386B41;
+}
+
+.first_child{
+    width:80%;
+}
+.second-child{
+    width: 20%;
+}
+   
+/* enlaces del menu */
+   
+#menu ul a , #menuAd ul a {
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    font-weight:400;
+    font-size:15px;
+    padding:10px;
+    font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+   
+/* items del menu */
+   
+#menu ul li , #menuAd ul li {
+    position:relative;
+    float:left;
+    margin:0;
+    padding:0;
+}
+   
+/* efecto al pasar el ratón por los items del menu */
+   
+#menu ul li:hover , #menuAd ul li:hover{
+    background:#34EB55;
+}
+   
+/* menu desplegable */
+   
+#menu ul ul , #menuAd ul ul{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#eee;
+    padding:0;
+}
+   
+/* items del menu desplegable */
+   
+#menu ul ul li , #menuAd ul ul li {
+    float:none;
+    width:277.5%;
+}
+   
+/* enlaces de los items del menu desplegable */
+   
+#menu ul ul a , #menuAd ul ul a {
+    line-height:120%;
+    padding:10px 15px;
+}
+   
+/* items del menu desplegable al pasar el ratón */
+   #menu ul li:hover > ul  , #menuAd ul li:hover > ul{
+    display:block;
+}
+
+#menu , #menuAd{
+    width:100%; 
+    height:100px;
+}
+
+header{
+    margin-bottom:2%;
+}
+
+header a{
+    font-size:26px; 
+    text-decoration: none;
+}
+
+    /* Header administrador */
+
+#menuAd ul li {
+    background-color:#386B41;
+    width:20%;
+}
+
+.perfil{
+    width: 7%;
+    height: 7%;
+    padding-bottom: 4px;
+    padding-top: 6px;
+    float: right;
+}
+
+/*************************************************************************************** FOOTER ************************************************************************************/
+footer p{
+    text-align: center;
+    color:#fff;
+    width: 90%;
+    
+}
+footer a{
+    background-color: #7a997f;
+    padding-top: 15px;
+    width: 10%;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+footer{
+    bottom:0;
+    position:fixed;
+    background-color:#386B41;
+    width:100%;
+    display: flex;
+    height: 7%;
+    margin-bottom: 3px;
+    left: 0;
+}
+
+/*************************************************************************************** PARTE PRODUCTOS ************************************************************************************/
+
+a{
+text-decoration: none;
+
+}
+.login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(#7a997f, #88d897);  
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+
+.login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: black;
+    text-align: center;
+}
+
+.login-box .user-box {
+    position: relative;
+}
+
+.login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+.login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #34EB55;
+    font-size: 12px;
+}
+
+.submit input{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #0f0f0f;
+    font-size: 16px;
+    text-decoration: none;
+    /* text-transform: uppercase; */
+    overflow: hidden;
+    margin-top: 20px;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 5px;
+    background: rgb(202, 200, 200);
+
+}
+
+.submit input:hover {
+    background: #7CEE91;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #7CEE91,
+                0 0 25px #7CEE91,
+                0 0 50px #7CEE91,
+                0 0 100px #7CEE91;
+}
+
+.submit{
+    width: 50%;
+    margin:auto;
+}
+
+table{
+    border: 1px solid;
+    margin: 10%;
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+
+td , th{
+    border: 1px solid;
+    padding: 20px;
+    text-align: center;
+}
+.prod{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.addProd{
+    margin: 30px;
+}
+
+
+.contenedor{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    /* width: 80%; */
+}
+
+.add{
+    border: 1px solid ;
+    display: block;
+}
+
+.pic{
+    height: 80%;
+    width: 80%;
+    border:1px solid;
+}
+
+.pict{
+    height: 80%;
+    width: 80%;
+}
+div > .pic{
+    padding:20px 70px 20px 70px;
+}
+
+.libros{
+    border: 1px solid;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 50px;
+
+}
+
+.libros div:nth-child(2){
+    border-top: 1px solid;
+    text-align: center;
+}
+.alibros{
+    color: black;
+}
+
+.contenedorForm{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 80%;
+    margin: auto;
+}
+
+.edit{
+    width: 30%;
+    height: 30%;
+}
+
+.act{
+    width: 40%;
+    height: 40%;
+}
+
+.desac{
+    width: 30%;
+    height: 30%;
+}
+
+.dd{
+    text-decoration:underline;
+}
+
+.picD{
+    width: 30%;
+    height: 30%;
+}
+
+.title{
+    float: right;
+    margin: 50px 35% 0 30px ;
+}
+.descr{
+    border: 1px solid;
+    width: 30%;
+    padding: 20px;
+    float: right;
+    margin: 0 20% 0 50px ;
+}
+
+.buscador{
+    margin-bottom: 30px;
+}
+
+
+
+/*************************************************************************************** PARTE CATEGORIAS ************************************************************************************/
+.icon{
+    width:50px;
+    height:50px;
+}
+
+.formCategorias{
+    display: grid;
+    width:40%;
+    margin:0 auto;
+    border: 1px solid black;
+    padding:3% 0;
+}
+
+.formCategorias input:nth-child(3){
+    width:12% !important;
+    margin: 0 auto;
+    padding:5px 0;
+}
+
+.formCategorias input:nth-child(2){
+    width:40% !important;
+    margin: 0 auto;
+    margin-bottom:3%;
+    padding:5px 0;
+}
+
+.formCategorias h2{
+    margin:0 auto;
+    margin-bottom:3%;
+}
+
+
+/*************************************************************************************** PARTE PEDIDOS ************************************************************************************/
+
+
+
+
+
+
+/*************************************************************************************** FORM CLIENTE ************************************************************************************/
+.containerC{
+    /*border:1px solid white;*/
+    width: 600px;
+    height: 350px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    display: inline-flex; 
+    margin-top: 20px;
+}
+.backbox{  
+    /* background-color: #7a7a7a; */
+    background: linear-gradient(135deg , rgb(68, 168, 112) 10%, rgb(167, 222, 162) 80%); 
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    transform: translate(0,-50%);
+    top:50%;
+    display: inline-flex;
+    border: 2px solid black;
+}
+  
+.frontbox{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    border-radius: 20px;
+    height: 100%;
+    width: 50%;
+    z-index: 10;
+    position: absolute;
+    right:0;
+    margin-right: 3%;
+    margin-left: 3%;
+    transition: right .8s ease-in-out;
+}
+ 
+.loginMsg{
+    width: 50%;
+    height: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+  
+.loginMsg .titleC{
+    font-weight: 300;
+    font-size: 23px;
+}
+  
+.loginMsg p{
+    font-weight: 100;
+    margin-bottom: 40px;
+}
+  
+.textcontent{
+    color:white;
+    margin-top:65px;
+    margin-left: 12%;
+}
+  
+.loginMsg a{
+    background-color: #404040;
+    border: 2px solid white;
+    border-radius: 10px;
+    color:white;
+    font-size: 12px;
+    box-sizing: content-box;
+    font-weight: 300;
+    padding:10px;
+}
+  
+  /* front box content*/
+.login{
+    padding: 20px;
+    text-align: center;
+}
+  
+.login h2{
+    color: #35B729;
+    font-size:25px;
+}
+
+.login img{
+    width: 30%;
+    height: 30%;
+}
+.inputbox{
+    margin-top:30px; 
+}
+
+.login input{
+    display: block;
+    width: 100%;
+    height: 40px;
+    /* background-color: #f2f2f2; */
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom:20px;
+    font-size: 12px;
+}
+  
+.buttom{
+    background-color: #35B729;
+    border: none;
+    color:white;
+    font-size: 15px;
+    padding:10px 20px;
+    border-radius: 10px;
+    /* margin-right: 20px;
+    float: right; */
+    cursor: pointer;
+}
+
+.divbuttom{
+    width: 40%;
+    margin: auto;
+}
+  
+  /* Fade In & Out*/
+.login p {
+    cursor: pointer;
+    color:#404040;
+    font-size:15px;
+}
+  
+.loginMsg{
+    /*opacity: 1;*/
+    transition: opacity .8s ease-in-out;
+}
+  
+.visibility{
+    opacity: 0;
+}
+  
+.hide{
+    display: none;
+}
+
+/************************************************FORM ALTA CLIENTE***************************/
+.formAltaUsu h1{
+    display:flex;
+    justify-content: center;
+    color:#fff;
+    padding-bottom:1%;
+}
+
+.formAltaUsu{
+    background-color:#386B41;
+    width: 40%;
+    margin: 0 auto;
+    padding-top: 1%;
+    margin-top:1%;
+    padding-bottom: 13%;
+    border-radius:5%;
+
+}
+
+.loginAltaUsu{
+    display:grid;
+    margin:0 auto;
+    row-gap:10%;
+    width:60%;
+}
+
+.loginAltaUsu p{
+    font-size:12px;
+    margin:0;
+    color:#fff;
+}
+
+.loginAltaUsu input{
+    padding:2% 0;
+    text-align: center;
+}
+
+.loginAltaUsu input:last-child{
+    width: 30%;
+    margin: 0 auto;
+}
+/******************************************* FAVORITOS **************************************************************************************/
+ul.menuVertival {
+    position:relative;
+    background:#fff;
+    width:250px;
+    margin-left: 20px;
+    margin-top: 10px;
+    padding:0;
+    list-style: none;
+    border-radius: 5px;	
+    float: left;
+}
+
+.menuVertival li {
+    padding:30px 0 30px 20px;
+}
+
+.menuVertival li a {
+    width:225px;
+    line-height:50px;
+    display:block;
+    position:relative;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-size:14px;
+    font-weight: bold;
+    color: #7a7a7a;	
+}
+
+.menuVertival li a:hover {
+    color: white;
+}
+.menuVertival li:first-child {
+    border-left:5px solid #008747;
+}
+
+.menuVertival li:first-child:hover {
+    background-color: #008747;
+}
+
+.menuVertival li:nth-child(2){
+        border-left:5px solid #fecf54;
+}
+.menuVertival li:nth-child(2):hover {
+    background-color: #fecf54;
+}
+
+.menuVertival li:nth-child(3) {
+    border-left:5px solid #cf2130;
+}
+.menuVertival li:nth-child(3):hover {
+    background-color: #cf2130;
+}
+
+.menuVertival li:nth-child(4) {
+    border-left:5px solid blue;
+}
+.menuVertival li:nth-child(4):hover {
+    background-color: blue;
+}
+.menuVertival li img{
+    width: 15%;
+    height: 15%;
+    float: left;
+    padding-right: 10px;
+}
+
+.favorTitle{
+    width: 20%;
+    margin: auto;
+    border-bottom: 5px solid #386B41 ;
+    text-align: center;
+}
+
+.zeroRows{
+    width: 62%;
+    padding: 50px;
+    margin-left: 25%;
+    margin-top: 30px;
+}
+
+.imgFav{
+    width: 20%;
+    height: 20%;
+}
+
+.price{
+    border: 1px solid;
+    width: 7%;
+    text-align: center;
+    padding: 2px;
+    /* position: absolute;
+    top: 340px;
+    margin-left: 10px; */
+    background-color: #087528;
+    color: white;
+    font-weight: bold;
+}
+
+
+.librosFav{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+
+/* ***************************************************** DETALLE LIBRO CLIENTE ***********************************************/
+.divimagenLibro{
+    width: 70%;
+    margin-left: 10%;
+}
+
+.divimagenLibro img:first-child{
+    width: 15%;
+    height: 15%;
+    float: right;
+    position: relative;
+    top : 20px;
+    left: 5px
+}
+
+.divimagenLibro img:nth-child(2){
+    width: 100%;
+    height: 100%;
+}
+
+.divTituloLibro{
+    border: 1px solid;
+    margin: 20px;
+    width: 20%;
+}
+
+.divAutorLibro{
+    border: 1px solid;
+    margin: 20px;
+    width: 20%;
+}
+
+.divEditLibro{
+    border: 1px solid;
+    margin: 20px;
+    width: 20%
+}
+.divDescriLibro{
+    border: 1px solid;
+    margin: 20px;
+    width: 70%;
+}
+
+.divPrecioLibro{
+    border: 1px solid;
+    margin: 20px;
+    width: 20%
+}
+
+#div1{
+    display: flex;
+}
+
+#div1 div:nth-child(2){
+}
+
+.botonAñadir{
+    display: flex;
+    width: 22%;
+    padding: 7px 50px 7px 50px;
+    background-color: #008747;
+    border-radius: 5px;
+    margin: auto;
+}
+
+.botonAñadir img{
+    width: 10%;
+    height:10%;
+    padding-top: 10px;
+    padding-right: 10px ;
+}
+
+.botonAñadir p{
+    color: white;
+    font-weight: bold;
+}
