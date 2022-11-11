@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/styles.css" rel="stylesheet" type="text/css">
     <title>Administrador</title>
+    <script type="text/javascript" charset="UTF-8" src="views/admin/pedidos/pedidos.js"></script>
 </head>
 <body>
     <?php
