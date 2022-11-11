@@ -6,113 +6,125 @@ body{
 }
 /**************************************************************************************HEADER*****************************************************************************/
     /* Header general */
-#menu ul , #menuAd ul{
-    list-style:none;
-    margin:0;
-    padding:0;
-}
-   
-/* items del menu */
-   
-#menu ul li {
-    background-color:#386B41;
-}
-
-.first_child{
-    width:80%;
-}
-.second-child{
-    width: 20%;
-}
-   
-/* enlaces del menu */
-   
-#menu ul a , #menuAd ul a {
-    display:block;
-    color:#fff;
-    text-decoration:none;
-    font-weight:400;
-    font-size:15px;
-    padding:10px;
-    font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-transform:uppercase;
-    letter-spacing:1px;
-}
-   
-/* items del menu */
-   
-#menu ul li , #menuAd ul li {
-    position:relative;
-    float:left;
-    margin:0;
-    padding:0;
-}
-   
-/* efecto al pasar el ratón por los items del menu */
-   
-#menu ul li:hover , #menuAd ul li:hover{
-    background:#34EB55;
-}
-   
-/* menu desplegable */
-   
-#menu ul ul , #menuAd ul ul{
-    display:none;
-    position:absolute;
-    top:100%;
-    left:0;
-    background:#eee;
-    padding:0;
-}
-   
-/* items del menu desplegable */
-   
-#menu ul ul li , #menuAd ul ul li {
-    float:none;
-    width:277.5%;
-}
-   
-/* enlaces de los items del menu desplegable */
-   
-#menu ul ul a , #menuAd ul ul a {
-    line-height:120%;
-    padding:10px 15px;
-}
-   
-/* items del menu desplegable al pasar el ratón */
-   #menu ul li:hover > ul  , #menuAd ul li:hover > ul{
-    display:block;
-}
-
-#menu , #menuAd{
-    width:100%; 
-    height:100px;
-}
-
-header{
-    margin-bottom:2%;
-}
-
-header a{
-    font-size:26px; 
-    text-decoration: none;
-}
-
-    /* Header administrador */
-
-#menuAd ul li {
-    background-color:#386B41;
-    width:20%;
-}
-
-.perfil{
-    width: 7%;
-    height: 7%;
-    padding-bottom: 4px;
-    padding-top: 6px;
-    float: right;
-}
-
+    #menu ul , #menuAd ul, #menucliente ul{
+        list-style:none;
+        margin:0;
+        padding:0;
+    }
+       
+    /* items del menu */
+       
+    #menu ul li, #menucliente ul li {
+        background-color:#386B41;
+    }
+    
+    .first_child{
+        width:80%;
+    }
+    
+    .second-child{
+        width: 20%;
+    }
+       
+    /* enlaces del menu */
+       
+    #menu ul a , #menuAd ul a, #menucliente ul a {
+        display:block;
+        color:#fff;
+        text-decoration:none;
+        font-weight:400;
+        font-size:15px;
+        padding:10px;
+        font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-transform:uppercase;
+        letter-spacing:1px;
+    }
+       
+    /* items del menu */
+       
+    #menu ul li , #menuAd ul li, #menucliente ul li {
+        position:relative;
+        float:left;
+        margin:0;
+        padding:0;
+    }
+       
+    /* efecto al pasar el ratón por los items del menu */
+       
+    #menu ul li:hover , #menuAd ul li:hover, #menucliente ul li:hover{
+        background:#34EB55;
+    }
+       
+    /* menu desplegable */
+       
+    #menu ul ul , #menuAd ul ul{
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        background:#eee;
+        padding:0;
+    }
+    
+    #menucliente ul ul{
+        display: none;
+        position: inherit;
+        top: 100%;
+        left: 0;
+        background: #eee;
+        padding: 0;
+        width:36%;
+    }
+    
+    
+       
+    /* items del menu desplegable */
+       
+    #menu ul ul li , #menuAd ul ul li, #menucliente ul ul li {
+        float:none;
+        width:277.5%;
+    }
+       
+    /* enlaces de los items del menu desplegable */
+       
+    #menu ul ul a , #menuAd ul ul a, #menucliente ul ul a{
+        line-height:120%;
+        padding:10px 15px;
+    }
+       
+    /* items del menu desplegable al pasar el ratón */
+       #menu ul li:hover > ul  , #menuAd ul li:hover > ul, #menucliente ul li:hover > ul{
+        display:block;
+    }
+    
+    #menu , #menuAd, #menucliente{
+        width:100%; 
+        height:100px;
+    }
+    
+    header{
+        margin-bottom:2%;
+    }
+    
+    header a{
+        font-size:26px; 
+        text-decoration: none;
+    }
+    
+        /* Header administrador */
+    
+    #menuAd ul li {
+        background-color:#386B41;
+        width:20%;
+    }
+    
+    .perfil{
+        width: 7%;
+        height: 7%;
+        padding-bottom: 4px;
+        padding-top: 6px;
+        float: right;
+    }
 /*************************************************************************************** FOOTER ************************************************************************************/
 footer p{
     text-align: center;
@@ -380,52 +392,7 @@ div > .pic{
 
 /*************************************************************************************** PARTE PEDIDOS ************************************************************************************/
 
-/*finestra emergent*/
-#principalAdmin{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    grid-template-rows:100px 1fr 2fr;
-}
-#titolDetallesPedidoAdmin{
-    grid-area: 1 / 1 / span 1 / span 2;
-    text-align: center;
-    color: white;
-    margin: auto;
-    background-color: #386B41;
-    width: 100%;
-}
-#pedidoAdmin{
-    grid-area: 2 / 1;
-}
-#clienteAdmin{
-    grid-area: 2 / 2;
-}
-#librosAdmin{
-    grid-area: 3 / 1 / span 3 / span 2;
-}
-#librosAdmin h4{
-    text-align: center;
-    padding-bottom: 10px;
-}
-/*mostrar todo*/
-#mostrarTodosAdmin{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    grid-template-rows:1fr 1fr 6fr;
-}
-#buscadorPedido{
-    padding-left: 10%;
-}
-#mostrarTodosAdmin h3{
-    text-align: center;
-}
-#mostrarTodosAdminTabla{
-    overflow: auto;
-}
+
 
 
 
