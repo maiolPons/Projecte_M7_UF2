@@ -20,7 +20,11 @@
         }
             //Lo mismo con el cliente , le muestra un menu diferente
         else if(isset($_SESSION['cliente'])){
-            require_once "views/admin/commonAdmin/headerCliente.html";
+            require_once "models/categoria.php";
+                $categoria = new Categoria();
+                $categorias=$categoria->mostrarDatosCategorias();
+                require_once "views/admin/commonAdmin/headerCliente.php";
+            
         }
             //Sino se ha logeado ningun usuario , se muestra el menu general
         else{
