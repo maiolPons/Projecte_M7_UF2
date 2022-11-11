@@ -6,7 +6,7 @@
                 <div class="textcontent">
                     <p class="titleC">¿No tienes cuenta?
                     </br></br>C R E A L A  &nbsp&nbsp Y A !</p>
-                    <a href="#">Crear mi cuenta</a>
+                    <a href="index.php?controller=cliente&action=crearCliente">Crear mi cuenta</a>
                 </div>
             </div>
         </div>
