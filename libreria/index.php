@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/styles.css" rel="stylesheet" type="text/css">
     <title>Administrador</title>
-    <script type="text/javascript" charset="UTF-8" src="views/admin/pedidos/pedidos.js"></script>
 </head>
 <body>
     <?php
         session_start();
         require_once "autoload.php";
+
+        //Scripts
+        include('views/scripts/scripts.php');
 
         //--------------------------------------------------------//
 
@@ -22,9 +24,9 @@
             //Lo mismo con el cliente , le muestra un menu diferente
         else if(isset($_SESSION['cliente'])){
             require_once "models/categoria.php";
-                $categoria = new Categoria();
-                $categorias=$categoria->mostrarDatosCategorias();
-                require_once "views/admin/commonAdmin/headerCliente.php";
+            $categoria = new Categoria();
+            $categorias=$categoria->mostrarDatosCategorias();
+            require_once "views/admin/commonAdmin/headerCliente.php";
             
         }
             //Sino se ha logeado ningun usuario , se muestra el menu general
