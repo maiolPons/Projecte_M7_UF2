@@ -93,6 +93,21 @@ class categoriaController{
                 LogAdmin();
             }
         }
+
+
+        //Mostrar categorias en header
+
+        public function categoriasHeader(){
+            if (isset($_SESSION['cliente'])){
+                require_once "models/categoria.php";
+                $categoria = new Categoria();
+                $categorias=$categoria->mostrarDatosCategorias();
+                require_once "views/admin/commonAdmin/headerCliente.php";
+            }
+            else{
+                LogCliente();
+            }
+        }
 }
 
 
