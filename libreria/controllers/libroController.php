@@ -326,11 +326,23 @@
                     $libro = new Libro();
                     $libro->setIsbn($isbn);
                     $libro->esFavorito();
-                    ?>
-                    <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=libro&action=detalleLibro&isbn=<?php echo $isbn?>"> 
-                    <?php
+
+                    /***** DIANA *****/
+                    if(isset($_GET['flag'])){
+                        ?>
+                        <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=libro&action=infoCategorias&isbn=<?php echo $isbn?>"> 
+                        <?php
+                    }
+                    else{
+                        ?>
+                        <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=libro&action=detalleLibro&isbn=<?php echo $isbn?>"> 
+                        <?php
+                    }
+                    
                 }
             }
+
+            
             //Si el admin no esta logeado , no puede ver las paginas
             else{
                 ?>
@@ -338,6 +350,7 @@
                 <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=cliente&action=logearCliente"> 
                 <?php
             }
+
         }
 
 //**************************************************************************************************************************************************************//
@@ -382,6 +395,20 @@
             }
             
         }
+
+
+/*******************************************************************************************************************************************************************/
+    //Mostrar libros por Categorias
+
+    public function infoCategorias(){
+        $nombreCategoria=$_GET['nombre'];
+        $idCategoria=$_GET['id'];
+        require_once "models/libro.php";
+        $libro = new Libro();
+        $libros=$libro -> categoriasLibros($idCategoria);
+        require_once "views/general/categorias.php";
+
+    }
 
     }
 ?>
