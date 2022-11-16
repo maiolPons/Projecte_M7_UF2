@@ -101,6 +101,13 @@ class Cliente extends Database{
         }
     }   
 
+    //Mostrar todos los datos cliente
+    public function mostrarDatos(){
+        $sql = "SELECT * FROM clientes WHERE email = '".$this->email."'";
+        $rows = $this->db->query($sql);
+        return $rows;
+    }
+
     //Comprobar repeticiones
     public function comprobarDuplicados(){
         $sql = "SELECT * FROM clientes WHERE email = '".$this->email."' OR dni='".$this->dni."' ";
