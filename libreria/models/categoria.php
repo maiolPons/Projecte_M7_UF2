@@ -70,4 +70,6 @@ class Categoria extends Database{
         $rows = $this->db->query($query);
         return $rows;
     }
+
+    
 }

@@ -173,5 +173,14 @@ class Libro extends Database{
         $sql = "UPDATE libros SET favorito=0 WHERE ISBN='".$this->getIsbn()."'";
         $rows = $this->db->query($sql);
     }
+
+
+    //Diana Categorias
+
+    public function categoriasLibros($categoria){
+        $sql="SELECT * FROM libros WHERE idCategoria=$categoria";
+        $rows = $this->db->query($sql);
+        return $rows;
+    }
 }
 ?>
