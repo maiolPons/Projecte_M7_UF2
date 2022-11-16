@@ -25,7 +25,7 @@
 <div class="zeroRows">
     <?php
     // Si no hay ningun favorito
-    echo "<h4>".$num." ARTÍCULOS</h4></br>";
+    //echo "<h4>".$num." ARTÍCULOS</h4></br>";
     if($num==0){?>
         <P>Aún no has añadido ningún artículo a tu lista de favoritos. Comienza a comprar y añade tus productos preferidos.</P>
     <?php
@@ -37,14 +37,15 @@
             ?>
                 <a class="alibros" href="index.php?controller=libro&action=detalleLibro&isbn=<?php echo $isbn; ?>">
                     <div>
-                        <img src="pic/corazonRojo.png" alt="" style="width:5%; height:5%;">
+                        <!-- <img src="pic/corazonRojo.png" alt="" style="width:5%; height:5%;"> -->
                         <img class="imgFav" src="<?php echo $row['foto'] ?>"/>
                     </div>
-                    <div>
-                        <p><?php echo $row['titulo'] ?></p>
-                        <p class="price"><?php echo $row['precioUni']." €" ?></p>
-                    </div>
                 </a>
+                    <div>
+                        <p class="tituloLibro"><?php echo $row['titulo'] ?></p>
+                        <p class="price"><?php echo $row['precioUni']." €" ?></p>
+                        <a href="index.php?controller=libro&action=NoEsFavorito&fav=1&isbn=<?php echo $isbn; ?>"><img src="pic/corazonRojo.png" alt="" id="corazon"></a>
+                    </div>
         <?php
             echo "</div>";
         }
