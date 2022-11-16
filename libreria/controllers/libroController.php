@@ -329,8 +329,10 @@
 
                     /***** DIANA *****/
                     if(isset($_GET['flag'])){
+                        $nombre=$_GET['nombre'];
+                        $id=$_GET['id'];
                         ?>
-                        <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=libro&action=infoCategorias&isbn=<?php echo $isbn?>"> 
+                        <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=libro&action=infoCategorias&id=<?php echo $id?>&nombre=<?php echo $nombre?>"> 
                         <?php
                     }
                     else{
@@ -362,6 +364,18 @@
                     $libro = new Libro();
                     $libro->setIsbn($isbn);
                     $libro->NoesFavorito();
+                    ?>
+                    <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=libro&action=detalleLibro&isbn=<?php echo $isbn?>"> 
+                    <?php
+                }
+                if(isset($_GET['flag'])){
+                    $nombre=$_GET['nombre'];
+                    $id=$_GET['id'];
+                    ?>
+                    <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=libro&action=infoCategorias&id=<?php echo $id?>&nombre=<?php echo $nombre?>"> 
+                    <?php
+                }
+                else{
                     ?>
                     <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=libro&action=detalleLibro&isbn=<?php echo $isbn?>"> 
                     <?php
