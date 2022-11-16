@@ -66,6 +66,18 @@ class ClienteController{
 
     }
     
+    //Mostrar datos del usuario
+    public function miPerfil(){
+        if(isset($_SESSION['cliente'])){
+            $email = $_SESSION['cliente'];
+            $cliente= new Cliente();
+            $cliente->setEmail($email);
+            $rows = $cliente->mostrarDatos();
+            require_once "views/cliente/perfil/miPerfil.php";
+
+        }
+    }
+    
     //Cerrar sesion
     public function salir(){
         $salir = new Cliente;
