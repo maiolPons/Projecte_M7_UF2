@@ -3,8 +3,10 @@
 		<li class="first_child"><a href="#">Libros</a>
 			<?php 
 				foreach($categorias as $categoria){
+				$id=$categoria['id'];
+				$nombre=$categoria['nombre'];
 				echo "<ul>";
-				echo "<li><a href='#'>".$categoria['nombre']."</a></li>";
+				echo "<li><a href='index.php?controller=libro&action=infoCategorias&id=$id&nombre=$nombre'>".$categoria['nombre']."</a></li>";
 				echo "</ul>";
 				}
 			?>
