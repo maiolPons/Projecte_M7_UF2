@@ -585,7 +585,7 @@ div > .pic{
 ul.menuVertival {
     position:relative;
     background:#fff;
-    width:250px;
+    width:20%;
     margin-left: 20px;
     margin-top: 10px;
     padding:0;
@@ -656,34 +656,37 @@ ul.menuVertival {
 }
 
 .zeroRows{
-    width: 62%;
+    width: 70%;
     padding: 50px;
-    margin-left: 25%;
+    margin-left: 22%;
     margin-top: 30px;
+    display: grid;
+    grid-template-columns: 35% 35% 35%;
 }
 
 .imgFav{
-    width: 20%;
-    height: 20%;
+    width: 100%;
+    height:40%;
 }
 
 .price{
-    border: 1px solid;
-    width: 7%;
-    text-align: center;
+    width: 50%;
     padding: 2px;
-    /* position: absolute;
-    top: 340px;
-    margin-left: 10px; */
-    background-color: #087528;
-    color: white;
+    color: #087528;
     font-weight: bold;
+    margin-left: 10px;
 }
 
-
 .librosFav{
-    display: grid;
-    grid-template-columns: auto auto;
+    margin : 20px auto;
+    /* margin-bottom: 20px; */
+    width: 50%;
+    border: 1px solid gray;
+}
+
+.tituloLibro{
+    font-weight: bold;
+    text-align: center;
 }
 
 
