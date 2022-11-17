@@ -6,11 +6,11 @@
         <ul class="menuVertival">
             <li class="novedades">
                 <img src="pic/news.png" alt="">
-                <a class="messages" href="index.php">Novedades</a>
+                <a class="messages" href="index.php">Página Principal</a>
             </li>
             <li>
-                <img src="pic/corazon.png" alt="">
-                <a class="favoritos" href="index.php?controller=libro&action=favoritos">Mis favoritos</a>
+                <img src="pic/news.png" alt="">
+                <a class="favoritos" href="index.php?controller=libro&action=favoritos">Novedades</a>
             </li>
             <li>
                 <img src="pic/sent.png" alt="">
@@ -21,20 +21,20 @@
     <div class="books">
         <?php
     foreach($libros as $libro){
-        ?>
+        ?>  
             <div class="books">
             <div>
                 <!-- Imagen -->
-                <div class="divimagenLibro">
+                <div class="divimagenLibro" id="imagenLibro">
                     <?php
                     $id=$libro['idCategoria'];
                     $isbn=$libro['ISBN'];
                     if($libro['favorito']==1){?>
-                        <a href="index.php?controller=libro&action=NoEsFavorito&isbn=<?php echo $isbn ?>&flag=1&nombre=<?php echo $nombreCategoria ?>&id=<?php echo $id ?>"><img src="pic/corazonRojo.png" alt=""></a>
+                        <a href="index.php?controller=libro&action=NoEsFavorito&isbn=<?php echo $isbn ?>&flag=1&nombre=<?php echo $nombreCategoria ?>&id=<?php echo $id ?>"><img class="x" src="pic/corazonRojo.png" alt=""></a>
                         <?php
                     }
                     else{?>
-                        <a href="index.php?controller=libro&action=esFavorito&isbn=<?php echo $isbn ?>&flag=1&nombre=<?php echo $nombreCategoria ?>&id=<?php echo $id ?>"><img src="pic/corazonNegro.png" alt=""></a>
+                        <a href="index.php?controller=libro&action=esFavorito&isbn=<?php echo $isbn ?>&flag=1&nombre=<?php echo $nombreCategoria ?>&id=<?php echo $id ?>"><img class="x" src="pic/corazonNegro.png" alt=""></a>
                         <?php
                     }
                     ?>
