@@ -763,18 +763,46 @@ ul.menuVertival {
     color: white;
     font-weight: bold;
 }
-/*************************CATEGORIAS FAVORITOS**********************/
-#imagenLibro img{
-    z-index:1;
-    top:30px;
-    left:20px;
-    border:none;
-    transform: scale(1.5);
+/****************************************************************************************LIBROS CATEGORIAS****************************************************************/
+.books{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
 }
 
-#imagenLibro img:hover{
+.books div{
+    margin: 0 auto;
+    display: block;
+}
+
+.books div p{
+    text-align: center;
+    
+}
+
+.books img{
+    width:200px;
+    height:300px;
+    border:1px solid black;
+}
+
+.books img:hover{
+    transform:scale(1.1);
+}
+.bksh1{
+    text-align: center;
+    border-bottom:#008747 2px solid;
+    padding-bottom:20px;
+    margin-top:0;
+    margin-bottom:3%;
+}
+
+
+/*************************CATEGORIAS FAVORITOS**********************/
+#imagenLibro .x{
     z-index:1;
-    top:30px;
-    left:20px;
-    transform: scale(1.9);
+    top:45px;
+    margin-right:150px;
+    float: right;
+    border:none;
+    transform: scale(1.1);
 }
