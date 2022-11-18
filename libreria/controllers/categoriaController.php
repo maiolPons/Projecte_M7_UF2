@@ -77,19 +77,24 @@ class categoriaController{
             }
         }
 
-
         //Mostrar categorias en header
 
         public function categoriasHeader(){
-            if (isset($_SESSION['cliente'])){
-                require_once "models/categoria.php";
-                $categoria = new Categoria();
-                $categorias=$categoria->mostrarDatosCategorias();
-                require_once "views/admin/commonAdmin/headerCliente.php";
-            }
-            else{
-                LogCliente();
-            }
+            require_once "models/categoria.php";
+            $categoria = new Categoria();
+            $categorias=$categoria->mostrarDatosCategorias();
+            require_once "views/admin/commonAdmin/header.php";
+
+            // if(!(isset($_SESSION['admin']))){
+            //     require_once "models/categoria.php";
+            //     $categoria = new Categoria();
+            //     $categorias=$categoria->mostrarDatosCategorias();
+            //     require_once "views/admin/commonAdmin/headerCliente.php";
+            //     require_once "views/admin/commonAdmin/header.php";
+            // }
+            // else{
+            //     LogCliente();
+            // }
         }
 
 }

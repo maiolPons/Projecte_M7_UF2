@@ -20,12 +20,13 @@
         </li>
     </ul>
 </div>
-
+<?php
+    echo "<h4 class='numFav'>".$num." ARTÍCULOS</h4></br>";
+?>
 
 <div class="zeroRows">
     <?php
     // Si no hay ningun favorito
-    //echo "<h4>".$num." ARTÍCULOS</h4></br>";
     if($num==0){?>
         <P>Aún no has añadido ningún artículo a tu lista de favoritos. Comienza a comprar y añade tus productos preferidos.</P>
     <?php

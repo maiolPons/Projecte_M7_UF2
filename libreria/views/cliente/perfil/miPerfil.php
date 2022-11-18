@@ -18,23 +18,42 @@
         </li>
     </ul>
 </div>
+<?php
+foreach($rows as $row){
+    $nombre = $row['nombre'];
+}
+echo "<h1 class='miPerfil'>Hola " . $nombre ."!</h1>";
+?>
+<div class="formPerfil">
+    
+        <div class="editProfile">
+            <a href="#">Editar mis datos</a>
+        </div>
 
+        <div>
+            <p>EMAIL  </p>
+            <p><?php echo $row['email']?></p>
+        </div>
 
-<div class="formAltaUsu">
-    <h1 class="favorTitle">Mi perfil</h1>
-    <form class="loginAltaUsu">
-        <?php
-        foreach($rows as $row){?>
-            <input type="email" name="email" value=<?php echo $row['email']?> readonly> 
-            <input type="text" name="nombre" value=<?php echo $row['nombre']?> readonly> 
-            <input type="text" name="apellidos" value=<?php echo $row['apellido']?> readonly> 
-            <input type="text" name="direccion" value=<?php echo $row['direccion']?> readonly> 
-            <input type="text" name="dni" value=<?php echo $row['dni']?> readonly> 
-            <div>
-                <a href="#">Modificar mi perfil</a>
-            </div>
-            <?php
-        }
-        ?>
-    </form>
+        <div>
+            <p>NOMBRE </p>
+            <p><?php echo $row['nombre']?></p>
+        </div>
+       
+        <div>
+            <p>APELLIDO </p>
+            <p><?php echo $row['apellido']?></p>
+        </div>
+
+        <div>
+            <p>DNI</p>
+            <p><?php echo $row['dni']?></p>
+        </div>
+
+        <div>
+            <p>DIRECCIÓN </p>
+            <p><?php echo $row['direccion']?></p>
+        </div>
 </div>
+
+

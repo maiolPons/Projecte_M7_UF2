@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/styles.css" rel="stylesheet" type="text/css">
-    <title>Administrador</title>
 </head>
 <body>
     <?php
@@ -31,7 +30,11 @@
         }
             //Sino se ha logeado ningun usuario , se muestra el menu general
         else{
-            require_once "views/admin/commonAdmin/header.html";
+                /* --- Salma --- */ 
+            require_once "models/categoria.php";
+            $categoria = new Categoria();
+            $categorias=$categoria->mostrarDatosCategorias();
+            require_once "views/admin/commonAdmin/header.php";
         }
         
         //--------------------------------------------------------//
@@ -57,8 +60,11 @@
         } 
         ?> 
         <?php
-        //--------------------------------------------------------//
+        //---------------------FOOTER-----------------------------------//
         if(isset($_SESSION['admin'])){
+            require_once "views/admin/commonAdmin/footerAdmin.html";
+        }
+        else if(isset($_SESSION['cliente'])){
             require_once "views/admin/commonAdmin/footerAdmin.html";
         }
         else{

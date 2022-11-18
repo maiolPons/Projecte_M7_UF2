@@ -43,7 +43,7 @@
                 <?php if ($libros!=''){?>
                 <!-- Imagen -->
                 <div>
-                <a href="index.php?controller=libro&action=detalleLibro&isbn=<?php echo $isbn; ?>"> <img  src="<?php echo $libro['foto']?>" alt=""> </a>
+                <img  src="<?php echo $libro['foto']?>" alt="">
                 </div>
                 <div>
                     <p> <?php echo $libro['titulo']?> </p>

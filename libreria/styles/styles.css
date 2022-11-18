@@ -1,136 +1,137 @@
+*{
+    margin:0;
+    padding: 0;
+}
 body{
     font-family: sans-serif;
     height: 100%;
     margin-bottom: 20%;
     margin-top:0;
 }
+
 /**************************************************************************************HEADER*****************************************************************************/
    /* Header general */
-    #menu ul , #menuAd ul, #menucliente ul{
-        list-style:none;
-        margin:0;
-        padding:0;
-    }
-       
-    /* items del menu */
-       
-    #menu ul li, #menucliente ul li {
-        background-color:#386B41;
-    }
-    
-    .first_child{
-        width:80%;
-    }
-    
-    .second-child{
-        width: 20%;
-    }
-       
-    /* enlaces del menu */
-       
-    #menu ul a , #menuAd ul a, #menucliente ul a {
-        display:block;
-        color:#fff;
-        text-decoration:none;
-        font-weight:400;
-        font-size:15px;
-        padding:10px;
-        font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        text-transform:uppercase;
-        letter-spacing:1px;
-    }
-       
-    /* items del menu */
-       
-    #menu ul li , #menuAd ul li, #menucliente ul li {
-        position:relative;
-        float:left;
-        margin:0;
-        padding:0;
-    }
-       
-    /* efecto al pasar el ratón por los items del menu */
-       
-    #menu ul li:hover , #menuAd ul li:hover, #menucliente ul li:hover{
-        background:#34EB55;
-    }
-       
-    /* menu desplegable */
-       
-    #menu ul ul , #menuAd ul ul{
-        display:none;
-        position:absolute;
-        top:100%;
-        left:0;
-        background:#eee;
-        padding:0;
-    }
-    
-    #menucliente ul ul{
-        display: none;
-        position: inherit;
-        top: 100%;
-        left: 0;
-        background: #eee;
-        padding: 0;
-        width:36%;
-    }
-    
-    
-       
-    /* items del menu desplegable */
-       
-    #menu ul ul li , #menuAd ul ul li, #menucliente ul ul li {
-        float:none;
-        width:277.5%;
-    }
-       
-    /* enlaces de los items del menu desplegable */
-       
-    #menu ul ul a , #menuAd ul ul a, #menucliente ul ul a{
-        line-height:120%;
-        padding:10px 15px;
-    }
-       
-    /* items del menu desplegable al pasar el ratón */
-       #menu ul li:hover > ul  , #menuAd ul li:hover > ul, #menucliente ul li:hover > ul{
-        display:block;
-    }
-    
-    #menu , #menuAd, #menucliente{
-        width:100%; 
-        height:80px;
-    }
-    
-    header{
-        margin-bottom:2%;
-    }
-    
-    header a{
-        font-size:26px; 
-        text-decoration: none;
-    }
-    
-        /* Header administrador */
-    
-    #menuAd ul li {
-        background-color:#386B41;
-        width:20%;
-    }
-    
-    .perfil{
-        width: 7%;
-        height: 7%;
-        padding-bottom: 4px;
-        padding-top: 6px;
-        float: right;
-    }
+
+#container {
+    position:relative;
+    width:100%;
+    background:linear-gradient(rgb(103, 187, 107) , #386B41 60%);
+    box-shadow: 2px 2px 2px rgb(21, 230, 21) ,5px 5px 5px #5C7373 ;
+    margin-bottom: 40px;
+  }
+#container > nav {
+    width:100%;
+    display:flex;
+}
+  #logo {
+    line-height:60px;
+    font-size:50px;
+    width:20%;
+  }
+  
+  #container img:first-child{
+    height: 40px;
+    width: 40px;
+    margin: 10px 5px 10px 70px;
+  }
+  
+  #logo a{
+    color: white;
+    letter-spacing:2px;
+    text-shadow:2px 2px 5px;
+  }
+  #container > nav > ul {
+    margin:0;
+    padding:0;
+    list-style-type:none;
+    display:flex;
+    position:absolute;
+      right:50px;
+  }
+  #container > nav > ul > li {
+    line-height:60px;
+    margin: 0 0px;
+    padding:0;
+    text-align:center;
+    display:inline-block;  
+    min-width:120px;
+  
+  } 
+  #container > nav > ul > li > a {
+    position:relative;
+    margin: 0 60px;
+    color:white;
+  }
+  .element1:hover , .element2:hover , .element3:hover{
+    border-bottom: 2px solid black;
+    background-color: #28B828;
+  }
+  .element4 a{
+    border-bottom: 1px solid white;
+  }
+  .element4:hover{
+    font-weight: bold;
+  }
+  
+  #container > nav > ul > .element2:hover{
+    border-bottom:none;
+  }
+  
+  #container > nav > ul > .element2:hover > .dd{
+    display:block;
+  } 
+  
+  #container > nav > ul > li > div {
+    position:absolute;
+    padding: 0 10px;
+    display:none;
+    background-color:#386B38;
+    min-width:154px;
+  }
+  
+  #container > nav > ul > li > div > ul {
+    margin:0px 0 10px 0;
+    padding:0;
+    list-style:none;
+  }
+
+  #desplegable {
+    position:relative;
+    width:20px;
+    height:20px;
+    left:42%;
+    top:-10px;
+    background-color:#28B828;
+    transform:rotate(45deg);
+  }
+  #container > nav > ul > li> div > ul > li:hover {
+    background-color:rgb(184, 183, 183);
+  }
+  #container > nav > ul > li> div > ul > li> a:hover {
+    color: black;
+    font-weight: bold;
+  }
+  #container > nav > ul > li > div > ul > li > a {
+    color:white;
+  }
+
+  #container > nav > ul > li > div > ul > li > a > p {
+    color:#008747;
+  }
+
+.perfil{
+    width: 5%;
+    height: 5%;
+    float: right;
+}
 /*************************************************************************************** FOOTER ************************************************************************************/
 footer p{
     text-align: center;
     color:#fff;
     width: 90%;
-    
+    position: relative;
+    top: 40%;
+    height: 30%;    
 }
 footer a{
     background-color: #7a997f;
@@ -143,10 +144,11 @@ footer a{
 footer{
     bottom:0;
     position:fixed;
-    background-color:#386B41;
+    background:linear-gradient(rgb(103, 187, 107) , #386B41 60%);
     width:100%;
     display: flex;
-    height: 7%;
+    line-height: 50%;
+    height: 5%;
     margin-bottom: 3px;
     left: 0;
 }
@@ -164,7 +166,7 @@ text-decoration: none;
     width: 400px;
     padding: 40px;
     transform: translate(-50%, -50%);
-    background: linear-gradient(#7a997f, #88d897);  
+    background: linear-gradient(#b3b4b3, #86ce94);  
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
@@ -207,7 +209,7 @@ text-decoration: none;
 .login-box .user-box input:valid ~ label {
     top: -20px;
     left: 0;
-    color: #34EB55;
+    color: #087528;
     font-size: 12px;
 }
 
@@ -410,8 +412,7 @@ div > .pic{
     margin-top: 20px;
 }
 .backbox{  
-    /* background-color: #7a7a7a; */
-    background: linear-gradient(135deg , rgb(68, 168, 112) 10%, rgb(167, 222, 162) 80%); 
+    background: linear-gradient(135deg , rgb(158, 158, 158) 10%, rgb(167, 222, 162) 80%); 
     width: 100%;
     height: 80%;
     position: absolute;
@@ -581,6 +582,59 @@ div > .pic{
     width: 30%;
     margin: 0 auto;
 }
+
+/******************************************* FORM PERFIL CLIENTE **************************************************************************************/
+.formPerfil{
+    width: 60%;
+    margin: 5px 0 0 25%  ;
+    background-color: #dfdbdb;
+    padding: 10px 0 20px 15px;
+}
+
+.miPerfil{
+    width: 20%;
+    margin : auto;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.formPerfil div p:first-child{
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.formPerfil div p:nth-child(2){
+    padding-left: 10px;
+}
+
+.formPerfil div{
+    margin: 20px;
+    border-bottom: 2px solid #087528;
+    padding: 10px 0 20px 0;
+}
+
+.formPerfil div:last-child , .formPerfil div:first-child{
+    border-bottom: none;
+}
+
+.editProfile{
+    width: 95%;    
+}
+
+.editProfile a{
+    float: right;
+    color: #087528;
+    margin-right: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.editProfile a:hover{
+    text-shadow:2px 2px 8px rgb(54, 253, 54) ;
+}
+
+
+
+
 /******************************************* FAVORITOS **************************************************************************************/
 ul.menuVertival {
     position:relative;
@@ -657,11 +711,11 @@ ul.menuVertival {
 
 .zeroRows{
     width: 70%;
-    /* padding: 50px; */
     margin-left: 22%;
     margin-top: 20px;
     display: grid;
     grid-template-columns: 35% 35% 35%;
+    background-color: #dfdbdb;
 }
 
 .imgFav{
@@ -704,6 +758,7 @@ ul.menuVertival {
     margin: 5% auto 0 auto;
 
 }
+
 
 /* ***************************************************** DETALLE LIBRO CLIENTE ***********************************************/
 .divimagenLibro{
@@ -778,6 +833,7 @@ ul.menuVertival {
     color: white;
     font-weight: bold;
 }
+
 /****************************************************************************************LIBROS CATEGORIAS****************************************************************/
 .books{
     display: grid;

@@ -1,4 +1,3 @@
-
 <?php
     foreach($rows as $row){
         $isbn = $row['ISBN'];

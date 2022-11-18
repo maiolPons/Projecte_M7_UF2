@@ -65,7 +65,7 @@ class ClienteController{
         }
 
     }
-    
+
     //Mostrar datos del usuario
     public function miPerfil(){
         if(isset($_SESSION['cliente'])){
