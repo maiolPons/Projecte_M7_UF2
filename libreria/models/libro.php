@@ -173,6 +173,16 @@ class Libro extends Database{
         $sql = "UPDATE libros SET favorito=0 WHERE ISBN='".$this->getIsbn()."'";
         $rows = $this->db->query($sql);
     }
+    public function novedades(){
+        $sql = "SELECT * FROM `libros` ORDER BY novedades DESC LIMIT 5";
+        $rows = $this->db->query($sql);
+        return $rows;
+    }
+    public function sienteUltimosFavoritos(){
+        $sql = "SELECT * FROM `libros` WHERE favorito=1  ORDER BY novedades DESC LIMIT 5";
+        $rows = $this->db->query($sql);
+        return $rows;
+    }
 
 
     //Diana Categorias

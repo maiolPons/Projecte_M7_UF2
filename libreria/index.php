@@ -41,7 +41,7 @@
             $nombreController = $_GET['controller']."Controller";
         }
         else{
-            $nombreController="";
+            $nombreController="libroController";
         }
         if (class_exists($nombreController)){
             $controlador = new $nombreController(); 
@@ -49,13 +49,13 @@
             $action = $_GET['action'];
         }
         else{
-            echo "<p>placeHolder</p>";
+            $action = "MostrarpaginaPrincial";
         }
             $controlador->$action();   
         }else{
-            echo "No existe el controlador";
-        }
-        ?>
+            echo "La pagina no existe";
+        } 
+        ?> 
         <?php
         //--------------------------------------------------------//
         if(isset($_SESSION['admin'])){

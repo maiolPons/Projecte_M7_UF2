@@ -392,7 +392,7 @@
 
 //**************************************************************************************************************************************************************//
         public function detalleLibro(){
-            if($_SESSION['cliente']){
+            if($_SESSION['cliente']){ 
                 if(isset($_GET['isbn'])){
                     $isbn = $_GET['isbn'];
                     $libro = new Libro();
@@ -423,6 +423,24 @@
         require_once "views/general/categorias.php";
 
     }
-
+//**************************************************************************************************************************************************************//
+//muestra la pagina principal
+public function MostrarpaginaPrincial(){
+    $libro = new Libro();
+    $novedades = $libro -> novedades();
+    $favoritos = $libro -> sienteUltimosFavoritos();
+    $libros = $libro -> mostrarLibros();
+    $todosLibros = array();
+    foreach($libros as $info){
+        array_push($todosLibros,$info);
     }
-?>
+    require "views/cliente/general/paginaPrincipal.php";
+}
+//mustra resultado de busqueda
+public function resultadoBusqueda(){
+    if(isset($_POST["buscador"])){
+        var_dump("placeHolder");
+    }
+}
+    }
+?> 
