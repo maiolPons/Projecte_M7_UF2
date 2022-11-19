@@ -55,7 +55,7 @@ body{
     display:inline-block; 
     height: 60px; 
   } 
-.element1 a , .element2 a , .element3 a{
+.element1 a , .element2 a , .element3 a , .element4 a{
     position:relative;
     margin: 0 40px;
     color:white;
