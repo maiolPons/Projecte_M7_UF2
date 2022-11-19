@@ -23,9 +23,9 @@
 			</div>
         </li>
         <li class="element3"><a href="index.php">Novedades</a></li>
-        <li class="element2">
-			<a href=""><img src="pic/perfil.png" alt="" class="perfil">.</a>
-			<!-- <a href="#"><img src="pic/carrito.png" alt=""></a> -->
+		<li class="element5"><a href="#"><img src="pic/compra.png" alt=""></a></li>
+        <li class="usuario">
+			<a href=""><img src="pic/perfil.png" alt="" class="perfil"></a>
 			<div class="dd">
 				<div id="desplegable"></div>
 					<ul>
