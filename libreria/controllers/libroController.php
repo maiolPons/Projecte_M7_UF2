@@ -17,10 +17,7 @@ class LibroController{
         }
         //Si el admin no esta logeado , no puede ver las paginas
         else{
-            ?>
-            <script>alert("Tienes que logearte primero para ver esta página!")</script>
-            <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=admin&action=logear"> 
-            <?php
+            LogAdmin();
         }
     }
 //**************************************************************************************************************************************************************//
@@ -37,10 +34,7 @@ class LibroController{
         }
         //Si el admin no esta logeado , no puede ver las paginas
         else{
-            ?>
-            <script>alert("Tienes que logearte primero para ver esta página!")</script>
-            <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=admin&action=logear"> 
-            <?php
+            LogAdmin();
         }
     }
 //**************************************************************************************************************************************************************//
@@ -57,10 +51,7 @@ class LibroController{
         }
         //Si el admin no esta logeado , no puede ver las paginas
         else{
-            ?>
-            <script>alert("Tienes que logearte primero para ver esta página!")</script>
-            <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=admin&action=logear"> 
-            <?php
+            LogAdmin();
         }
     }
 //**************************************************************************************************************************************************************//
@@ -75,10 +66,7 @@ class LibroController{
         }
         //Si el admin no esta logeado , no puede ver las paginas
         else{
-            ?>
-            <script>alert("Tienes que logearte primero para ver esta página!")</script>
-            <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=admin&action=logear"> 
-            <?php
+            LogAdmin();
         }
     }
 //**************************************************************************************************************************************************************//
@@ -128,10 +116,7 @@ class LibroController{
         }
         //Si el admin no esta logeado , no puede ver las paginas
         else{
-            ?>
-            <script>alert("Tienes que logearte primero para ver esta página!")</script>
-            <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=admin&action=logear"> 
-            <?php
+            LogAdmin();
         }
     }
 
@@ -155,10 +140,7 @@ class LibroController{
         }
         //Si el admin no esta logeado , no puede ver las paginas
         else{
-            ?>
-            <script>alert("Tienes que logearte primero para ver esta página!")</script>
-            <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=admin&action=logear"> 
-            <?php
+            LogAdmin();
         }
     }
 
@@ -193,10 +175,7 @@ class LibroController{
         }
         //Si el admin no esta logeado , no puede ver las paginas
         else{
-            ?>
-            <script>alert("Tienes que logearte primero para ver esta página!")</script>
-            <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=admin&action=logear"> 
-            <?php
+            LogAdmin();
         }
     }
 
@@ -210,10 +189,7 @@ class LibroController{
         }
         //Si el admin no esta logeado , no puede ver las paginas
         else{
-            ?>
-            <script>alert("Tienes que logearte primero para ver esta página!")</script>
-            <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=admin&action=logear"> 
-            <?php
+            LogAdmin();
         }
     }
 
@@ -247,10 +223,7 @@ class LibroController{
         }
         //Si el admin no esta logeado , no puede ver las paginas
         else{
-            ?>
-            <script>alert("Tienes que logearte primero para ver esta página!")</script>
-            <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=admin&action=logear"> 
-            <?php
+            LogAdmin();
         }
     }
 
@@ -270,10 +243,7 @@ class LibroController{
         }
         //Si el admin no esta logeado , no puede ver las paginas
         else{
-            ?>
-            <script>alert("Tienes que logearte primero para ver esta página!")</script>
-            <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=admin&action=logear"> 
-            <?php
+            LogAdmin();
         }
     }
 
@@ -293,10 +263,7 @@ class LibroController{
         }
         //Si el admin no esta logeado , no puede ver las paginas
         else{
-            ?>
-            <script>alert("Tienes que logearte primero para ver esta página!")</script>
-            <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=admin&action=logear"> 
-            <?php
+            LogAdmin();
         }
     }
 
@@ -311,10 +278,7 @@ class LibroController{
             require_once "views/cliente/libro/favoritos.php";
         }
         else{
-            ?>
-            <script>alert("Tienes que logearte primero para ver esta página!")</script>
-            <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=cliente&action=logearCliente"> 
-            <?php
+            LogCliente();
         }
     }
 //**************************************************************************************************************************************************************//
@@ -347,10 +311,7 @@ class LibroController{
         
         //Si el admin no esta logeado , no puede ver las paginas
         else{
-            ?>
-            <script>alert("Tienes que logearte primero para ver esta página!")</script>
-            <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=cliente&action=logearCliente"> 
-            <?php
+            LogCliente();
         }
 
     }
@@ -385,10 +346,7 @@ class LibroController{
         }
         //Si el admin no esta logeado , no puede ver las paginas
         else{
-            ?>
-            <script>alert("Tienes que logearte primero para ver esta página!")</script>
-            <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=cliente&action=logearCliente"> 
-            <?php
+            LogCliente();
         }
     }
 
@@ -404,10 +362,7 @@ class LibroController{
             }
         }
         else{
-            ?>
-            <script>alert("Tienes que logearte primero para ver esta página!")</script>
-            <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=cliente&action=logearCliente"> 
-            <?php
+            LogCliente();
         }
 
     }

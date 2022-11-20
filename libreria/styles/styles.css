@@ -715,6 +715,8 @@ ul.menuVertival {
     display: grid;
     grid-template-columns: 35% 35% 35%;
     background-color: #dfdbdb;
+    padding: 40px;
+
 }
 
 .imgFav{
@@ -732,12 +734,11 @@ ul.menuVertival {
 }
 
 .librosFav{
-    /* margin : 5px auto 0 auto; */
-    margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
     width: 50%;
     border: 1px solid gray;
+    background-color: white;
 }
 
 .tituloLibro{

@@ -76,6 +76,9 @@ class ClienteController{
             require_once "views/cliente/perfil/miPerfil.php";
 
         }
+        else{
+            logCliente();
+        }
     }
     
     //Cerrar sesion
