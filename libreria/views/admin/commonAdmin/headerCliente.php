@@ -23,6 +23,15 @@
 			</div>
         </li>
         <li class="element3"><a href="index.php">Novedades</a></li>
+
+		<!---------------- Buscador ---------------->
+		<form class="box" action="index.php?controller=libro&action=resultadoBusqueda" method="post">
+			<div class="searcher">
+				<input type="search" id="search" placeholder="  Search..." />
+				<input class="lupa" alt="" src="pic/lupa.png" type="image" />
+			</div>
+		</form>
+		<!-- ---------------------------------------- -->
 		<li class="element5"><a href="#"><img src="pic/compra.png" alt=""></a></li>
         <li class="usuario">
 			<a href=""><img src="pic/perfil.png" alt="" class="perfil"></a>
