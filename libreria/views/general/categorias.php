@@ -5,16 +5,12 @@
     <div class="divMenuVertival">
         <ul class="menuVertival">
             <li class="novedades">
-                <img src="pic/news.png" alt="">
+                <img src="pic/libr.png" alt="">
                 <a class="messages" href="index.php">Página Principal</a>
             </li>
             <li>
                 <img src="pic/news.png" alt="">
-                <a class="favoritos" href="index.php?controller=libro&action=favoritos">Novedades</a>
-            </li>
-            <li>
-                <img src="pic/sent.png" alt="">
-                <a class="pedidos" href="#">Mis pedidos</a>
+                <a class="favoritos" href="index.php">Novedades</a>
             </li>
         </ul>
     </div>
