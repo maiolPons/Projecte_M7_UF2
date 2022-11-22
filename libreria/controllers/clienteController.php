@@ -80,6 +80,43 @@ class ClienteController{
             logCliente();
         }
     }
+
+    //Modificar perfil
+    public function modificarPerfil(){
+        if(isset($_SESSION['cliente'])){
+            $email = $_SESSION['cliente'];
+            $cliente= new Cliente();
+            $cliente->setEmail($email);
+            $rows = $cliente->mostrarDatos();
+            require_once "views/cliente/perfil/modificar.php";
+        }
+    }
+
+    public function modificarPerfilI(){
+        if(isset($_SESSION['cliente'])){
+            $cliente= new Cliente();
+            $email = $_SESSION['cliente'];
+            $cliente->setEmail($email);
+            $cliente->setNombre($_POST['nombre']);
+            $cliente->setApellido($_POST['apellidos']);
+            $cliente->setDireccion($_POST['direccion']);
+            if ($_POST['contrasenya']!=""){
+                $cliente->setContrasenya($_POST['contrasenya']);
+                $cliente->actualizarContrasenya();
+                ?>
+                    <script>alert("Datos actualizados con éxito")</script>
+                    <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=cliente&action=modificarPerfil">
+                <?php
+            }
+            else{
+                $cliente->modificarUsuario();
+                 ?>
+                    <script>alert("Datos actualizados con éxito")</script>
+                   <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=cliente&action=modificarPerfil"> 
+                 <?php
+            }
+        }
+    }
     
     //Cerrar sesion
     public function salir(){
