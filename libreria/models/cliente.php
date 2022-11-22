@@ -90,7 +90,7 @@ class Cliente extends Database{
 
     //Añadir cliente
     public function anyadirCliente(){
-        $sql = "INSERT INTO clientes (email,nombre,apellido,direccion,dni,passwd) VALUES ('".$this->email."','".$this->nombre."','".$this->apellido."','".$this->direccion."','".$this->dni."','".$this->contrasenya."')";
+        $sql = "INSERT INTO clientes (email,nombre,apellido,direccion,dni,passwd) VALUES ('".$this->email."','".$this->nombre."','".$this->apellido."','".$this->direccion."','".$this->dni."',md5('".$this->contrasenya."'))";
         $ejecutar = $this->db->query($sql);
 
         if($ejecutar){
@@ -122,6 +122,21 @@ class Cliente extends Database{
         }
         return $duplicado;
     }
+
+    //Update Usuarios 
+    public function modificarUsuario(){
+        $sql="UPDATE clientes SET nombre='".$this->getNombre()."',apellido='".$this->getApellido()."',direccion='".$this->getDireccion()."' WHERE email='".$this->getEmail()."'";
+
+        $rows = $this->db->query($sql);
+    }
+
+    //Actualizar contrasenya modificar perfil
+    public function actualizarContrasenya(){
+        $sql="UPDATE clientes SET nombre='".$this->getNombre()."',apellido='".$this->getApellido()."',direccion='".$this->getdireccion()."',passwd=md5('".$this->getContrasenya()."') WHERE email='".$this->getEmail()."'";
+        $rows = $this->db->query($sql);
+    }
+
+
 
     public function salir(){
         session_destroy();
