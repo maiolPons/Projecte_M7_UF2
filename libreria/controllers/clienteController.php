@@ -105,14 +105,14 @@ class ClienteController{
                 $cliente->actualizarContrasenya();
                 ?>
                     <script>alert("Datos actualizados con éxito")</script>
-                    <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=cliente&action=modificarPerfil">
+                    <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=cliente&action=miPerfil">
                 <?php
             }
             else{
                 $cliente->modificarUsuario();
                  ?>
                     <script>alert("Datos actualizados con éxito")</script>
-                   <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=cliente&action=modificarPerfil"> 
+                   <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=cliente&action=miPerfil"> 
                  <?php
             }
         }

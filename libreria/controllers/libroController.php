@@ -273,7 +273,11 @@ class LibroController{
     public function favoritos(){
         if($_SESSION['cliente']){
             $libro = new Libro();
-            $rows = $libro->favoritos();
+            if(isset($_POST["busc"])){
+                $rows = $libro->buscadorFav($_POST["busc"]);
+            }else{
+                $rows = $libro->favoritos();
+            }
             $num = $rows->rowCount();
             require_once "views/cliente/libro/favoritos.php";
         }
@@ -394,11 +398,15 @@ class LibroController{
         }
         require "views/cliente/general/paginaPrincipal.php";
     }
-//mustra resultado de busqueda
+    //mustra resultado de busqueda
     public function resultadoBusqueda(){
         if(isset($_POST["buscador"])){
             var_dump("placeHolder");
         }
     }
+
+
+//**************************************************************************************************************************************************************//
+
 }
 ?> 

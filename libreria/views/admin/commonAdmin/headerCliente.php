@@ -35,7 +35,7 @@
 		<li class="element5"><a href="#"><img src="pic/compra.png" alt=""></a></li>
         <li class="usuario">
 			<a href=""><img src="pic/perfil.png" alt="" class="perfil"></a>
-			<div class="dd">
+			<div class="mm">
 				<div id="desplegable"></div>
 					<ul>
 						<li><a href="index.php?controller=cliente&action=miPerfil">Mi perfil</a></li>

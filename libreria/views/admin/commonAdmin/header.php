@@ -22,6 +22,14 @@
           </div>
         </li>
         <li class="element3"><a href="index.php">Novedades</a></li>
+        <!---------------- Buscador ---------------->
+        <form class="box" action="index.php?controller=libro&action=resultadoBusqueda" method="post">
+          <div class="searcher">
+            <input type="search" id="search" placeholder="  Search..." />
+            <input class="lupa" alt="" src="pic/lupa.png" type="image" />
+          </div>
+        </form>
+        <!-- ---------------------------------------- -->
         <li class="element4"><a href="index.php?controller=cliente&action=logearCliente">Iniciar sesión</a></li>
       </ul>
     </nav>

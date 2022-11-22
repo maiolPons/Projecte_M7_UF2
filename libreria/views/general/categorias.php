@@ -4,17 +4,27 @@
     <link href="styles/styles.css" rel="stylesheet" type="text/css">
     <div class="divMenuVertival">
         <ul class="menuVertival">
-            <li class="novedades">
-                <img src="pic/libr.png" alt="">
+            <li id="buscador">
+                <!---------------- Buscador ---------------->
+                <form class="buscMenu" action="#" method="post">
+                    <div class="">
+                        <input type="text" name="busc" id="search2" placeholder="  Busca en tus favoritos..." />
+                        <input class="lupaMenu" alt="" src="pic/lupa.png" type="image" />
+                    </div>
+                </form>
+            <!-- ---------------------------------------- -->
+            </li>
+            <li id="first">
+                <img src="pic/news.png" alt="">
                 <a class="messages" href="index.php">Página Principal</a>
             </li>
-            <li>
+            <li id="second">
                 <img src="pic/news.png" alt="">
-                <a class="favoritos" href="index.php">Novedades</a>
+                <a class="favoritos" href="index.php?controller=libro&action=favoritos">Novedades</a>
             </li>
-            <li>
-                <img src="pic/perfil.png" alt="">
-                <a class="favoritos" href="index.php?controller=cliente&action=logearCliente">Iniciar sesión</a>
+            <li id="third">
+                <img src="pic/sent.png" alt="">
+                <a class="pedidos" href="#">Mis pedidos</a>
             </li>
         </ul>
     </div>
@@ -43,7 +53,7 @@
                 <?php if ($libros!=''){?>
                 <!-- Imagen -->
                 <div>
-                <a href="index.php?controller=libro&action=detalleLibro&isbn=<?php echo $isbn; ?>"> <img  src="<?php echo $libro['foto']?>" alt=""> </a>
+                <img  src="<?php echo $libro['foto']?>" alt="">
                 </div>
                 <div>
                     <p> <?php echo $libro['titulo']?> </p>
