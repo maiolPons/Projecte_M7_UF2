@@ -27,7 +27,7 @@ echo "<h1 class='miPerfil'>Hola " . $nombre ."!</h1>";
 <div class="formPerfil">
     
         <div class="editProfile">
-            <a href="#">Editar mis datos</a>
+            <a href="index.php?controller=cliente&action=modificarPerfil">Editar mis datos</a>
         </div>
 
         <div>

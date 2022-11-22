@@ -1056,3 +1056,37 @@ hr{
     width: 100%;
     border-radius: 10%;
 }
+
+
+/********************************************************************************MODIFICAR CLIENTE**********************************************************************/
+.modUsu{
+    background-color:#dfdbdb; 
+    width: 45%;
+    margin: 0 auto;
+    padding-top: 3%;
+    padding-bottom: 12%;
+    margin-top:4%;
+
+}  
+.modUsu h1{
+    display:flex;
+    justify-content: center;
+    color:#000;
+    padding-bottom:1%;
+}
+
+.modUsu p{
+    text-align: center;
+    color:#000;
+    font-size:16px;
+}
+
+.modUsu div{
+    margin:0 auto;
+}
+
+.modUsu div input{
+    width:100% !important;
+    padding:revert;
+    font-size:16px;
+}
