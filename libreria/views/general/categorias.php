@@ -12,6 +12,10 @@
                 <img src="pic/news.png" alt="">
                 <a class="favoritos" href="index.php">Novedades</a>
             </li>
+            <li>
+                <img src="pic/perfil.png" alt="">
+                <a class="favoritos" href="index.php?controller=cliente&action=logearCliente">Iniciar sesión</a>
+            </li>
         </ul>
     </div>
     <div class="books">
