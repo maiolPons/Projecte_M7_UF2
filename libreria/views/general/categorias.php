@@ -73,11 +73,7 @@
                 </div>
             </div>
                 <?php
-                 if ($num==0){?>
-                <p>AAAA</p>
-                <?php 
-                } 
-                else{
+                     echo "<h4 class='numFav'>".$num." ARTÍCULOS</h4></br>";
                     ?> <!-- Imagen -->
                     <div>
                     <a href="index.php?controller=libro&action=detalleLibro&isbn=<?php echo $isbn; ?>"> <img  src="<?php echo $libro['foto']?>" alt=""> </a>
@@ -87,11 +83,17 @@
                         <p> Autor/a: <?php echo $libro['autor']?> </p>
                         <p> <?php echo $libro['precioUni']?>€ </p>
                     </div><?php
-                }
+                
                 ?>
             </div>
         <?php
     
     }
-    ?> </div> <?php
+    if ($num==0){
+        echo "<h4 class='numFav'>".$num." ARTÍCULOS</h4></br>";
+        ?>
+        <p></p><p></p><P class="zeroRows" style="display:block;width:300%;">No se ha encontrado ningún resultado</P><?php
+    }
+    ?> 
+    </div> <?php
 ?>
