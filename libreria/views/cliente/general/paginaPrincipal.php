@@ -6,7 +6,7 @@
         <p>Buscar libro</p>
         <nav>
         <form action="index.php?controller=libro&action=resultadoBusqueda" method="post">
-            <input type="search" id="buscadorMenuPrincipalInput">
+            <input type="search" name="buscadorMenuPrincipalInput">
             <input class="buttom" type="submit" value="buscador">
         </form>
             <ul id="buscadorLibrosDesplegable">

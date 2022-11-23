@@ -408,8 +408,15 @@ class LibroController{
     }
     //mustra resultado de busqueda
     public function resultadoBusqueda(){
-        if(isset($_POST["buscador"])){
-            var_dump("placeHolder");
+        if(isset($_POST["buscadorMenuPrincipalInput"])){
+            $libro = new Libro();
+            $resultados = true;
+            $rows=$libro->mostrarBuscador($_POST["buscadorMenuPrincipalInput"]);
+            if ($rows->rowCount() == 0) {
+                $resultados = false;
+                $rows=$libro->mostrarLibros();
+            }
+            require_once "views/cliente/general/resultadoBusqueda.php";
         }
     }
 
