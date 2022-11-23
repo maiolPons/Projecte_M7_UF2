@@ -1,6 +1,6 @@
 <?php
     ?>
-    <h1 class="bksh1"><?php echo $nombreCategoria?></h1>
+    <h1 class="bksh1"><?php echo $categoria?></h1>
     <link href="styles/styles.css" rel="stylesheet" type="text/css">
     <div class="divMenuVertival">
         <ul class="menuVertical">
@@ -72,21 +72,21 @@
                     ?>
                 </div>
             </div>
-                <?php
-                 if ($num==0){?>
-                <p>AAAA</p>
-                <?php 
-                } 
+                <?php if ($libros -> rowCount()!=0){?>
+                <!-- Imagen -->
+                <div>
+                <a href="index.php?controller=libro&action=detalleLibro&isbn=<?php echo $isbn; ?>"> <img  src="<?php echo $libro['foto']?>" alt=""> </a>
+                </div>
+                <div>
+                    <p> <?php echo $libro['titulo']?> </p>
+                    <p> Autor/a: <?php echo $libro['autor']?> </p>
+                    <p> <?php echo $libro['precioUni']?>€ </p>
+                </div>
+                <?php } 
                 else{
-                    ?> <!-- Imagen -->
-                    <div>
-                    <a href="index.php?controller=libro&action=detalleLibro&isbn=<?php echo $isbn; ?>"> <img  src="<?php echo $libro['foto']?>" alt=""> </a>
-                    </div>
-                    <div>
-                        <p> <?php echo $libro['titulo']?> </p>
-                        <p> Autor/a: <?php echo $libro['autor']?> </p>
-                        <p> <?php echo $libro['precioUni']?>€ </p>
-                    </div><?php
+                    ?> <div>
+                        <p>Aún no has añadido ningún artículo a tu lista de favoritos. Comienza a comprar y añade tus productos preferidos.</p> 
+                </div><?php
                 }
                 ?>
             </div>

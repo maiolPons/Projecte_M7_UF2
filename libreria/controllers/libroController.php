@@ -376,13 +376,21 @@ class LibroController{
     //Mostrar libros por Categorias
 
     public function infoCategorias(){
-        $nombreCategoria=$_GET['nombre'];
-        $idCategoria=$_GET['id'];
-        require_once "models/libro.php";
         $libro = new Libro();
-        $libros=$libro -> categoriasLibros($idCategoria);
-        require_once "views/general/categorias.php";
-
+        if(isset($_POST['busc'])){
+            $nombreCategoria=$_GET['nombre'];
+            $buscador=$_POST['busc'];
+            $libros=$libro ->buscadorCat($buscador,$nombreCategoria);
+            $num= $libros -> rowCount();
+            require_once "views/general/categorias.php";
+        }
+        else{
+            $nombreCategoria=$_GET['nombre'];
+            $idCategoria=$_GET['id'];
+            $libros=$libro -> categoriasLibros($idCategoria);
+            $num= $libros -> rowCount();
+            require_once "views/general/categorias.php";
+        }
     }
 
 //**************************************************************************************************************************************************************//
@@ -407,6 +415,5 @@ class LibroController{
 
 
 //**************************************************************************************************************************************************************//
-
 }
 ?> 

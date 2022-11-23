@@ -42,7 +42,7 @@ class Categoria extends Database{
     }
 
     public function mostrarDatosCategorias(){
-        $sql = "SELECT * FROM categorias";
+        $sql = "SELECT * FROM categorias WHERE activo=1";
         $rows = $this->db->query($sql);
         return $rows;
     }

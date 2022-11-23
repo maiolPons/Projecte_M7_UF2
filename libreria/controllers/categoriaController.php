@@ -92,6 +92,11 @@ class categoriaController{
             }
         }
 
+
+
+
+        //Buscador x categorias
+
 }
 
 
