@@ -3,30 +3,52 @@
     <h1 class="bksh1"><?php echo $nombreCategoria?></h1>
     <link href="styles/styles.css" rel="stylesheet" type="text/css">
     <div class="divMenuVertival">
-        <ul class="menuVertival">
+        <ul class="menuVertical">
+            <!---------------- Buscador ---------------->
             <li id="buscador">
-                <!---------------- Buscador ---------------->
-                <form class="buscMenu" action="#" method="post">
+            <form class="buscMenu" action="#" method="post">
                     <div class="">
                         <input type="text" name="busc" id="search2" placeholder="  Busca en tus favoritos..." />
                         <input class="lupaMenu" alt="" src="pic/lupa.png" type="image" />
                     </div>
                 </form>
-            <!-- ---------------------------------------- -->
             </li>
-            <li id="first">
-                <img src="pic/news.png" alt="">
+            <!-- ---------------------------------------- -->
+    <?php
+
+    if (isset($_SESSION['cliente'])){?>
+            <li  id="first" class="novedades">
+                <img src="pic/libr.png" alt="">
                 <a class="messages" href="index.php">Página Principal</a>
             </li>
             <li id="second">
                 <img src="pic/news.png" alt="">
-                <a class="favoritos" href="index.php?controller=libro&action=favoritos">Novedades</a>
+                <a class="favoritos" href="index.php">Novedades</a>
             </li>
             <li id="third">
-                <img src="pic/sent.png" alt="">
-                <a class="pedidos" href="#">Mis pedidos</a>
+                <img src="pic/corazon.png" alt="">
+                <a class="favoritos" href="index.php?controller=cliente&action=logearCliente">Favoritos</a>
             </li>
-        </ul>
+
+
+    <?php } 
+    else{?>
+            <li id="first" class="novedades">
+                <img src="pic/libr.png" alt="">
+                <a class="messages" href="index.php">Página Principal</a>
+            </li>
+            <li id="second">
+                <img src="pic/news.png" alt="">
+                <a class="favoritos" href="index.php">Novedades</a>
+            </li>
+            <li id="third">
+                <img src="pic/perfil.png" alt="">
+                <a class="favoritos" href="index.php?controller=cliente&action=logearCliente">Iniciar sesión</a>
+            </li>
+
+    <?php
+    }?>
+            </ul>
     </div>
     <div class="books">
         <?php
@@ -53,7 +75,7 @@
                 <?php if ($libros!=''){?>
                 <!-- Imagen -->
                 <div>
-                <img  src="<?php echo $libro['foto']?>" alt="">
+                <a href="index.php?controller=libro&action=detalleLibro&isbn=<?php echo $isbn; ?>"> <img  src="<?php echo $libro['foto']?>" alt=""> </a>
                 </div>
                 <div>
                     <p> <?php echo $libro['titulo']?> </p>
@@ -62,7 +84,9 @@
                 </div>
                 <?php } 
                 else{
-                    echo "a";
+                    ?> <div>
+                        <p>Aún no has añadido ningún artículo a tu lista de favoritos. Comienza a comprar y añade tus productos preferidos.</p> 
+                </div><?php
                 }
                 ?>
             </div>

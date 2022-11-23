@@ -688,7 +688,11 @@ div > .pic{
 .menuVertival{
     margin-top: 60px !important;
 }
-ul.menuVertival {
+
+.menuVertical{
+    margin-top: 0px !important;
+}
+ul.menuVertival, ul.menuVertical{
     position:relative;
     background:#fff;
     width:20%;
@@ -700,11 +704,11 @@ ul.menuVertival {
     float: left;
 }
 
-.menuVertival li {
+.menuVertival li, .menuVertical li {
     padding:30px 0 30px 20px;
 }
 
-.menuVertival li a {
+.menuVertival li a, .menuVertical li a{
     width:225px;
     line-height:50px;
     display:block;
@@ -716,7 +720,7 @@ ul.menuVertival {
     color: #7a7a7a;	
 }
 
-.menuVertival li a:hover {
+.menuVertival li a:hover, .menuVertical li a:hover{
     color: white;
 }
 
@@ -748,12 +752,13 @@ ul.menuVertival {
 #fourth:hover {
     background-color: blue;
 }
-.menuVertival li img{
+.menuVertival li img, .menuVertical li img{
     width: 15%;
     height: 15%;
     float: left;
     padding-right: 10px;
 }
+
 
 .favorTitle{
     width: 30%;
@@ -892,6 +897,7 @@ ul.menuVertival {
 .books{
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
+    margin-left: 10% !important;
 }
 
 .books div{
