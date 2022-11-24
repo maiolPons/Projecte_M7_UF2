@@ -6,15 +6,13 @@
         <p>Buscar libro</p>
         <nav>
         <form action="index.php?controller=libro&action=resultadoBusqueda" method="post">
-            <input type="search" name="buscadorMenuPrincipalInput">
+            <input type="search" id="buscadorMenuPrincipalInput" name="buscadorMenuPrincipalInput">
             <input class="buttom" type="submit" value="buscador">
         </form>
             <ul id="buscadorLibrosDesplegable">
                 <script type="text/javascript"> 
                     var arrayLibros = <?php echo json_encode($todosLibros); ?>;
-                    console.log(arrayLibros);
                     const buscarInput = document.getElementById("buscadorMenuPrincipalInput");
-                    console.log(buscarInput);
                     var nav =document.getElementById("buscadorLibrosDesplegable");
                     document.getElementById("buscadorMenuPrincipalInput").addEventListener('keyup',(e)=>{
                         
