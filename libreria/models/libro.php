@@ -209,7 +209,7 @@ class Libro extends Database{
 
         
         $query= "%".$buscador."%";
-        $sql = "SELECT * FROM libros INNER JOIN categorias ON '".$result['id']."' = idCategoria WHERE (ISBN LIKE '$query' OR titulo LIKE '$query' OR autor LIKE '$query' OR editorial LIKE '$query' OR descripcion LIKE '$query' OR stock LIKE '$query' OR novedades LIKE '$query' OR idCategoria LIKE '$query' OR nombre LIKE '$query' AND estadoL=1 )  AND nombre='".$categoria."'";
+        $sql = "SELECT * FROM libros INNER JOIN categorias ON '".$result['id']."' = idCategoria WHERE (titulo LIKE '$query' OR autor LIKE '$query' OR editorial LIKE '$query' OR descripcion LIKE '$query') AND estadoL=1  AND nombre='".$categoria."'";
         $rows = $this->db->query($sql);
         return $rows;
     }
