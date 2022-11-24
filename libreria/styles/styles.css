@@ -896,10 +896,24 @@ ul.menuVertival, ul.menuVertical{
 }
 
 /****************************************************************************************LIBROS CATEGORIAS****************************************************************/
+.divCategories p{
+    padding:1%;
+    background-color: #fff;
+    
+}
+
+.divCategories p:first-child{
+    padding-top: 2%;
+    font-weight: bold;
+}
+.divCategories p:last-child{
+    color:#35B729;
+}
+
 .books{
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    background-color: rgb(182, 182, 182);
+    background-color: #dfdbdb;
     margin-right: 1%;
 }
 
