@@ -52,6 +52,7 @@
     </div>
     <div class="books">
         <?php
+        
     foreach($libros as $libro){
         ?>  
             <div class="books">
@@ -73,7 +74,7 @@
                 </div>
             </div>
                 <?php
-                     echo "<h4 class='numFav'>".$num." ARTÍCULOS</h4></br>";
+    
                     ?> <!-- Imagen -->
                     <div>
                     <a href="index.php?controller=libro&action=detalleLibro&isbn=<?php echo $isbn; ?>"> <img  src="<?php echo $libro['foto']?>" alt=""> </a>
