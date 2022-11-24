@@ -56,32 +56,33 @@
     foreach($libros as $libro){
         ?>  
             <div class="books">
-            <div>
+
                 <!-- Imagen -->
-                <div class="divimagenLibro" id="imagenLibro">
+
                     <?php
                     $id=$libro['idCategoria'];
                     $isbn=$libro['ISBN'];
                     if($libro['favorito']==1){?>
-                        <a href="index.php?controller=libro&action=NoEsFavorito&isbn=<?php echo $isbn ?>&flag=1&nombre=<?php echo $nombreCategoria ?>&id=<?php echo $id ?>"><img class="x" src="pic/corazonRojo.png" alt=""></a>
+                        <a href="index.php?controller=libro&action=NoEsFavorito&isbn=<?php echo $isbn ?>&flag=1&nombre=<?php echo $nombreCategoria ?>&id=<?php echo $id ?>"><img class="corason" src="pic/corazonRojo.png" alt=""></a>
                         <?php
                     }
                     else{?>
-                        <a href="index.php?controller=libro&action=esFavorito&isbn=<?php echo $isbn ?>&flag=1&nombre=<?php echo $nombreCategoria ?>&id=<?php echo $id ?>"><img class="x" src="pic/corazonNegro.png" alt=""></a>
+                        <a href="index.php?controller=libro&action=esFavorito&isbn=<?php echo $isbn ?>&flag=1&nombre=<?php echo $nombreCategoria ?>&id=<?php echo $id ?>"><img class="corason" src="pic/corazonNegro.png" alt=""></a>
                         <?php
                     }
                     ?>
-                </div>
-            </div>
+
+
                 <?php
     
                     ?> <!-- Imagen -->
                     <div>
                     <a href="index.php?controller=libro&action=detalleLibro&isbn=<?php echo $isbn; ?>"> <img  src="<?php echo $libro['foto']?>" alt=""> </a>
                     </div>
-                    <div>
+                    <div class="divCategories">
                         <p> <?php echo $libro['titulo']?> </p>
                         <p> Autor/a: <?php echo $libro['autor']?> </p>
+                        <p>Editorial: <?php echo $libro['editorial']?>  </p>
                         <p> <?php echo $libro['precioUni']?>€ </p>
                     </div><?php
                 
