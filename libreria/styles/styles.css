@@ -825,15 +825,13 @@ ul.menuVertival, ul.menuVertical{
     margin-left: 10%;
 }
 
-.corason{
-    width:40px !important;
-    height:40px !important;
-    float:right !important;
-    z-index: 1;
-    top: 45px !important;
-    right: 5px !important;
-    position: relative !important;
-    border: none !important;
+.divimagenLibro img:first-child{
+    width: 15%;
+    height: 15%;
+    float: right;
+    position: relative;
+    top : 20px;
+    left: 5px
 }
 
 .divimagenLibro img:nth-child(2){
@@ -896,31 +894,15 @@ ul.menuVertival, ul.menuVertical{
 }
 
 /****************************************************************************************LIBROS CATEGORIAS****************************************************************/
-.divCategories p{
-    padding:1%;
-    background-color: #fff;
-    
-}
-
-.divCategories p:first-child{
-    padding-top: 2%;
-    font-weight: bold;
-}
-.divCategories p:last-child{
-    color:#35B729;
-}
-
 .books{
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    background-color: #dfdbdb;
-    margin-right: 1%;
+    margin-left: 10% !important;
 }
 
 .books div{
     margin: 0 auto;
     display: block;
-    padding-bottom: 4%;
 }
 
 .books div p{
@@ -993,6 +975,7 @@ ul.menuVertival, ul.menuVertical{
     padding-top: 20px;
     background-color: #35b72915;
     color: black;
+    padding-bottom: 10px;
 }
 .displayItem p:nth-of-type(1){
     font-weight: bold;
@@ -1008,6 +991,8 @@ ul.menuVertival, ul.menuVertical{
 hr{
     width: 80%;
     border-top: 1px dotted #8c8b8b;
+    margin: auto;
+    padding: auto;
 }
 /*favoritos sin logear*/
 #noLogeadoPaginaPrincipalFavoritos{
@@ -1109,6 +1094,18 @@ hr{
     height: 100%;
     width: 100%;
     border-radius: 10%;
+}
+/*mostrar items en buscador resultado*/
+.mostrarProductos{
+    margin: auto;
+    display: flex;
+    width: 1200px;
+    justify-content: space-evenly;
+    flex-wrap:wrap;
+    gap: 10px;
+}
+.tituloPantallaBuscar{
+    padding-left: 20%;
 }
 
 /********************************************************************************MODIFICAR CLIENTE**********************************************************************/
