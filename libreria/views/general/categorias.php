@@ -26,7 +26,7 @@
                 </li>
                 <li id="third">
                     <img src="pic/corazon.png" alt="">
-                    <a class="favoritos" href="index.php?controller=cliente&action=logearCliente">Favoritos</a>
+                    <a class="favoritos" href="index.php?controller=libro&action=favoritos">Favoritos</a>
                 </li>
 
 
