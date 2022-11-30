@@ -1121,7 +1121,10 @@ hr{
 #noLogeadoPaginaPrincipalFavoritos p:nth-of-type(1){
     grid-area: 1 / 1 / 1 / span 2;
     text-align: center;
-    border-bottom: #8c8b8b 1px solid;
+    /*border-bottom: #8c8b8b 1px solid;*/
+}
+#BuscadorPaginaPrincipal p{
+   padding-top: 20px;
 }
 #noLogeadoPaginaPrincipalFavoritos a:nth-of-type(1){
     grid-area: 2 / 1;
@@ -1146,6 +1149,9 @@ hr{
     font-weight: 510;
     margin: -5px;
     margin-bottom: -65px;
+}
+hr{
+    margin: auto;
 }
 /*buscador*/
 #BuscadorPaginaPrincipal{
@@ -1232,7 +1238,6 @@ hr{
     margin: auto;
     text-align: center;
 }
-
 /********************************************************************************MODIFICAR CLIENTE**********************************************************************/
 .modUsu{
     background-color:#dfdbdb; 
