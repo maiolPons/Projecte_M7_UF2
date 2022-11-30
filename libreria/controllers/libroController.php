@@ -395,15 +395,20 @@ class LibroController{
 //**************************************************************************************************************************************************************//
     //muestra la pagina principal
     public function MostrarpaginaPrincial(){
-        $libro = new Libro();
-        $novedades = $libro -> novedades();
-        $favoritos = $libro -> sienteUltimosFavoritos();
-        $libros = $libro -> mostrarLibros();
-        $todosLibros = array();
-        foreach($libros as $info){
-            array_push($todosLibros,$info);
+        if(!isset($_SESSION["admin"])){
+            $libro = new Libro();
+            $novedades = $libro -> novedades();
+            $favoritos = $libro -> sienteUltimosFavoritos();
+            $libros = $libro -> mostrarLibros();
+            $todosLibros = array();
+            foreach($libros as $info){
+                array_push($todosLibros,$info);
+            }
+            require "views/cliente/general/paginaPrincipal.php";
         }
-        require "views/cliente/general/paginaPrincipal.php";
+        else{
+            require "views/admin/commonAdmin/paginaPrincipal.php";
+        }
     }
     //mustra resultado de busqueda
     public function resultadoBusqueda(){

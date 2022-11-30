@@ -887,11 +887,12 @@ ul.menuVertival, ul.menuVertical{
 
 .botonAñadir{
     display: flex;
-    width: 40%;
+    width: 70%;
     padding: 10px 50px;
     background-color: #008747;
     border-radius: 5px;
-    margin: 20% auto 0 auto;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 .botonAñadir img{
@@ -910,6 +911,14 @@ ul.menuVertival, ul.menuVertical{
 .textoDetalle{
     margin-left: 70px;
     width: 50%;
+}
+
+#cantidadLibroInput{
+    margin-left: 20px;
+    width: 50px;
+    height: 20px;
+    background-color: #abd8c3;
+    border: none;
 }
 
 /****************************************************************************************LIBROS CATEGORIAS****************************************************************/
@@ -1127,6 +1136,33 @@ hr{
     height: 100%;
     width: 100%;
     border-radius: 10%;
+}
+/*Pagina principal admin*/
+#enlacesAdmin{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+#enlacesAdmin a{
+    font-size: 18px;
+    text-decoration: none;
+    color: #0f0f0f;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 30px;
+    border: #00874898 3px solid;
+    background-color: rgba(128, 128, 128, 0.082);
+}
+#enlacesAdmin a:hover{
+    font-weight: 600;
+    color: #008747;
+    background-color: rgba(128, 128, 128, 0.137);
+}
+#paginaPrincipalAdmin{
+    padding-top: 50px;
+    width: 500px;
+    margin: auto;
+    text-align: center;
 }
 
 /********************************************************************************MODIFICAR CLIENTE**********************************************************************/
