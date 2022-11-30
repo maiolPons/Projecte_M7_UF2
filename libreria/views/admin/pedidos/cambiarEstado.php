@@ -1,5 +1,5 @@
 <?php
-echo "<div>";
+echo "<div id='cambiarEstadoPedido'>";
     echo "<h3>Cambiar estado del Pedido</h3>";
     echo "<p> Id pedido: ".$pedido->getId()."</p>";
     echo "<p> Estado pedido: ".$pedido->getEstado()."</p>";
@@ -16,7 +16,7 @@ echo "<div>";
     echo '<div>';      
         echo '<input type="hidden" name="idPedido" value="'.$pedido->getId().'">'; 
         echo '<input type="hidden" name="estadoPedido" value="'.$pedido->getEstado().'">'; 
-        echo '<p><input type="submit" value="Aceptar"></p>';
+        echo '<p><input id="submitCambiarEstado" type="submit" value="Aceptar"></p>';
     echo '</div>';
     echo "</form>";
 echo "</div>";

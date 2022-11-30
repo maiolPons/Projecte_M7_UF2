@@ -1,7 +1,7 @@
 <?php
-echo "<div>";
+echo "<div id='mostrarTodosAdmin'>";
     echo "<h3>Tabla pedidos</h3>";
-    echo "<div>";
+    echo "<div id='buscadorPedido'>";
         ?>
         <form action="index.php?controller=pedido&action=mostrarReservas" method="post">
             <span>Buscador: </span>
@@ -16,14 +16,14 @@ echo "<div>";
         </form>
         <?php
     echo "</div>";
-    echo "<div>";
+    echo "<div id='mostrarTodosAdminTabla'>";
         echo "<table>";
-        echo "<tr><th>Id Pedido</th><th>Dni Cliente</th><th>Email Cliente</th><th>Importe Total</th><th>Fecha Peticion</th><th>Estado del Pedido</th><th>Mostrar Detalles</th></tr>";
+        echo "<tr><th>Id Pedido</th><th>Dni Cliente</th><th>Email Cliente</th><th>Importe Total</th><th>Fecha Peticion</th><th>Estado del Pedido</th><th>Cambiar estado</th><th>Mostrar Detalles</th></tr>";
         $id="0";
-        
         foreach ($todosLosPedidos as $pedido) {
-            if($pedido['id'] != $id){
-                $id=$pedido["id"];
+            if($pedido['idPedido'] != $id){
+                $id=$pedido["idPedido"];
+                $info=self::mostrarDetalles($id);
                 echo "<tr>";
                 echo "<td>". $pedido['idPedido'] . "</td>";
                 echo "<td>".$pedido['dni'] . "</td>";
@@ -31,7 +31,8 @@ echo "<div>";
                 echo "<td>".$pedido['ImporteTotal'] . "</td>";
                 echo "<td>".$pedido['fechaPeticion'] . "</td>";
                 echo "<td>".$pedido['estado'] . "</td>";
-                echo "<td><a href='index.php?controller=pedido&action=mostrarDetalles&idPedido=". $pedido["idPedido"] ."'>Abrir detalles</a></td>";
+                echo '<td><a href="index.php?controller=pedido&action=cambiarEstado&idPedido='.$id.'">Cambiar estado del pedido</a></td>';
+                echo "<td><button onclick='mostrarDetalles(".json_encode($info).")'>Mostrar Detalles</button></td>";
                 echo "</tr>";
             }
         }

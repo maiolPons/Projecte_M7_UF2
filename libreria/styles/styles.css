@@ -431,9 +431,77 @@ div > .pic{
 /*************************************************************************************** PARTE PEDIDOS ************************************************************************************/
 
 
+/*finestra emergent*/
+#principalAdmin{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    grid-template-rows:100px 1fr 2fr;
+}
+#titolDetallesPedidoAdmin{
+    grid-area: 1 / 1 / span 1 / span 2;
+    text-align: center;
+    color: white;
+    margin: auto;
+    background-color: #386B41;
+    width: 100%;
+}
+#pedidoAdmin{
+    grid-area: 2 / 1;
+    padding-left: 40%;
+}
+#clienteAdmin{
+    grid-area: 2 / 2;
+}
+#librosAdmin{
+    grid-area: 3 / 1 / span 3 / span 2;
+}
+#librosAdmin h4{
+    text-align: center;
+    padding-bottom: 10px;
+}
+/*mostrar todo*/
+#mostrarTodosAdmin{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    grid-template-rows:1fr 1fr 6fr;
+}
+#buscadorPedido{
+    padding-left: 10%;
+}
+#mostrarTodosAdmin h3{
+    text-align: center;
+}
+#mostrarTodosAdminTabla{
+    overflow: auto;
+}
+/*cambiar estado*/
+#cambiarEstado{
+    width: 100%;
+    margin: auto;
+}
+input[type="radio"]{
+    margin: 0 10px 0 10px;
+  }
 
-
-
+#cambiarEstadoPedido{
+    width: 500px;
+    margin: auto;
+    text-align: center;
+}
+#cambiarEstadoPedido input{
+    margin-top: 10px;
+}
+#cambiarEstadoPedido p{
+    margin-top: 10px;
+}
+#submitCambiarEstado{
+    width: 100px;
+    height: 30px;
+}
 
 /*************************************************************************************** FORM CLIENTE ************************************************************************************/
 .containerC{
