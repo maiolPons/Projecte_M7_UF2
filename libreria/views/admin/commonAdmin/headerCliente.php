@@ -40,7 +40,7 @@
 					<ul>
 						<li><a href="index.php?controller=cliente&action=miPerfil">Mi perfil</a></li>
 						<li><a href="index.php?controller=libro&action=favoritos">Mis favoritos</a></li>
-						<li><a href="#">Mis pedidos</a></li>
+						<li><a href="index.php?controller=pedido&action=misPedidos">Mis pedidos</a></li>
 						<li><a href="index.php?controller=cliente&action=salir">Cerrar sesión</a></li>
 					</ul>
 			</div>
