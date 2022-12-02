@@ -13,6 +13,10 @@
             <img src="pic/corazon.png" alt="">
             <a class="favoritos" href="index.php?controller=libro&action=favoritos">Mis favoritos</a>
         </li>
+        <li id="fourth">
+            <img src="pic/sent.png" alt="">
+            <a class="pedidos" href="index.php?controller=pedido&action=misPedidos">Mis pedidos</a>
+        </li>
     </ul>
 </div>
 <div class="mP">
