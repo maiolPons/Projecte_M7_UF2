@@ -92,5 +92,15 @@ class PedidoController{
         }
     }
 
+    //Diana
+    public function misPedidos(){
+        require_once "models/pedido.php";
+        $pedido = new Pedido();
+        $email=$_SESSION['cliente'];
+        $pedidos=$pedido -> mostrarPedidoCliente($email);
+        $num=$pedidos->rowCount();
+        require_once "views/cliente/perfil/misPedidos.php";
+    }
+
 }
 ?>
