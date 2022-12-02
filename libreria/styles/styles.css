@@ -1282,3 +1282,16 @@ hr{
 .tituloPantallaBuscar{
     padding-left: 20%;
 }
+
+/***************************************************************MIS PEDIDOS**********************************/
+.mP{
+    background-color: #dfdbdb !important;
+    width: 70%;
+    margin-left:450px;
+    margin-top:100px;
+    height:700px;
+}
+
+.tablaP{
+    padding-top:3%;
+}
