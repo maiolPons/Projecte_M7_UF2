@@ -103,6 +103,17 @@ class Pedido extends Database{
         $count = $this->db->exec($sql);
         return($count);
     }
+
+    public function mostrarPedidoCliente($email){
+        $sql1="SELECT id FROM clientes WHERE email='".$email."'";
+        $rows = $this->db->query($sql1);
+        foreach($rows as $row){
+            // echo $row['id'];
+            $sql="SELECT * FROM pedidos WHERE idCliente='".$row['id']."'";
+            $pedidos = $this->db->query($sql);
+        }
+        return $pedidos;
+    }
 }
 
 ?>
