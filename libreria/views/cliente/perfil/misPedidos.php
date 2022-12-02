@@ -15,7 +15,7 @@
         </li>
     </ul>
 </div>
-<div class="zeroRows">
+<div class="mP">
     <?php
     // Si no hay ningun favorito
     if($num==0){?>
@@ -24,12 +24,24 @@
     }
     else{
         foreach ($pedidos as $pedido) {
-            echo "<div class='librosFav'>";
-            echo $pedido['id'];
-            echo $pedido['fechaPeticion'];
-            echo $pedido['estado'];
-            echo $pedido['ImporteTotal'];
-            echo "</div>";
+        echo "<div class='tablaP'>";
+            echo "<table>"; ?>
+            <tr>
+                <td>ID PEDIDO  </td>
+                <td>FECHA DE PETICIÓN</td>
+                <td>ESTADO</td>
+                <td>IMPORTE TOTAL</td>
+                <td>DETALLE DEL PEDIDO</td>
+            </tr>
+            <tr>
+                <td><?php echo $pedido['id']?></td>
+                <td><?php echo $pedido['fechaPeticion']?></td>
+                <td><?php echo $pedido['estado']?></td>
+                <td><?php echo $pedido['ImporteTotal']?></td>
+                <td><a href="#">Detalle</a></td>
+            </tr> <?php
+            echo "</table>"; 
+        echo "</div>";
         }
     }  
     ?>
