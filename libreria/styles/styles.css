@@ -1100,6 +1100,30 @@ ul.menuVertival, ul.menuVertical{
     height: 250px;
     object-fit:scale-down;
 }
+.displayItemMore{
+    grid-area: 4 / 2;
+    width: 250px;
+    height: 329.5px;
+    text-align: center;
+    border:#7a7a7a solid 1px;
+    margin-left: 10px;
+    padding-top: 20px;
+    background-color: #35b72915;
+    color: black;
+}
+.displayItemMore img{
+    width: 200px;
+    height: 200px;
+    object-fit:scale-down;
+    padding-top: 50px;
+}
+.displayItemMore p{
+    padding-top: 10px;
+    font-weight: bold;
+}
+.displayItemMore:hover{
+    background-color: #35b7293d;
+}
 hr{
     width: 80%;
     border-top: 1px dotted #8c8b8b;
@@ -1294,4 +1318,15 @@ hr{
 
 .tablaP{
     padding-top:3%;
+}
+/*Esperar peticiones*/
+#esperandoPeticion{
+    width: 100%;
+    color: black;
+}
+#esperandoPeticion img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }

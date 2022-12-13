@@ -120,10 +120,15 @@ class Libro extends Database{
         $rows = $this->db->query($sql);
         return $rows;
     }
+    public function mostrarLibrosActivos(){
+        $sql = "SELECT * FROM libros WHERE estadoL=1";
+        $rows = $this->db->query($sql);
+        return $rows;
+    }
 
     public function mostrarBuscador($buscador){
         $query= "%".$buscador."%";
-        $sql = "SELECT * FROM libros INNER JOIN categorias ON id = idCategoria WHERE ISBN LIKE '$query' OR titulo LIKE '$query' OR autor LIKE '$query' OR editorial LIKE '$query' OR descripcion LIKE '$query' OR stock LIKE '$query' OR novedades LIKE '$query' OR idCategoria LIKE '$query' OR nombre LIKE '$query'";
+        $sql = "SELECT * FROM libros INNER JOIN categorias ON id = idCategoria WHERE (ISBN LIKE '$query' OR titulo LIKE '$query' OR autor LIKE '$query' OR editorial LIKE '$query' OR descripcion LIKE '$query' OR stock LIKE '$query' OR novedades LIKE '$query' OR idCategoria LIKE '$query' OR nombre LIKE '$query') AND estadoL=1";
         $rows = $this->db->query($sql);
         return $rows;
     }
@@ -181,7 +186,7 @@ class Libro extends Database{
     }
     
     public function sienteUltimosFavoritos(){
-        $sql = "SELECT * FROM `libros` WHERE favorito=1  ORDER BY novedades DESC LIMIT 5";
+        $sql = "SELECT * FROM `libros` WHERE favorito=1 AND estadoL=1  ORDER BY novedades DESC LIMIT 4";
         $rows = $this->db->query($sql);
         return $rows;
     }

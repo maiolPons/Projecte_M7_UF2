@@ -61,7 +61,8 @@
                 foreach ($favoritos as $info) {
                     echo "<a href='index.php?controller=libro&action=detalleLibro&isbn=".$info["ISBN"]."'><div class='displayItem'><img src='".$info["foto"]."'><hr><p>".$info["titulo"]."</p><hr><p>Autor: ".$info["autor"]."</p><p>Editorial: ".$info["editorial"]."</p><p>Precio: ".$info["precioUni"]."$</p></div></a>";
                 }
-            }
+                echo "<a href='index.php?controller=libro&action=favoritos'><div class='displayItemMore'><img src='pic/iconMore.png'><p>Ver Todos<p></div></a>";
+            } 
             else{
                 ?>
                 <div id="noLogeadoPaginaPrincipalFavoritos">

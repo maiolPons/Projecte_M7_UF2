@@ -92,11 +92,35 @@
                 <!-- Añadir a la cesta -->
                     <?php $isbn=$row['ISBN']; ?>
                     <div>
-                        <?php echo '<button class="botonAñadir" onclick="añadirProductoCarrito('.$row['ISBN'].','.$row['stock'].')">'; ?>
-                            <img src="pic/cesta.png" alt="">
-                            <p>AÑADIR A LA CESTA</p>
-                        </button>
+                        <?php $isbnString=strval($row['ISBN']); echo "<a id='enlaceLibroAnyadir' href='index.php?controller=libro&action=anyadirLibroCarrito&cantidad=1&isbn=$isbnString'>"; ?>
+                            <div class="botonAñadir">
+                                <img src="pic/cesta.png" alt="">
+                                <p>AÑADIR A LA CESTA</p>
+                            </div>
+                        </a>
                     </div>
+                    <script>
+                            //Cambiar enlace en base a la cantidad
+                            var stock = <?php echo json_encode($row['stock']); ?>;
+                            var isbn = <?php echo json_encode($row['ISBN']); ?>;
+                            var cantidadFinal = 1;
+                            const enlaceLibroAnyadir = document.getElementById("enlaceLibroAnyadir");
+                            const cantidad = document.getElementById("cantidadLibroInput").addEventListener('keyup',(e)=>{
+                                cantidadFinal = e.target.value;
+                                if(isNaN(parseInt(cantidadFinal)) || cantidadFinal < 1){
+                                    cantidadFinal = 1;
+                                }
+                                if(cantidadFinal > stock){
+                                    cantidadFinal = stock;
+                                }
+                                enlaceLibroAnyadir.href = 'index.php?controller=libro&action=anyadirLibroCarrito&isbn='+isbn+'&cantidad='+cantidadFinal;
+                            });
+                    </script>
+                    <?php
+                        if(isset($_GET["done"])){
+                            ?><script>swal("","Producto añadido correctamente!","success",{buttons : ["ok"]})</script><?php
+                        }
+                    ?>
             </div>
     <?php 
     }
