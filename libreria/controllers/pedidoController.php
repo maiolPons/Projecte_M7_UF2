@@ -101,6 +101,18 @@ class PedidoController{
         $num=$pedidos->rowCount();
         require_once "views/cliente/perfil/misPedidos.php";
     }
+    //hacer pedido
+    public function comprar(){
+        require_once "models/detallesPedido.php";
+        if($_SESSION["cliente"]){
+            require_once "views/cliente/carrito/confirmarCompra.php";
+        }
+        else{
+            ?>
+                <script>swal("","El producto ya esta en la cesta!","info",{buttons : ["ok"]})</script>
+            <?php
+        }
+    }
 
 }
 ?>

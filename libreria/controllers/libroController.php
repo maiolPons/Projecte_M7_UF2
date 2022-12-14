@@ -468,7 +468,7 @@ public function anyadirLibroCarrito(){
     } 
     require_once "views/cliente/libro/esperandoPeticion.php";
     ?>
-        <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=libro&action=detalleLibro&done=yes&isbn=<?php echo $_GET["isbn"]?>"> 
+        <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=libro&action=detalleLibro&done=yes&isbn=<?php echo $_GET["isbn"]?>">
     <?php
     /*
     $libro = new Libro();
