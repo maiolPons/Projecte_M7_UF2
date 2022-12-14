@@ -107,10 +107,10 @@
                             const enlaceLibroAnyadir = document.getElementById("enlaceLibroAnyadir");
                             const cantidad = document.getElementById("cantidadLibroInput").addEventListener('keyup',(e)=>{
                                 cantidadFinal = e.target.value;
-                                if(isNaN(parseInt(cantidadFinal)) || cantidadFinal < 1){
+                                if(isNaN(parseInt(cantidadFinal)) || parseInt(cantidadFinal) < 1){
                                     cantidadFinal = 1;
                                 }
-                                if(cantidadFinal > stock){
+                                if(parseInt(cantidadFinal) > stock){
                                     cantidadFinal = stock;
                                 }
                                 enlaceLibroAnyadir.href = 'index.php?controller=libro&action=anyadirLibroCarrito&isbn='+isbn+'&cantidad='+cantidadFinal;
