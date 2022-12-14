@@ -1419,7 +1419,35 @@ hr{
 .tituloPantallaBuscar{
     padding-left: 20%;
 }
-
+@media (max-width: 1023px) and (min-width: 768px) {
+/*mostrar items en buscador resultado*/
+    .mostrarProductos{
+        margin: auto;
+        display: flex;
+        width: 750px;
+        justify-content: space-evenly;
+        flex-wrap:wrap;
+        gap: 10px;
+    }
+    .tituloPantallaBuscar{
+        padding: 0%;
+        text-align: center;
+    }
+}
+@media (max-width: 767px){
+    .mostrarProductos{
+        margin: auto;
+        display: flex;
+        width: 550px;
+        justify-content: space-evenly;
+        flex-wrap:wrap;
+        gap: 10px;
+    }
+    .tituloPantallaBuscar{
+        padding: 0%;
+        text-align: center;
+    }
+}
 /***************************************************************MIS PEDIDOS**********************************/
 .mP{
     background-color: #dfdbdb !important;
