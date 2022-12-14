@@ -1128,6 +1128,109 @@ hr{
     width: 80%;
     border-top: 1px dotted #8c8b8b;
 }
+/*ajustes tablet pagina principal*/
+@media (max-width: 1023px) and (min-width: 768px) {
+    /*diseño de los expositores*/
+    .expocitoresMenuPrincipal{
+        width: 100%;
+        display: flex;
+        border-top: #386B41 solid 1px;
+        padding: 10px;
+        overflow: auto;
+        justify-content: space-evenly;
+    }
+    /*item in div*/
+    .displayItem{
+        grid-area: 4 / 2;
+        width: 150px;
+        text-align: center;
+        border:#7a7a7a solid 1px;
+        margin-left: 10px;
+        padding-top: 20px;
+        background-color: #35b72915;
+        color: black;
+    }
+    .displayItem img{
+        width: 150px;
+        height: 150px;
+        object-fit:scale-down;
+    }
+    .displayItemMore{
+        grid-area: 4 / 2;
+        width: 150px;
+        height: 229.5px;
+        text-align: center;
+        border:#7a7a7a solid 1px;
+        margin-left: 10px;
+        padding-top: 20px;
+        background-color: #35b72915;
+        color: black;
+    }
+    .displayItemMore img{
+        width: 100px;
+        height: 100px;
+        object-fit:scale-down;
+        padding-top: 50px;
+    }
+    #imagenPrecentacion {
+        margin: auto;
+    }
+}
+/*ajustes movil pagina principal*/
+@media (max-width: 767px){
+    #imagenPrecentacion {
+        margin: auto;
+    }
+    /*diseño de los expositores*/
+    .expocitoresMenuPrincipal{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        border-top: #386B41 solid 1px;
+        padding: 10px;
+        overflow: auto;
+        justify-content: space-evenly;
+        
+    }
+    /*item in div*/
+    .displayItem{
+        grid-area: 4 / 2;
+        width: 150px;
+        text-align: center;
+        border:#7a7a7a solid 1px;
+        margin-left: 10px;
+        padding-top: 20px;
+        background-color: #35b72915;
+        color: black;
+       
+    }
+    .displayItem img{
+
+        width: 120px;
+        height: 120px;
+        object-fit:scale-down;
+    }
+    .displayItemMore{
+        grid-area: 4 / 2;
+        width: 150px;
+        height: 199.5px;
+        text-align: center;
+        border:#7a7a7a solid 1px;
+        margin-left: 10px;
+        padding-top: 20px;
+        background-color: #35b72915;
+        color: black;
+    }
+    .displayItemMore img{
+        width: 100px;
+        height: 100px;
+        object-fit:scale-down;
+        padding-top: 20px;
+    }
+    #imagenPrecentacion {
+        margin: auto;
+    }
+}
 /*favoritos sin logear*/
 #noLogeadoPaginaPrincipalFavoritos{
     width: 300px;
