@@ -88,7 +88,7 @@
                 <div class="divPrecioLibro">
                     <p><?php echo $row['precioUni']." €"?></p>
                 </div>
-                <?php echo '<input type="number" value="1" id="cantidadLibroInput" min="1" max="'.$row['stock'].'">'; ?>
+                <?php echo '<input type="text" value="1" id="cantidadLibroInput" min="1" max="'.$row['stock'].'">'; ?>
                 <!-- Añadir a la cesta -->
                     <?php $isbn=$row['ISBN']; ?>
                     <div>
