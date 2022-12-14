@@ -1130,10 +1130,20 @@ hr{
 }
 /*ajustes tablet pagina principal*/
 @media (max-width: 1023px) and (min-width: 768px) {
+    /*division tamaño*/
+    #paginaPrincipal{
+        width: 100%;
+        display: grid;
+        grid-template-rows: 500px 150px 50px 550px 50px 550px;
+        gap: 10px;
+        grid-template-columns:10% 80% 10%;
+        margin: auto;
+    }
     /*diseño de los expositores*/
     .expocitoresMenuPrincipal{
         width: 100%;
         display: flex;
+        flex-wrap: wrap;
         border-top: #386B41 solid 1px;
         padding: 10px;
         overflow: auto;
