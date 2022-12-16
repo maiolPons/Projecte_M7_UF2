@@ -91,7 +91,47 @@ class PedidoController{
             echo '<meta http-equiv="refresh" content="0;url=index.php?controller=pedido&action=mostrarReservas" />';
         }
     }
+    
+    //*********************************************************************************************************** */
+    public function verCarrito(){
+        require_once "models/libro.php";
+        $libro = new Libro();
+        $arrayInfo = [];
+        $lista = [1,5,7];
+        if(isset($_SESSION["carritoCompra"]) && count($_SESSION['carritoCompra'])!=0){
+            for($i = 0; $i < count($_SESSION["carritoCompra"]); $i++){
+                $isbn = $_SESSION["carritoCompra"][$i][0];
+                $libro -> setIsbn($isbn);
+                $rows = $libro -> infoLibro();
+                array_push($arrayInfo , $rows);   
 
+                //Mostrar la cantidad actualizada por el usuario
+                if(isset($_POST['cantidadLibroCesta']) && isset($_GET['isbnC'])){
+                    if($_SESSION["carritoCompra"][$i][0] == $_GET['isbnC']){
+                        $_SESSION["carritoCompra"][$i][1] = $_POST['cantidadLibroCesta'];
+                    }
+                }
+            }
+        }
+        
+        require_once "views/cliente/carrito/cesta.php";
+    }
+
+    //*********************************************************************************************************** */
+    public function eliminarCarrito(){
+        for($i = 0; $i < count($_SESSION["carritoCompra"]); $i++){
+            if (isset($_GET['isbn'])) {
+                $isbnC = $_GET['isbn'];
+                $isbn = $_SESSION["carritoCompra"][$i][0];
+                if($isbn == $isbnC){
+                    array_splice($_SESSION["carritoCompra"],$i);
+                }
+            }
+            echo '<meta http-equiv="refresh" content="0;url=index.php?controller=pedido&action=verCarrito" />';
+
+        }
+    }
+    //*********************************************************************************************************** */
     //Diana
     public function misPedidos(){
         require_once "models/pedido.php";
