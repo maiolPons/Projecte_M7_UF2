@@ -32,7 +32,7 @@
 			</div>
 		</form>
 		<!-- ---------------------------------------- -->
-		<li class="element5"><a href="#"><img src="pic/compra.png" alt=""></a></li>
+		<li class="element5"><a href="index.php?controller=pedido&action=verCarrito"><img src="pic/compra.png" alt=""></a></li>
         <li class="usuario">
 			<a href=""><img src="pic/perfil.png" alt="" class="perfil"></a>
 			<div class="mm">
