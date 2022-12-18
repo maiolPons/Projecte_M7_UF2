@@ -141,16 +141,90 @@ class PedidoController{
         $num=$pedidos->rowCount();
         require_once "views/cliente/perfil/misPedidos.php";
     }
-    //hacer pedido
+    //mostrar pagina para confirmar pedido
     public function comprar(){
         require_once "models/detallesPedido.php";
-        if($_SESSION["cliente"]){
+        if(isset($_SESSION["carritoCompra"]) && isset($_SESSION["cliente"])){ 
+            require_once "models/libro.php";
+            //extrae informacion de los libros
+            $librosInfo = array();
+            $precioFinal=0;
+            $contador=0;
+            foreach($_SESSION["carritoCompra"] as $libros){
+                $libro = new Libro();
+                $libro->setIsbn($libros[0]);
+                $rows=$libro->infoLibro();
+                $librosInfo[] = $rows->fetch();
+                $precioFinal+=$librosInfo[$contador]["precioUni"]*$_SESSION["carritoCompra"][$contador][1];
+                $contador++;
+            }
             require_once "views/cliente/carrito/confirmarCompra.php";
         }
         else{
-            ?>
-                <script>swal("","El producto ya esta en la cesta!","info",{buttons : ["ok"]})</script>
-            <?php
+            echo '<meta http-equiv="refresh" content="0;url=index.php"/>';
+        }
+    }
+    //comprovaciones i confirmacion de pedido
+    public function pagar(){
+        if(isset($_SESSION["carritoCompra"]) && isset($_SESSION["cliente"])){ 
+            $errorResultado = false;
+            $contador=0;
+            $precioFinal=0;
+            require_once "models/libro.php";
+            foreach($_SESSION["carritoCompra"] as $libros){
+                $libro = new Libro();
+                $libro->setIsbn($libros[0]);
+                $rows=$libro->infoLibro();
+                $librosInfo[] = $rows->fetch();
+                if($librosInfo[0]["stock"] < $_SESSION["carritoCompra"][$contador][1]){
+                    $errorResultado = true;
+                }
+                $precioFinal+=$librosInfo[$contador]["precioUni"]*$_SESSION["carritoCompra"][$contador][1];
+                $contador++;
+            }
+            if(!$errorResultado){
+                require_once "models/pedido.php";
+                require_once "models/cliente.php";
+                require_once "models/detallesPedido.php";
+        
+                //id cliente
+                $cliente = new Cliente();
+                $cliente->setEmail($_SESSION["cliente"]);
+                $clienteInfopdo=$cliente->mostrarDatos();
+                $clienteInfo[] = $clienteInfopdo->fetch();
+                //crear pedido
+                $pedido = new Pedido();
+                $pedido->setFechaCompra(date("Y/m/d"));
+                $pedido->setIdCliente($clienteInfo[0]["id"]);
+                $pedido->setImporte($precioFinal);
+                $pedido->crearPedido();
+                $pedidoInfo=$pedido->mostrarUltimoPedidoDeCliente();
+                $pedidoInfoResult[] = $pedidoInfo->fetch();
+                $pedidoInfoResult[0]["id"];
+                //crear detalles de pedido
+                foreach($_SESSION["carritoCompra"] as $productos){
+                    $detallesPedido = new DetallesPedido();
+                    $detallesPedido->setIdPedido($pedidoInfoResult[0]["id"]);
+                    $detallesPedido->setLibro($productos[0]);
+                    $detallesPedido->setCantidad($productos[1]);
+                    $detallesPedido->crearDetallePedido();
+                }
+                //cambiar stock producto
+                foreach($_SESSION["carritoCompra"] as $productos){
+                    //restar cantidad
+                    $libro = new Libro();
+                    $libro->setIsbn($productos[0]);
+                    $libro->restarStock($productos[1]);
+                }
+                unset($_SESSION["carritoCompra"]);
+                require_once "views/cliente/carrito/pedidoConfirmado.php";
+            }
+            else{
+                echo '<meta http-equiv="refresh" content="0;url=index.php?controller=pedido&action=comprar"/>';
+            }
+        }
+        else{
+            echo '<meta http-equiv="refresh" content="0;url=index.php"/>';
         }
     }
 

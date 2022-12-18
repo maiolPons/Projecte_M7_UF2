@@ -49,7 +49,7 @@
                 <h3>Resumen del pedido</h3>
                 <p style="margin-left:20px">Total <?php echo "(".$numProducts." productos): "?><span><?php echo array_sum($importe)."€"?></span></p>
                 <form action="" method="post">
-                    <div class="divButton"><button type="submit">Comprar</button></div>
+                    <div class="divButton"><a href="index.php?controller=pedido&action=comprar">Comprar</a></div>
                 </form>
             </div>
 

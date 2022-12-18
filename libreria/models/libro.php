@@ -217,5 +217,10 @@ class Libro extends Database{
         $rows = $this->db->query($sql);
         return $rows;
     }
+    //actualizar stock
+    public function restarStock($cantidad){
+        $sql = "UPDATE libros SET `stock`= `stock` - $cantidad WHERE ISBN='".$this->getIsbn()."'";
+        $this->db->exec($sql);
+    }
 }
 ?>

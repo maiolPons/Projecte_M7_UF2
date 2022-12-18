@@ -114,6 +114,15 @@ class Pedido extends Database{
         }
         return $pedidos;
     }
+    public function crearPedido(){
+        $sql = "INSERT INTO pedidos (`idCliente`, `fechaPeticion`, `ImporteTotal`) VALUES ('".$this->getIdCliente()."','".$this->getFechaCompra()."','".$this->getImporte()."')";
+        $this->db->exec($sql);
+    }
+    public function mostrarUltimoPedidoDeCliente(){
+        $sql = "SELECT * FROM pedidos WHERE idCliente='".$this->getIdCliente()."' ORDER BY id DESC LIMIT 1";
+        $rows = $this->db->query($sql);
+        return($rows);
+    }
 }
 
 ?>

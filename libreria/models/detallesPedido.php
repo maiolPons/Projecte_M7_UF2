@@ -11,7 +11,7 @@ class DetallesPedido extends Database{
         return $this->idPedido;
     }
     public function setIdPedido($idPedido){
-        $this->libro = $idPedido;
+        $this->idPedido = $idPedido;
     }
     public function getLibro(){
         return $this->libro;
@@ -30,5 +30,9 @@ class DetallesPedido extends Database{
         $sql = "SELECT * FROM pedidos INNER JOIN lineapedidos ON id = idPedido WHERE id='".$id."'";
         $rows = $this->db->query($sql);
         return($rows);
+    }
+    public function crearDetallePedido(){
+        $sql = "INSERT INTO lineapedidos (`idPedido`, `ISBN`, `cantidad`) VALUES ('".$this->getIdPedido()."','".$this->getLibro()."','".$this->getCantidad()."')";
+        $this->db->exec($sql);
     }
 }
