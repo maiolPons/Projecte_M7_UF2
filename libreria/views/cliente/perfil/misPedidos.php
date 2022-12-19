@@ -38,11 +38,12 @@
                 <td>DETALLE DEL PEDIDO</td>
             </tr>
             <tr>
+                <?php $id=$pedido['id']?>
                 <td><?php echo $pedido['id']?></td>
                 <td><?php echo $pedido['fechaPeticion']?></td>
                 <td><?php echo $pedido['estado']?></td>
                 <td><?php echo $pedido['ImporteTotal']?></td>
-                <td><a href="#">Detalle</a></td>
+                <td><a href="index.php?controller=pedido&action=detalledelPedido&id=<?php echo $id ?>">Detalle</a></td>
             </tr> <?php
             echo "</table>"; 
         echo "</div>";
