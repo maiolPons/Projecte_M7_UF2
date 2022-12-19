@@ -28,6 +28,12 @@ body{
     font-size:50px;
     width:20%;
   }
+
+  #logo a{
+    color: white;
+    letter-spacing:2px;
+    text-shadow:2px 2px 5px;
+  }
   
   #container img:first-child{
     height: 40px;
@@ -35,11 +41,6 @@ body{
     margin: 10px 5px 10px 70px;
   }
   
-  #logo a{
-    color: white;
-    letter-spacing:2px;
-    text-shadow:2px 2px 5px;
-  }
   #container > nav > ul {
     padding:0;
     list-style-type:none;
@@ -60,8 +61,6 @@ body{
     width: 140px;
   }
 .element1 a , .element2 a , .element3 a , .element4 a{
-    position:relative;
-/*     margin: 0 40px; */
     color:white;
 }
 
@@ -71,6 +70,7 @@ body{
   }
   .element4 a{
     border-bottom: 1px solid white;
+    margin-left: 50px;
   }
   .element4:hover{
     font-weight: bold;
@@ -300,18 +300,30 @@ td , th{
 }
 .prod{
     text-align: center;
-    margin-top: 30px;
-    margin-bottom: 50px;
+    margin : 30px auto 50px auto;
+    border-bottom: 3px solid #008747;
+    width: 15%;
 }
 
 .addProd{
-    margin: 30px;
+    /* margin: 30px; */
+    margin: 35px 0 0 20px ;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #9aee97;
+    width: 130px;
+    border:1px solid black;
 }
 
+.addProd a{
+    color: black;
+    font-weight: bold;
+}
 
 .contenedor{
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
+    margin: 10px 50px;
     /* width: 80%; */
 }
 
@@ -329,6 +341,7 @@ td , th{
 .pict{
     height: 80%;
     width: 80%;
+    margin: auto;
 }
 div > .pic{
     padding:20px 70px 20px 70px;
@@ -391,9 +404,29 @@ div > .pic{
 
 .buscador{
     margin-bottom: 30px;
+    margin-left: 40px;
 }
 
+.plus{
+    width: 40px;
+    height: 40px;
+    float: right;
+    margin: 0 35px 50px 0;
+}
 
+.desc{
+    display: flex;
+    float: right;
+    margin-right: 30px;
+}
+.desc a{
+    border: 1px solid black;
+    margin: 0 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #9aee97;
+    color: black;
+}
 
 /*************************************************************************************** PARTE CATEGORIAS ************************************************************************************/
 .icon{
@@ -757,7 +790,7 @@ input[type="radio"]{
     margin-top: 60px !important;
 }
 
-ul.menuVertival, ul.menuVertical{
+ul.menuVertival , ul.menuVertical{
     position:relative;
     background:#fff;
     width:20%;
@@ -791,14 +824,13 @@ ul.menuVertival, ul.menuVertical{
 
 #first {
     border-left:5px solid #008747;
-    /* margin-top: 20px; */
 }
 #first:hover {
     background-color: #008747;
 }
 
 #second{
-        border-left:5px solid #fecf54;
+    border-left:5px solid #fecf54;
 }
 #second:hover {
     background-color: #fecf54;
@@ -832,13 +864,12 @@ ul.menuVertival, ul.menuVertical{
 }
 
 .zeroRows{
-    width: 70%;
+    width: 40%;
     margin-top: 20px;
     display: grid;
     grid-template-columns: 33% 33% 33%;
     background-color: #dfdbdb;
     padding: 40px;
-
 }
 
 .imgFav{
@@ -1009,7 +1040,7 @@ ul.menuVertival, ul.menuVertical{
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     background-color: #dfdbdb;
-    margin-right: 1%;
+    margin-right: 5%;
 }
 
 .books div{
@@ -1375,6 +1406,7 @@ hr{
     margin: auto;
     text-align: center;
 }
+
 /********************************************************************************MODIFICAR CLIENTE**********************************************************************/
 .modUsu{
     background-color:#dfdbdb; 
@@ -1478,7 +1510,6 @@ hr{
     margin-right: auto;
     width: 50%;
 }
-
 /******************************************************************************** CARRITO **********************************************************************/
 .divLibrosC{
     width: 90%;
@@ -1502,25 +1533,18 @@ hr{
 .divCompra h3{
     margin-bottom: 30px;
 }
-.divCompra a{
-    background-color: black;
-    text-align: center;
-    padding: 10px 20px;
-    width: 100%;
-    border: none;
+.divButton a{
     color:white;
     font-size: 18px;
     font-weight: bold;
-    outline:none;
 }
-.divCompra a:hover{
-    cursor: pointer;
-}
+
 .divButton{
     width: 80%;
-    margin: 30% auto 20px auto;
-    border: 1px solid;
-
+    background-color: black;
+    margin: 20% auto 20px auto;
+    padding: 10px 20px;
+    text-align: center;
 }
 .divCompra span{
     font-weight: bold ; 
@@ -1604,12 +1628,66 @@ hr{
     margin-left: 23%;
     position: relative;
     bottom: 140px;
-    height: 20px;
+    height: 10px;
 }
 .aut{
     margin-left: 8px;
     font-size: 15px;
     color: rgb(99, 99, 99);
+}
+.stock10{
+    background-color: rgba(216, 127, 127, 0.788);
+    width:80px;
+    padding: 6px 5px;
+    margin-left: 35px;
+    position: relative;
+    bottom: 60px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.subtotal{
+    border-top:1px solid gray;
+    width: 40%;
+    margin-right: 10px;
+    padding: 5px 0;
+    margin: 0 10px 10px 58%;
+    height: 20px;
+}
+.subtotal p{
+    float: right;
+}
+
+/* Cesta vacia */
+.cestaVacia{
+    width: 50%;
+    margin: 70px auto;
+    background-color: rgb(241, 240, 240);
+    border-radius: 5px;
+    padding-top: 20px;
+}
+.imgCestaVacia{
+    width: 30%;
+    height: 85%;
+    margin:10px auto;
+}
+.imgCestaVacia img{
+    width: 100%;
+}
+.cestaVacia h4{
+    width: fit-content;
+    margin: 20px auto;
+}
+.cestaVacia a{
+    background-color: black;
+    color: white;
+    padding: 20px 50px;
+    font-weight: bold;
+}
+.cestaVacia div:last-child{
+    width: fit-content;
+    margin: 50px auto;
+    padding-bottom: 70px;
 }
 /*Confirmar compra*/
 #listarSimplePedido{
@@ -1701,8 +1779,6 @@ hr{
 #pedidoRealizadoDiv a:hover{
     color: #0087807b;
 }
-
-
 /****DIANA****/
 
 /******************************************** RESPONSIVE MOVIL **************************************/
@@ -1742,7 +1818,10 @@ hr{
         width:110%;
     }
 
-    
+    body{
+        background-color: yellow;
+    }
+    .menuVertical li a{display: none;}
 }
 
 /******************************************** RESPONSIVE TABLET ************************************/
@@ -1757,8 +1836,9 @@ hr{
     }
 
     .books{
-        grid-template-columns: 40% 40%;
-        margin-left: 29% !important;
+        grid-template-columns: 50% 50%;
+        margin-left: 18% !important;
+        margin-top: 50px;
     }
 
     .lupaMenu{
@@ -1788,5 +1868,93 @@ hr{
         padding-left: 10px !important;
         margin-top: 100px !important;
         height: 700px !important;
+    }
+
+    #logo{
+        font-size:20px;
+    }
+    #logo a{
+        letter-spacing: 1px;
+    }
+
+    #container img:first-child{
+        margin: 10px 5px 10px 20px;
+    }
+    .element4 a{
+        margin-left: 20px;
+    }
+    .element1 a{
+        display: none;
+    }
+    .box{
+        padding:0;
+        margin: 0;
+    }
+    .textoDetalle {
+        width: fit-content;
+        margin: 20px 0;
+    }
+    ul.menuVertival{
+        width: 20%;
+    }  
+    .menuVertival li a , .menuVertical li a{
+        font-size: 10px;
+    }
+
+    .divimagenLibro{
+        width: 200px;
+        height: 350px;
+        margin-top:100px;
+    }
+    .divTituloLibro{
+        font-size: 15px;
+    }
+    .miPerfil{
+        width: 30%;
+        margin-top: 50px;
+    }
+    .favorTitle{
+        width:30%;
+    }
+    .img1{
+        position: relative;
+        top: 70px;
+    }
+    .cestaVacia{
+        margin-top: 200px;
+        width: 80%;
+    }
+    footer a{
+        width:20%;
+        padding-top: 20px;
+    }
+    .containerC{
+        width:700px;
+    }
+    .cesta{
+        display: block;
+    }
+    .divLibrosC{
+        width: 100%;
+    }
+    .aut{
+        margin-top: 30px;
+    }
+    .stock10{
+        margin-left: 25px;
+        bottom: 75px;
+    }
+    .libroCarrito input[type=submit]{
+        width: 50%;
+        font-weight: bold;
+    }
+    .divCompra{
+        margin: 50px auto;
+    }
+    #search2 {
+        width:80%;
+    }
+    .numFav{
+        margin-left: 50%;
     }
 }
