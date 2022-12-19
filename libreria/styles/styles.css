@@ -1451,14 +1451,21 @@ hr{
 /***************************************************************MIS PEDIDOS**********************************/
 .mP{
     background-color: #dfdbdb !important;
-    width: 70%;
-    margin-left:450px;
-    margin-top:100px;
-    height:700px;
+    width: 70% !important;
+    margin-left:450px !important;
+    margin-top:100px !important;
+    height:700px !important;
 }
 
 .tablaP{
     padding-top:3%;
+}
+
+
+
+.imgDet{
+    width:100px;
+    height: 150px;
 }
 /*Esperar peticiones*/
 #esperandoPeticion{
