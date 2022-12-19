@@ -15,6 +15,7 @@ class Libro extends Database{
     private $destacado;
     private $novedades;
     private $estadoL;
+    private $favorito;
     //gets y sets
     //isbn libro
     public function getIsbn(){
@@ -113,6 +114,13 @@ class Libro extends Database{
     public function setEstadoL($estadoL){
         $this->esatdoL = $estadoL;
     }
+    //Favorito
+    public function getFavotito(){
+        return $this->favorito;
+    }
+    public function setFavorito($favorito){
+        $this->favorito = $favorito;
+    }
 
 //metodos
     public function mostrarLibros(){
@@ -120,6 +128,7 @@ class Libro extends Database{
         $rows = $this->db->query($sql);
         return $rows;
     }
+
     public function mostrarLibrosActivos(){
         $sql = "SELECT * FROM libros WHERE estadoL=1";
         $rows = $this->db->query($sql);
@@ -128,7 +137,7 @@ class Libro extends Database{
 
     public function mostrarBuscador($buscador){
         $query= "%".$buscador."%";
-        $sql = "SELECT * FROM libros INNER JOIN categorias ON id = idCategoria WHERE (ISBN LIKE '$query' OR titulo LIKE '$query' OR autor LIKE '$query' OR editorial LIKE '$query' OR descripcion LIKE '$query' OR stock LIKE '$query' OR novedades LIKE '$query' OR idCategoria LIKE '$query' OR nombre LIKE '$query') AND estadoL=1";
+        $sql = "SELECT * FROM libros INNER JOIN categorias ON id = idCategoria WHERE ISBN LIKE '$query' OR titulo LIKE '$query' OR autor LIKE '$query' OR editorial LIKE '$query' OR descripcion LIKE '$query' OR stock LIKE '$query' OR novedades LIKE '$query' OR idCategoria LIKE '$query' OR nombre LIKE '$query'";
         $rows = $this->db->query($sql);
         return $rows;
     }
@@ -186,7 +195,7 @@ class Libro extends Database{
     }
     
     public function sienteUltimosFavoritos(){
-        $sql = "SELECT * FROM `libros` WHERE favorito=1 AND estadoL=1  ORDER BY novedades DESC LIMIT 4";
+        $sql = "SELECT * FROM `libros` WHERE favorito=1 AND estadoL=1 ORDER BY novedades DESC LIMIT 5";
         $rows = $this->db->query($sql);
         return $rows;
     }
@@ -217,6 +226,7 @@ class Libro extends Database{
         $rows = $this->db->query($sql);
         return $rows;
     }
+
     //actualizar stock
     public function restarStock($cantidad){
         $sql = "UPDATE libros SET `stock`= `stock` - $cantidad WHERE ISBN='".$this->getIsbn()."'";
