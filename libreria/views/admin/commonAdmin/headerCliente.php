@@ -2,7 +2,7 @@
 
 <div id="container">
     <nav>
-      <img src="pic/book.png" alt="">
+    	<a href="index.php"><img src="pic/book.png" alt=""></a>
       <div id="logo">
         <a href="index.php">LibreríaBDN</a>
       </div>
@@ -22,7 +22,6 @@
 					</ul>
 			</div>
         </li>
-        <li class="element3"><a href="index.php">Novedades</a></li>
 
 		<!---------------- Buscador ---------------->
 		<form class="box" action="index.php?controller=libro&action=resultadoBusqueda" method="post">
@@ -32,7 +31,7 @@
 			</div>
 		</form>
 		<!-- ---------------------------------------- -->
-		<li class="element5"><a href="index.php?controller=pedido&action=verCarrito"><img src="pic/compra.png" alt=""></a></li>
+		<li class="element5" title="Cesta"><a href="index.php?controller=pedido&action=verCarrito"><img src="pic/compra.png" alt=""></a></li>
         <li class="usuario">
 			<a href=""><img src="pic/perfil.png" alt="" class="perfil"></a>
 			<div class="mm">

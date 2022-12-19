@@ -2,7 +2,6 @@
     <ul class="menuVertival">
     <?php
         if(isset($_SESSION['cliente'])){?>
-
             <li id="first">
                 <img src="pic/usuario.png" alt="">
                 <a class="profile" href="index.php?controller=cliente&action=miPerfil">Mi perfil</a>
@@ -17,7 +16,7 @@
             </li>
             <li id="fourth">
                 <img src="pic/sent.png" alt="">
-                <a class="pedidos" href="#">Mis pedidos</a>
+                <a class="pedidos" href="index.php?controller=pedido&action=misPedidos">Mis pedidos</a>
             </li>
         <?php
         }
@@ -70,8 +69,10 @@
                 <div class="divAutorLibro">
                     <h2><?php echo $row['autor'] ?></h2>
                 </div>
-                <!-- Isbn y editorial -->
                 <div class="divEditLibro">
+                <!-- Categoria  -->
+                    <p style="margin-bottom: 20px;font-style: italic;"><?php echo $row['nombre']?></p>
+                <!-- Isbn y editorial -->
                     <p><?php echo $row['editorial']." - ".$row['ISBN']?></p>
                 </div>
                 <!-- Descripcion -->
@@ -80,16 +81,24 @@
                 </div>
 
                 <!-- Stock -->
-                <div class="divEditLibro">
-                    <p>Stock : <?php echo $row['stock']?></p>
-                </div>
+                <?php
+                if($row['stock']==0){
+                    echo "<div class='divEditLibro'><p style='color:red; font-weight:bold;'>Agotado</p></div>";
+                }
+                else{
+                    echo "<div class='divEditLibro'><p style='color:green; font-weight:bold;'>Disponible</p></div>";
+                }
+                ?>
 
                 <!-- Precio -->
                 <div class="divPrecioLibro">
                     <p><?php echo $row['precioUni']." €"?></p>
                 </div>
-                <?php echo '<input type="text" value="1" id="cantidadLibroInput" min="1" max="'.$row['stock'].'">'; ?>
-                <!-- Añadir a la cesta -->
+                
+                <?php 
+                if($row['stock']!=0){
+                    echo '<input type="text" value="1" id="cantidadLibroInput" min="1" max="'.$row['stock'].'">';?>
+                    <!-- Añadir a la cesta -->
                     <?php $isbn=$row['ISBN']; ?>
                     <div>
                         <?php $isbnString=strval($row['ISBN']); echo "<a id='enlaceLibroAnyadir' href='index.php?controller=libro&action=anyadirLibroCarrito&cantidad=1&isbn=$isbnString'>"; ?>
@@ -120,7 +129,8 @@
                         if(isset($_GET["done"])){
                             ?><script>swal("","Producto añadido correctamente!","success",{buttons : ["ok"]})</script><?php
                         }
-                    ?>
+                }
+                ?>
             </div>
     <?php 
     }

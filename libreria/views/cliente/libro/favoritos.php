@@ -33,34 +33,35 @@
 <?php
     echo "<h4 class='numFav'>".$num." ARTÍCULOS</h4></br>";
 ?>
-
-<div class="zeroRows">
+<!-- ------------------------------------------------------------------------------------------------ -->
+<div class="books">
     <?php
     // Si no hay ningun favorito
     if($num==0){?>
-        <P>Aún no has añadido ningún artículo a tu lista de favoritos. Comienza a comprar y añade tus productos preferidos.</P>
+        <p class="zeroRows" style="display:block;width:300%;">No se ha encontrado ningún resultado !</p>
     <?php
     }
     else{
         foreach ($rows as $row) {
-            echo "<div class='librosFav'>";
             $isbn = $row['ISBN'];
+            echo "<div class='books'>";?>
+            <a href="index.php?controller=libro&action=NoEsFavorito&fav=1&isbn=<?php echo $isbn; ?>"><img src="pic/corazonRojo.png" class="corason"></a>            
+            <?php
             ?>
-                <a class="alibros" href="index.php?controller=libro&action=detalleLibro&isbn=<?php echo $isbn; ?>">
-                    <div>
-                        <!-- <img src="pic/corazonRojo.png" alt="" style="width:5%; height:5%;"> -->
-                        <img class="imgFav" src="<?php echo $row['foto'] ?>"/>
-                    </div>
-                </a>
-                    <div>
-                        <p class="tituloLibro"><?php echo $row['titulo'] ?></p>
-                        <p class="price"><?php echo $row['precioUni']." €" ?></p>
-                        <a href="index.php?controller=libro&action=NoEsFavorito&fav=1&isbn=<?php echo $isbn; ?>"><img src="pic/corazonRojo.png" alt="" id="corazon"></a>
-                    </div>
+            <!-- Imagen -->
+            <div>
+                <a href="index.php?controller=libro&action=detalleLibro&isbn=<?php echo $isbn; ?>"> <img  src="<?php echo $row['foto']?>" ></a>
+            </div>
+            <div class="divCategories">
+                <p> <?php echo $row['titulo']?> </p>
+                <p> Autor/a: <?php echo $row['autor']?> </p>
+                <p>Editorial: <?php echo $row['editorial']?>  </p>
+                <p> <?php echo $row['precioUni']?>€ </p>
+            </div>
+        </div>
+
         <?php
-            echo "</div>";
         }
     }  
     ?>
 </div>
-

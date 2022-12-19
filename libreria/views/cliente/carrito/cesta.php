@@ -29,14 +29,12 @@
                             </div>
                             <?php
                             if($info['stock'] <= 10){
-                                echo "<div><p>Quedan solo ".$info['stock']."</p></div>";
+                                echo "<div class='stock10'><p>Quedan ".$info['stock']."</p></div>";
                             }
                             $cantidad = $_SESSION["carritoCompra"][$i][1];
                             $sub = $cantidad*$info['precioUni'];
                             ?>
-                            <div>
-                                <p>Subtotal: <?php echo $sub ?>€</p>
-                            </div>
+                            <div class="subtotal"><p>Subtotal: <?php echo $sub ?>€</p></div>
                         </div>
                     <?php
                     array_push($importe , (int)$sub);
@@ -47,18 +45,30 @@
             <div class="divCompra">
                 <!-- Aqui va la parte donde hay el importe total y el botton de comprar-->
                 <h3>Resumen del pedido</h3>
-                <p style="margin-left:20px">Total <?php echo "(".$numProducts." productos): "?><span><?php echo array_sum($importe)."€"?></span></p>
-                <form action="" method="post">
+                <p style="margin:50px 0 0 20px">Total <?php echo "(".$numProducts." productos): "?><span><?php echo array_sum($importe)."€"?></span></p>
+                <?php
+                if(isset($_SESSION['cliente'])){?>
                     <div class="divButton"><a href="index.php?controller=pedido&action=comprar">Comprar</a></div>
-                </form>
+                    <?php
+                }
+                else{
+                    ?>
+                    <div class="divButton"><a href="index.php?controller=pedido&action=noLogin">Comprar</a></div><?php
+                }
+                ?>
             </div>
 
         </div>
         <?php
     }
 
-    else{
-        echo "Cesta vacia";
+    else{?>
+        <div class="cestaVacia">
+            <div class="imgCestaVacia"><img src="pic/vacia.png" alt=""></div>
+            <h4>TU CESTA ESTÁ VACÍA</h4>
+            <div><a href="index.php">Comprar ahora</a></div>
+        </div>
+        <?php   
     }
     
 ?>

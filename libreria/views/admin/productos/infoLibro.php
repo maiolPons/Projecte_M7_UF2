@@ -1,5 +1,6 @@
 
 <h1 class="prod">Productos</h1>
+
 <!-- Imrimir la tabla con los datos de todos los libros -->
 <table>
     <tr>
@@ -70,9 +71,7 @@
     ?>
     </tr>
 </table>
-
 <div class="addProd">
-    <p><a href="index.php?controller=libro&action=formAñadir">Añadir nuevo producto</a></p>
     <p><a href="index.php?controller=libro&action=mostrarLibros">Todos los libros</a></p>
-    <p><a href="index.php?controller=admin&action=salir">Cerrar sesión</a></p>
 </div>
+

@@ -14,7 +14,7 @@
         </li>
         <li id="fourth">
             <img src="pic/sent.png" alt="">
-            <a class="pedidos" href="#">Mis pedidos</a>
+            <a class="pedidos" href="index.php?controller=pedido&action=misPedidos">Mis pedidos</a>
         </li>
     </ul>
 </div>

@@ -1,7 +1,7 @@
 <title>LibreriaBDN</title>
 <div id="container">
     <nav>
-      <img src="pic/book.png" alt="">
+      <a href="index.php"><img src="pic/book.png" alt=""></a>
       <div id="logo">
         <a href="index.php">LibreríaBDN</a>
       </div>
@@ -21,15 +21,15 @@
             </ul>
           </div>
         </li>
-        <li class="element3"><a href="index.php">Novedades</a></li>
         <!---------------- Buscador ---------------->
         <form class="box" action="index.php?controller=libro&action=resultadoBusqueda" method="post">
           <div class="searcher">
-            <input type="search" id="search" placeholder="  Search..." />
+            <input type="search" id="search" name="buscadorMenuPrincipalInput" placeholder="  Search..." />
             <input class="lupa" alt="" src="pic/lupa.png" type="image" />
           </div>
         </form>
         <!-- ---------------------------------------- -->
+        <li class="element5" title="Cesta"><a href="index.php?controller=pedido&action=verCarrito"><img src="pic/compra.png" alt=""></a></li>
         <li class="element4"><a href="index.php?controller=cliente&action=logearCliente">Iniciar sesión</a></li>
       </ul>
     </nav>
