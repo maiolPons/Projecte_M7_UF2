@@ -370,7 +370,6 @@ class LibroController{
 
     }
 
-
 /*******************************************************************************************************************************************************************/
     //Mostrar libros por Categorias
 
@@ -399,7 +398,7 @@ class LibroController{
             $libro = new Libro();
             $novedades = $libro -> novedades();
             $favoritos = $libro -> sienteUltimosFavoritos();
-            $libros = $libro -> mostrarLibrosActivos();
+            $libros = $libro -> mostrarLibros();
             $todosLibros = array();
             foreach($libros as $info){
                 array_push($todosLibros,$info);
@@ -409,8 +408,10 @@ class LibroController{
         else{
             require "views/admin/commonAdmin/paginaPrincipal.php";
         }
-    } 
-    //mustra resultado de busqueda
+    }
+
+//**************************************************************************************************************************************************************//
+    //muestra resultado de busqueda
     public function resultadoBusqueda(){
         if(isset($_POST["buscadorMenuPrincipalInput"])){
             $libro = new Libro();
@@ -418,106 +419,104 @@ class LibroController{
             $rows=$libro->mostrarBuscador($_POST["buscadorMenuPrincipalInput"]);
             if ($rows->rowCount() == 0) {
                 $resultados = false;
-                $rows=$libro->mostrarLibrosActivos();
+                $rows=$libro->mostrarLibros();
             }
             require_once "views/cliente/general/resultadoBusqueda.php";
         }
     }
 
-
 //**************************************************************************************************************************************************************//
-public function anyadirLibroCarrito(){
-    require_once "models/libro.php";
+    public function anyadirLibroCarrito(){
+        require_once "models/libro.php";
 
-    $libro = new Libro();
-    
-    $libro->setIsbn($_GET["isbn"]);
-    $info=$libro->infoLibro();
-    foreach($info as $infoLibro){
-        $libro->setTitulo($infoLibro["titulo"]);
-        $libro->setAutor($infoLibro["autor"]);
-        $libro->setEditorial($infoLibro["editorial"]);
-        $libro->setDescripcion($infoLibro["descripcion"]);
-        $libro->setFoto($infoLibro["foto"]);
-        $libro->setPrecioUni($infoLibro["precioUni"]);
-        $libro->setCategoria($infoLibro["idCategoria"]);
-        $libro->setStock($infoLibro["stock"]);
-    }
-
-    $flag = true;
-    if(!isset($_SESSION["carritoCompra"])){
-        $carritoCompra=array();
-        $_SESSION["carritoCompra"]=$carritoCompra;
-        array_push($_SESSION["carritoCompra"],[$_GET["isbn"],$_GET["cantidad"]]);
-    }
-    else{    
-        for($i = 0; $i < count($_SESSION["carritoCompra"]);$i++){
-            if($_SESSION["carritoCompra"][$i][0]==$_GET["isbn"]){
-                $flag = false;
-                if($_SESSION["carritoCompra"][$i][1] + $_GET["cantidad"] > $libro->getStock()){
-                    $_SESSION["carritoCompra"][$i][1]=$libro->getStock();
-                }
-                else{
-                    $_SESSION["carritoCompra"][$i][1] = $_SESSION["carritoCompra"][$i][1] + $_GET["cantidad"];
-                }
-            }
+        $libro = new Libro();
+        
+        $libro->setIsbn($_GET["isbn"]);
+        $info=$libro->infoLibro();
+        foreach($info as $infoLibro){
+            $libro->setTitulo($infoLibro["titulo"]);
+            $libro->setAutor($infoLibro["autor"]);
+            $libro->setEditorial($infoLibro["editorial"]);
+            $libro->setDescripcion($infoLibro["descripcion"]);
+            $libro->setFoto($infoLibro["foto"]);
+            $libro->setPrecioUni($infoLibro["precioUni"]);
+            $libro->setCategoria($infoLibro["idCategoria"]);
+            $libro->setStock($infoLibro["stock"]);
         }
-        if($flag){
-            array_push($_SESSION["carritoCompra"],[$_GET["isbn"],$_GET["cantidad"]]);
-        } 
-    } 
-    require_once "views/cliente/libro/esperandoPeticion.php";
-    ?>
-        <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=libro&action=detalleLibro&done=yes&isbn=<?php echo $_GET["isbn"]?>">
-    <?php
-    /*
-    $libro = new Libro();
-    $detalles = new DetallesPedido();
-    $libro->setIsbn($_GET["isbn"]);
-    $info=$libro->infoLibro();
-    foreach($info as $infoLibro){
-        $libro->setTitulo($infoLibro["titulo"]);
-        $libro->setAutor($infoLibro["autor"]);
-        $libro->setEditorial($infoLibro["editorial"]);
-        $libro->setDescripcion($infoLibro["descripcion"]);
-        $libro->setFoto($infoLibro["foto"]);
-        $libro->setPrecioUni($infoLibro["precioUni"]);
-        $libro->setCategoria($infoLibro["idCategoria"]);
-        $libro->setStock($infoLibro["stock"]);
-    }
-    $detalles->setCantidad($_GET["cantidad"]);
-    $detalles->setLibro($libro);
-    if(!isset($_SESSION["carritoCompra"])){
 
-        $carritoCompra=array();
-        $_SESSION["carritoCompra"]=$carritoCompra;
-        array_push($_SESSION["carritoCompra"],$detalles);
-    }
-    else{
         $flag = true;
-        foreach($_SESSION["carritoCompra"] as $infoPedido){
-            if($infoPedido->getLibro()->getIsbn()==$_GET["isbn"]){
-                $flag = false;
-                if($infoPedido->getLibro()->getStock() < $infoPedido->getCantidad()){
-                    if($infoPedido->getCantidad() + $_GET["cantidad"] > $infoPedido->getLibro()->getStock()){
-                        $infoPedido->setCantidad($infoPedido->getLibro()->getStock());
+        if(!isset($_SESSION["carritoCompra"])){
+            $carritoCompra=array();
+            $_SESSION["carritoCompra"]=$carritoCompra;
+            array_push($_SESSION["carritoCompra"],[$_GET["isbn"],$_GET["cantidad"]]);
+        }
+        else{    
+            for($i = 0; $i < count($_SESSION["carritoCompra"]);$i++){
+                if($_SESSION["carritoCompra"][$i][0]==$_GET["isbn"]){
+                    $flag = false;
+                    if($_SESSION["carritoCompra"][$i][1] + $_GET["cantidad"] > $libro->getStock()){
+                        $_SESSION["carritoCompra"][$i][1]=$libro->getStock();
                     }
                     else{
-                        $detalles->setCantidad($infoPedido->getCantidad()+$_GET["cantidad"]);
+                        $_SESSION["carritoCompra"][$i][1] = $_SESSION["carritoCompra"][$i][1] + $_GET["cantidad"];
                     }
                 }
             }
+            if($flag){
+                array_push($_SESSION["carritoCompra"],[$_GET["isbn"],$_GET["cantidad"]]);
+            } 
+        } 
+        require_once "views/cliente/libro/esperandoPeticion.php";
+        ?>
+            <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=libro&action=detalleLibro&done=yes&isbn=<?php echo $_GET["isbn"]?>">
+        <?php
+        /*
+        $libro = new Libro();
+        $detalles = new DetallesPedido();
+        $libro->setIsbn($_GET["isbn"]);
+        $info=$libro->infoLibro();
+        foreach($info as $infoLibro){
+            $libro->setTitulo($infoLibro["titulo"]);
+            $libro->setAutor($infoLibro["autor"]);
+            $libro->setEditorial($infoLibro["editorial"]);
+            $libro->setDescripcion($infoLibro["descripcion"]);
+            $libro->setFoto($infoLibro["foto"]);
+            $libro->setPrecioUni($infoLibro["precioUni"]);
+            $libro->setCategoria($infoLibro["idCategoria"]);
+            $libro->setStock($infoLibro["stock"]);
         }
-        if($flag){
-            $_SESSION["carritoCompra"][]=$detalles;
-            //array_push($_SESSION["carritoCompra"],$detalles);
+        $detalles->setCantidad($_GET["cantidad"]);
+        $detalles->setLibro($libro);
+        if(!isset($_SESSION["carritoCompra"])){
+            $carritoCompra=array();
+            $_SESSION["carritoCompra"]=$carritoCompra;
+            array_push($_SESSION["carritoCompra"],$detalles);
         }
+        else{
+            $flag = true;
+            foreach($_SESSION["carritoCompra"] as $infoPedido){
+                if($infoPedido->getLibro()->getIsbn()==$_GET["isbn"]){
+                    $flag = false;
+                    if($infoPedido->getLibro()->getStock() < $infoPedido->getCantidad()){
+                        if($infoPedido->getCantidad() + $_GET["cantidad"] > $infoPedido->getLibro()->getStock()){
+                            $infoPedido->setCantidad($infoPedido->getLibro()->getStock());
+                        }
+                        else{
+                            $detalles->setCantidad($infoPedido->getCantidad()+$_GET["cantidad"]);
+                        }
+                    }
+                }
+            }
+            if($flag){
+                $_SESSION["carritoCompra"][]=$detalles;
+                //array_push($_SESSION["carritoCompra"],$detalles);
+            }
+        }
+        require_once "views/cliente/libro/esperandoPeticion.php";
+        ?>
+            <!--<META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=libro&action=detalleLibro&done=yes&isbn=<?php echo $_GET["isbn"]?>"> -->
+        <?php
+        */
     }
-    require_once "views/cliente/libro/esperandoPeticion.php";
-    ?>
-        <!--<META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=libro&action=detalleLibro&done=yes&isbn=<?php echo $_GET["isbn"]?>"> -->
-    <?php
-    */
-}
 }
 ?> 
