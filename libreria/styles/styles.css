@@ -1715,6 +1715,25 @@ hr{
         width: 55%;
         margin-top: 100px !important;
     }
+    .imgDet{
+        width:50px;
+        height: 50px;
+    }
+
+    .mP .tablaP table td{
+        width:3px !important;
+    }
+    .mP{
+        background-color: #dfdbdb !important;
+        width: 100% !important;
+        margin-top: 100px !important;
+        height: 700px !important;
+    }
+
+    .books{
+        grid-template-columns: 30%;
+        margin-left: 45% !important;
+    }
 }
 
 /******************************************** RESPONSIVE TABLET ************************************/
@@ -1747,5 +1766,18 @@ hr{
 
     .zeroRows{
         width: 150%;
+    }
+    .tablaP td{
+        width:20px !important;
+    }
+
+    .mP{
+        background-color: #dfdbdb !important;
+        width: 70% !important;
+        margin-left: 200px !important;
+        padding-right: 40px !important;
+        padding-left: 10px !important;
+        margin-top: 100px !important;
+        height: 700px !important;
     }
 }
