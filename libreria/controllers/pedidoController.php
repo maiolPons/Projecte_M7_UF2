@@ -181,6 +181,29 @@ class PedidoController{
 
     }
     
+    //mostrar pagina para confirmar pedido
+    public function comprar(){
+        require_once "models/detallesPedido.php";
+        if(isset($_SESSION["carritoCompra"]) && isset($_SESSION["cliente"])){ 
+            require_once "models/libro.php";
+            //extrae informacion de los libros
+            $librosInfo = array();
+            $precioFinal=0;
+            $contador=0;
+            foreach($_SESSION["carritoCompra"] as $libros){
+                $libro = new Libro();
+                $libro->setIsbn($libros[0]);
+                $rows=$libro->infoLibro();
+                $librosInfo[] = $rows->fetch();
+                $precioFinal+=$librosInfo[$contador]["precioUni"]*$_SESSION["carritoCompra"][$contador][1];
+                $contador++;
+            }
+            require_once "views/cliente/carrito/confirmarCompra.php";
+        }
+        else{
+            echo '<meta http-equiv="refresh" content="0;url=index.php"/>';
+        }
+    }
     //comprovaciones i confirmacion de pedido
     public function pagar(){
         if(isset($_SESSION["carritoCompra"]) && isset($_SESSION["cliente"])){ 
