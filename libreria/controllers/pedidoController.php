@@ -141,29 +141,46 @@ class PedidoController{
         $num=$pedidos->rowCount();
         require_once "views/cliente/perfil/misPedidos.php";
     }
-    //mostrar pagina para confirmar pedido
-    public function comprar(){
+
+    public function detalledelPedido(){
+        $arrayPedido = array();
+        $arrayLibros = array();
+        require_once "models/pedido.php";
+        $pedido = new Pedido();
+        $id=$_GET['id'];
+        $pedido->setId($id);
+        $rows=$pedido->mostrarPedido();
+        foreach ($rows as $info) {
+            $peidoInfo = array();
+            $pedido->setIdCliente($info["idCliente"]);
+            array_push($peidoInfo,$id,$info["idCliente"],$info["estado"],$info["fechaPeticion"],$info["ImporteTotal"]);
+            array_push($arrayPedido,$peidoInfo);
+        }
+        
+
+        //crear objeto detalles de pedido
         require_once "models/detallesPedido.php";
-        if(isset($_SESSION["carritoCompra"]) && isset($_SESSION["cliente"])){ 
+        $detallesPedido = new DetallesPedido();
+        $rows=$detallesPedido->cogerDetallesPedido($id);
+        //recoger datos libros
+        foreach ($rows as $info) {
             require_once "models/libro.php";
-            //extrae informacion de los libros
+            $libro = new Libro();
+            $libro->setIsbn($info["ISBN"]);
+            $rows=$libro->infoLibro();
             $librosInfo = array();
-            $precioFinal=0;
-            $contador=0;
-            foreach($_SESSION["carritoCompra"] as $libros){
-                $libro = new Libro();
-                $libro->setIsbn($libros[0]);
-                $rows=$libro->infoLibro();
-                $librosInfo[] = $rows->fetch();
-                $precioFinal+=$librosInfo[$contador]["precioUni"]*$_SESSION["carritoCompra"][$contador][1];
-                $contador++;
+            foreach ($rows as $libroInfo) {
+                array_push($librosInfo,$info["ISBN"],$libroInfo["titulo"],$libroInfo["autor"],$libroInfo["editorial"],$libroInfo["descripcion"],$libroInfo["foto"],$libroInfo["stock"],$libroInfo["precioUni"],$libroInfo["idCategoria"]);
             }
-            require_once "views/cliente/carrito/confirmarCompra.php";
+            //acavar de rellenar objeto detalles de pedido
+            array_push($librosInfo,$info["cantidad"]);
+            array_push($arrayLibros,$librosInfo);
         }
-        else{
-            echo '<meta http-equiv="refresh" content="0;url=index.php"/>';
-        }
+        array_push($arrayPedido,$arrayLibros);
+        require_once "views/cliente/perfil/detalledelPedido.php";
+
     }
+    
     //comprovaciones i confirmacion de pedido
     public function pagar(){
         if(isset($_SESSION["carritoCompra"]) && isset($_SESSION["cliente"])){ 
