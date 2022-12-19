@@ -1734,6 +1734,16 @@ hr{
         grid-template-columns: 30%;
         margin-left: 45% !important;
     }
+
+    .lupaMenu{
+        display: none;
+    }
+
+    #search2{
+        width:110%;
+    }
+
+    
 }
 
 /******************************************** RESPONSIVE TABLET ************************************/
