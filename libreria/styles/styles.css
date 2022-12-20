@@ -1014,8 +1014,10 @@ ul.menuVertival , ul.menuVertical{
 
 #cantidadLibroInput{
     margin-left: 20px;
-    width: 50px;
+    width: 40px;
+    border-radius: 5px;
     height: 20px;
+    padding-left: 10px;
     background-color: #abd8c3;
     border: none;
 }
@@ -1817,11 +1819,19 @@ hr{
     #search2{
         width:110%;
     }
-
-    body{
-        background-color: yellow;
+    .miPerfil{
+        width:30%;
     }
-    .menuVertical li a{display: none;}
+    .formPerfil{
+        margin-left:200px;
+    }
+    .searcher{
+        display:none;
+    }
+    #logo a{
+        font-size: 30px;
+    }
+
 }
 
 /******************************************** RESPONSIVE TABLET ************************************/
