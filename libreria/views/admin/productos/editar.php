@@ -1,8 +1,12 @@
 
-<div>
-    <h2>Editar producto</h2>
+<div class="desc">
+    <p><a href="index.php?controller=libro&action=infoLibro&isbn=<?php echo $isbn ?>">Detalles libro</a></p>
+    <p><a href="index.php?controller=libro&action=mostrarLibros">Todos los libros</a></p>
+</div>
+<div class="divAñadirLibro">
+    <h1>Editar producto</h1>
             
-    <form class="contenedorForm" action="index.php?controller=libro&action=editar" method="post" enctype="multipart/form-data">
+    <form class="formAñadirLibro" action="index.php?controller=libro&action=editar" method="post" enctype="multipart/form-data">
         <?php
         foreach($rows as $row){
             $isbn = $row['ISBN'];
@@ -71,19 +75,12 @@
             }
             ?>
         </div>
-
-        <div>           
-            <p><input type="submit" value="Modificar"></p>
-        </div>
+        <div></div>
+        <div></div>
+        <div><input class="botonSubmit2" type="submit" value="Modificar"></div>
 
         <?php
         }
         ?>
     </form>
-</div>
-
-<div>
-    <p><a href="index.php?controller=libro&action=infoLibro&isbn=<?php echo $isbn ?>">Detalles libro</a></p>
-    <p><a href="index.php?controller=libro&action=mostrarLibros">Todos los libros</a></p>
-    <p><a href="index.php?controller=admin&action=salir">Cerrar sesión</a></p>
 </div>

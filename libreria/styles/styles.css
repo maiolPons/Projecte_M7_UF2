@@ -300,7 +300,7 @@ td , th{
 }
 .prod{
     text-align: center;
-    margin : 30px auto 50px auto;
+    margin : 70px auto 50px auto;
     border-bottom: 3px solid #008747;
     width: 15%;
 }
@@ -363,13 +363,98 @@ div > .pic{
     color: black;
 }
 
-.contenedorForm{
+.formAñadirLibro{
     display: grid;
     grid-template-columns: auto auto;
-    width: 80%;
+    width: 90%;
     margin: auto;
 }
+.formAñadirLibro div{
+    margin: 15px 0 15px 70px;
+}
+.formAñadirLibro div p{
+    margin-bottom: 5px;
+}
+.divAñadirLibro{
+    border: 1px solid black;
+    width: 50%;
+    margin: 100px auto;
+    border-radius: 10px;
+    background-image: linear-gradient(rgba(132, 202, 132, 0.842),rgb(187, 186, 186));
+}
+.divAñadirLibro h1 , .divModificarLibro h1{
+    width: fit-content;
+    margin: 20px auto;
+}
+.divModificarLibro{
+    border: 1px solid black;
+    width: 40%;
+    margin: 150px auto;
+    border-radius: 10px;
+    background-image: linear-gradient(rgba(132, 202, 132, 0.842),rgb(187, 186, 186));
+}
+.formModificarLibro{
+    padding: 25px;
+    width: 50%;
+    margin: auto;
+}
+.formModificarLibro div{
+    margin-bottom: 40px;
+}
+.formModificarLibro div:first-child{
+    margin-left: 20px;
+}
+.formModificarLibro div:nth-child(2){
+    width: 50%;
+    margin: auto;
+}
+.formModificarLibro div:nth-child(2) input{
+    font-weight: bold;
+    padding: 5px 13px;
+    background-color: #008747;
+    font-size: 20px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+.formModificarLibro div:nth-child(2) input:hover{
+    cursor: pointer;
+    box-shadow: 5px 5px 5px black;
+}
+.pu , .st{
+    width: 50px;
+    padding-left: 5px;
+}
 
+.botonSubmit1{
+    width: 50%;
+    font-weight: bold;
+    float: right;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 5px 0;
+    background-color: #008747;
+    font-size: 20px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+.botonSubmit1:hover , .botonSubmit2:hover{
+    cursor: pointer;
+    box-shadow: 5px 5px 5px black;
+}
+.botonSubmit2{
+    width: 50%;
+    margin: 0 60px 30px 0;
+    font-weight: bold;
+    float: right;
+    padding: 5px 0;
+    background-color: #008747;
+    font-size: 20px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
 .edit{
     width: 30%;
     height: 30%;
@@ -404,7 +489,13 @@ div > .pic{
 
 .buscador{
     margin-bottom: 30px;
-    margin-left: 40px;
+    margin-left: 60px;
+}
+.buscador input[type=text]{
+    border: 2px solid black;
+    padding: 3px 10px;
+    border-radius: 5px;
+    width: 15%;
 }
 
 .plus{
@@ -418,14 +509,59 @@ div > .pic{
     display: flex;
     float: right;
     margin-right: 30px;
+    margin-top: 10px;
+}
+.desc a:hover{
+    box-shadow: 5px 5px 5px grey;
 }
 .desc a{
-    border: 1px solid black;
     margin: 0 5px;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: #9aee97;
-    color: black;
+    padding: 10px;
+    font-weight: bold;
+    color: green;
+    /* text-decoration: underline; */
+    border: 1px solid green;
+    border-radius:50px ;
+}
+
+.lupaAdmin{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    right: 35px;
+    top: 6px;
+    background-color: #28B828;
+    padding: 0.5px 4px;
+}
+
+.noResult{
+    background-color: rgb(219, 216, 216);
+    width: 70%;
+    margin: 50px auto;
+    padding: 20px;
+    font-weight: bold;
+}
+.noResult p{
+    font-size: 30px;
+    padding-bottom: 80px;
+    margin: 30px 0 20px 40px;
+}
+.noResult a{
+    border: 1px solid black;
+    color: white;
+    background-color: #000;
+    padding: 20px;
+}
+.noResult div{
+    width: fit-content;
+    margin: 10px auto 50px auto;
+}
+
+.añadirLibro{
+    text-align: center;
+    margin : 30px auto 50px auto;
+    border-bottom: 3px solid #008747;
+    width: fit-content;
 }
 
 /*************************************************************************************** PARTE CATEGORIAS ************************************************************************************/
@@ -794,8 +930,7 @@ ul.menuVertival , ul.menuVertical{
     position:relative;
     background:#fff;
     width:20%;
-    margin-left: 20px;
-    margin-top: 10px;
+    margin: 10px 0 100px 20px;
     padding:0;
     list-style: none;
     border-radius: 5px;	
@@ -907,7 +1042,7 @@ ul.menuVertival , ul.menuVertical{
 }
 
 .numFav{
-    width: 40%;
+    width: 45%;
     margin: 5% auto 0 auto;
 
 }
@@ -964,7 +1099,7 @@ ul.menuVertival , ul.menuVertical{
     margin: 20px;
     width: 90%;
     background-color: #dfdbdb;
-    padding: 10px 7px;
+    padding: 20px;
     line-height: 25px;
 }
 
@@ -981,7 +1116,7 @@ ul.menuVertival , ul.menuVertical{
     display: flex;
     height: 550px;
     width: 70%;
-    margin: 80px auto;
+    margin: 100px auto;
 }
 
 .botonAñadir{
@@ -1020,6 +1155,12 @@ ul.menuVertival , ul.menuVertical{
     padding-left: 10px;
     background-color: #abd8c3;
     border: none;
+}
+
+.categoria{
+    margin-bottom: 20px;
+    font-style: italic;
+    background-color: slategray;
 }
 
 /****************************************************************************************LIBROS CATEGORIAS****************************************************************/
@@ -1121,6 +1262,7 @@ ul.menuVertival , ul.menuVertical{
     padding-top: 20px;
     background-color: #35b72915;
     color: black;
+    margin-bottom: 30px;
 }
 .displayItem p:nth-of-type(1){
     font-weight: bold;

@@ -5,19 +5,32 @@
 
 <!-- Formulario del buscador -->
 <form class="buscador" action="index.php?controller=libro&action=mostrarLibros" method="post">
-    Buscador: 
-    <input type="text" name="busc">
-    <input type="submit" value="Buscar">
+    <input type="text" name="busc" placeholder="ISBN, Título, Autor...">
+    <input class="lupaAdmin" alt="" src="pic/lupa.png" type="image" />
 </form>
 
-
-
-<div class="contenedor">
-    <?php
-        foreach ($rows as $row) {
-            echo "<a href='index.php?controller=libro&action=infoLibro&isbn=".$row["ISBN"]."'><div class='displayItem'><img src='".$row["foto"]."'><hr><p>".$row["titulo"]."</p><hr><p>Autor: ".$row["autor"]."</p><p>Editorial: ".$row["editorial"]."</p><p>Precio: ".$row["precioUni"]."€</p></div></a>";
-        }
+<?php
+if($num!=0){
     ?>
-</div>
+    <div class="contenedor">
+        <?php
+            foreach ($rows as $row) {
+                echo "<a href='index.php?controller=libro&action=infoLibro&isbn=".$row["ISBN"]."'><div class='displayItem'><img src='".$row["foto"]."'><hr><p>".$row["titulo"]."</p><hr><p>Autor: ".$row["autor"]."</p><p>Editorial: ".$row["editorial"]."</p><p>Precio: ".$row["precioUni"]."€</p></div></a>";
+            }
+        ?>
+    </div>
+    <?php
+}
+//Cuando aun no hay ningun libro
+else{
+    ?>
+    <div class="noResult">
+        <p>Lo sentimos, tu búsqueda no coincide con ningún producto !</p>
+        <div><a href="index.php?controller=libro&action=formAñadir">Crea un nuevo libro</a></div>
+    </div>
+    <?php    
+}
+
+?>
 
 

@@ -28,6 +28,11 @@
             require_once "models/categoria.php";
             $categoria = new Categoria();
             $categorias=$categoria->mostrarDatosCategorias();
+            // Para sacar el nombre del cliente
+            require_once "models/cliente.php";
+            $cliente = new Cliente();
+            $cliente ->setEmail($_SESSION['cliente']);
+            $datosCliente = $cliente->mostrarDatos();
             require_once "views/admin/commonAdmin/headerCliente.php";
             
         }

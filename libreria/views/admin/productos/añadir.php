@@ -1,7 +1,10 @@
-<div>
-    <h2>Añadir nuevo libro</h2>
+<div class="desc">
+    <p><a href="index.php?controller=libro&action=mostrarLibros">Todos los libros</a></p>
+</div>
+<div class="divAñadirLibro">
+    <h1>Añadir nuevo libro</h1>
             
-    <form class="contenedorForm" action="index.php?controller=libro&action=añadir" method="post" enctype="multipart/form-data">
+    <form class="formAñadirLibro" action="index.php?controller=libro&action=añadir" method="post" enctype="multipart/form-data">
         <div>
             <p>ISBN</p>
             <input type="text" name="isbn" required>
@@ -15,7 +18,7 @@
             <input type="text" name="autor" required>
         </div>
         <div>
-            <p>Editroial</p>
+            <p>Editorial</p>
             <input type="text" name="editorial" required>
         </div>
         <div>
@@ -27,14 +30,15 @@
             <p>Imagen</p>
             <input type="file" name="archivo" value="archivo" style="color:#4959ff" required>
         </div>
+
         <div>
             <p>Stock</p>
-            <input type="number" name="stock" required>
+            <input class="st" type="number" name="stock" required>
 
         </div>
         <div>
             <p>Precio unitario</p>
-            <input type="number" name="preU" required>
+            <input class="pu" type="number" name="preU" required>
         </div>
         <div>
             <p>Categoria</p>
@@ -54,13 +58,7 @@
             <input type="radio" name="dest" value="no">
             <label for="dest">No</label><br>
         </div>
-        <div>           
-            <p><input type="submit" value="Crear"></p>
-        </div>
+        <div></div>
+        <div><input class="botonSubmit1" type="submit" value="Crear"></div>
     </form>
-</div>
-
-<div>
-    <p><a href="index.php?controller=libro&action=mostrarLibros">Todos los libros</a></p>
-    <p><a href="index.php?controller=admin&action=salir">Cerrar sesión</a></p>
 </div>

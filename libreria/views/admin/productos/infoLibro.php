@@ -1,4 +1,7 @@
 
+<div class="desc">
+    <p><a href="index.php?controller=libro&action=mostrarLibros">Todos los libros</a></p>
+</div>
 <h1 class="prod">Productos</h1>
 
 <!-- Imrimir la tabla con los datos de todos los libros -->
@@ -71,7 +74,5 @@
     ?>
     </tr>
 </table>
-<div class="addProd">
-    <p><a href="index.php?controller=libro&action=mostrarLibros">Todos los libros</a></p>
-</div>
+
 

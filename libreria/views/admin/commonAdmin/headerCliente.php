@@ -32,7 +32,9 @@
 		</form>
 		<!-- ---------------------------------------- -->
 		<li class="element5" title="Cesta"><a href="index.php?controller=pedido&action=verCarrito"><img src="pic/compra.png" alt=""></a></li>
-        <li class="usuario">
+				
+		<li class="usuario">
+			<?php foreach($datosCliente as $datos){echo "<p>".$datos['nombre']."</p>";}?>
 			<a href=""><img src="pic/perfil.png" alt="" class="perfil"></a>
 			<div class="mm">
 				<div id="desplegable"></div>

@@ -71,7 +71,7 @@
                 </div>
                 <div class="divEditLibro">
                 <!-- Categoria  -->
-                    <p style="margin-bottom: 20px;font-style: italic;"><?php echo $row['nombre']?></p>
+                    <p class="categoria"><?php echo $row['nombre']?></p>
                 <!-- Isbn y editorial -->
                     <p><?php echo $row['editorial']." - ".$row['ISBN']?></p>
                 </div>

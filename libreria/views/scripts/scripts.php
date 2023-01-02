@@ -67,6 +67,17 @@
         <?php
     }
 
-
-
+    function comprobarIsbn($isbn) {
+        $ExpReg = "/[0-9]{13}/";
+        if(preg_match($ExpReg, $isbn)){
+            return true;
+        }
+        return false;
+    }
+    function formatoInvalido(){
+        ?>
+        <script>swal("","Formato del ISBN es inválido.Debe contener 13 dígitos!","error",{buttons : ["ok"]})</script>
+        <?php
+    }
 ?>
+
