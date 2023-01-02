@@ -13,6 +13,7 @@ class LibroController{
             }else{
                 $rows = $libro->mostrarLibros();
             }
+            $num = $rows->rowCount();
             require_once "views/admin/productos/mostrarLibros.php";
         }
         //Si el admin no esta logeado , no puede ver las paginas
@@ -88,7 +89,7 @@ class LibroController{
                 }
                 $ruta = $nombreDirectorio.$archivo;
                 //---------------------------------------------------------------------------//
-    
+            
                 //------------------Obtener los datos enviados por el formulario-------------//
                 $libro->setIsbn($_POST['isbn']);
                 $libro->setTitulo($_POST['titulo']);
@@ -105,12 +106,20 @@ class LibroController{
                 }
                 $libro->setNovedades(date('Y-m-d'));
                 //---------------------------------------------------------------------------//
-    
-                $libro->insertar();
-                añadirProducto();
-                ?>
-                <META HTTP-EQUIV="REFRESH" CONTENT="2;URL=index.php?controller=libro&action=mostrarLibros">
-                <?php
+                if(comprobarIsbn($_POST['isbn'])==false){
+                    ?>
+                    <script>swal("","Formato del ISBN es inválido.Debe contener 13 dígitos!","error",{buttons : ["ok"]})</script>
+                    <META HTTP-EQUIV="REFRESH" CONTENT="2;URL=index.php?controller=libro&action=formAñadir">
+                    <?php
+                }
+                else{
+                    $libro->insertar();
+                    añadirProducto();
+                    ?>
+                    <META HTTP-EQUIV="REFRESH" CONTENT="2;URL=index.php?controller=libro&action=mostrarLibros">
+                    <?php
+                }
+                
             }
         }
         //Si el admin no esta logeado , no puede ver las paginas
