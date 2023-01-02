@@ -9,6 +9,15 @@
         <?php
     }
 
+    function adminValido(){
+        ?>
+        <script>
+            swal("","Nombre de usuario o contraseña incorrectos!","error",{buttons : ["ok"]});
+        </script>
+        <META HTTP-EQUIV="REFRESH" CONTENT="2;URL=index.php?controller=admin&action=logear"> 
+        <?php
+    }
+
     //Session Cliente
     function LogCliente(){
         ?>
