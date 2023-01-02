@@ -18,12 +18,7 @@ class AdminController{
             }
             
             else{
-                ?>
-                <script>alert("Usuario inválido , intenta otra vez!")</script>
-                <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=admin&action=logear">
-                <?php
-            ?>
-                    <?php
+                adminValido();
             }
         }
         else{
