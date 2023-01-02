@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles/styles.css" rel="stylesheet" type="text/css">
+    <link href="views/styles/styles.css" rel="stylesheet" type="text/css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="views/admin/pedidos/pedidos.js"></script>
     <script src="views/cliente/libro/scripts.js"></script>
