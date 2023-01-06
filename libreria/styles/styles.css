@@ -2110,3 +2110,11 @@ hr{
         margin-left: 50%;
     }
 }
+/*Error try catch*/
+.errorChatch{
+    margin: auto;
+    width: 24px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}
