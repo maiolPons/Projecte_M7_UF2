@@ -189,7 +189,7 @@ class Libro extends Database{
     }
 
     public function novedades(){
-        $sql = "SELECT * FROM `libros` ORDER BY novedades DESC LIMIT 5";
+        $sql = "SELECT * FROM `libros` AS L INNER JOIN `categorias` as C ON L.idCategoria = C.id WHERE C.activo=1 AND estadoL = 1 ORDER BY novedades DESC LIMIT 5";
         $rows = $this->db->query($sql);
         return $rows;
     }
