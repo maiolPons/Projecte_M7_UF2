@@ -1243,14 +1243,15 @@ transform:scale(1.25);
 }
 
 /****************************************************** Pagina Principal ***********************************************/
-
-#paginaPrincipal{
-    width: 100%;
-    display: grid;
-    grid-template-rows: 500px 150px 50px 500px 50px 500px;
-    gap: 10px;
-    grid-template-columns:10% 80% 10%;
-    margin: auto;
+@media (min-width: 1024px){
+    #paginaPrincipal{
+        width: 100%;
+        display: grid;
+        grid-template-rows: 500px 150px 50px 500px 50px 500px;
+        gap: 10px;
+        grid-template-columns:10% 80% 10%;
+        margin: auto;
+    }
 }
 /*novedades*/
 #paginaPrincipalNovedades{
@@ -1379,6 +1380,26 @@ hr{
     }
 }
 /*ajustes movil pagina principal*/
+@media (max-width: 767px) and (min-width: 601px){
+    #paginaPrincipal{
+        width: 100%;
+        display: grid;
+        grid-template-rows: 200px 150px 50px 580px 50px 580px;
+        gap: 10px;
+        grid-template-columns:10% 80% 10%;
+        margin: auto;
+    }
+}
+@media (max-width: 600px){
+    #paginaPrincipal{
+        width: 100%;
+        display: grid;
+        grid-template-rows: 200px 150px 50px 880px 50px 880px;
+        gap: 10px;
+        grid-template-columns:10% 80% 10%;
+        margin: auto;
+    }
+}
 @media (max-width: 767px){
     #imagenPrecentacion {
         margin: auto;
@@ -1397,7 +1418,7 @@ hr{
     /*item in div*/
     .displayItem{
         grid-area: 4 / 2;
-        width: 150px;
+        width: 100px;
         text-align: center;
         border:#7a7a7a solid 1px;
         margin-left: 10px;
