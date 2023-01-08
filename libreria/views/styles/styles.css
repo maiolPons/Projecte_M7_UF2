@@ -2179,3 +2179,18 @@ hr{
     text-align:center;
     margin-top:2%;
 }
+
+/****************************Form alta usu**********************/
+#altaUsu{
+    background-color: #008747;
+    width:40%;
+    text-align: center;
+    color:#fff;
+    border:none;
+    border-radius: 60px;
+    height:120%;
+}
+
+#altaUsu:hover{
+    cursor:pointer !important;
+}
