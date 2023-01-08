@@ -1655,10 +1655,27 @@ hr{
 .mP p{
     padding:5%;
 }
-.tablaP{
+
+#tablaP1{
+    display: inline-block;
+    width: 75%;
+    margin: 0;
+    padding: 0;
+    margin-top: 3%;
+}
+
+.tablaP, .tablaP0{
     padding-top:3%;
 }
 
+.tablaP td{
+    padding:0.5%;
+}
+
+.tablaP img{
+    height:90px;
+    width:70px;
+}
 
 
 .imgDet{
@@ -2031,8 +2048,20 @@ hr{
     .zeroRows{
         width: 150%;
     }
+
+  
+    .tablaP0 td{
+        width: 1%;
+        font-size:15px;
+    }
+
+    .tablaP{
+        width: 100%;
+    }
     .tablaP td{
         width:20px !important;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     .mP{
