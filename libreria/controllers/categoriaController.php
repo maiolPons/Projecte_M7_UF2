@@ -25,7 +25,15 @@ class categoriaController{
                     require_once "models/categoria.php";
                     $categoria = new Categoria();
                     $categoria ->setNombre($_POST['nombre']);
-                    $categoria ->anyadirCategoria();
+                    if ($categoria ->anyadirCategoria()==false){
+                        ?><script>alert("Esta categoria ya existe!");</script><?php
+                        
+                    }
+                    else{
+                        $categoria ->anyadirCategoria();
+                        ?><script>alert("Categoria añadida con exito");</script><?php
+                   
+                    }
                 }
             }
             else{

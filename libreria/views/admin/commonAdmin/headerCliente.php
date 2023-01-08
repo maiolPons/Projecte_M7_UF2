@@ -34,7 +34,7 @@
 		<li class="element5" title="Cesta"><a href="index.php?controller=pedido&action=verCarrito"><img src="pic/compra.png" alt=""></a></li>
 				
 		<li class="usuario">
-			<?php foreach($datosCliente as $datos){echo "<b>".$datos['nombre']."</b>";}?>
+			<?php foreach($datosCliente as $datos){echo "<b class='nombreCliente'>".$datos['nombre']."</b>";}?>
 			<a href=""><img src="pic/perfil.png" alt="" class="perfil"></a>
 			<div class="mm">
 				<div id="desplegable"></div>

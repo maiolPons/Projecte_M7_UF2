@@ -42,14 +42,22 @@ class Categoria extends Database{
     }
 
     public function mostrarDatosCategorias(){
-        $sql = "SELECT * FROM categorias WHERE activo=1";
+        $sql = "SELECT * FROM categorias";
         $rows = $this->db->query($sql);
         return $rows;
     }
 
     public function anyadirCategoria(){
-        $consult="INSERT INTO categorias (nombre) VALUES ('".$this->nombre."')";
-        $rows = $this->db->query($consult);
+        $sql1="SELECT * FROM categorias WHERE nombre='$this->nombre'";
+        $comprobar= $this->db->query($sql1);
+        $filas = $comprobar->rowCount();
+        if ($filas>0){
+            $rows= false;
+        }
+        else{
+            $consult="INSERT INTO categorias (nombre) VALUES ('".$this->nombre."')";
+            $rows = $this->db->query($consult);
+        }
         return $rows;
     }
 

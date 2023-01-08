@@ -1,6 +1,7 @@
 <?php
-
+    echo "<div class='maincat'>";
     //Buscador
+    echo "<div class='maincatdiv'>";
     echo "<nav>";
 
     ?>
@@ -13,6 +14,8 @@
 
     <?php
     echo "</nav>";
+    echo "<a href='index.php?controller=categoria&action=anyadirCategoria'> Añadir categoría </a>";
+    echo "</div>";
 
 
     echo "<h2> Categorias </h2>";
@@ -45,6 +48,6 @@
     }
     echo "</table>";
 
-    echo "<a href='index.php?controller=categoria&action=anyadirCategoria'> Añadir categoría </a>";
-    ?><p><a href="index.php?controller=admin&action=salir">Cerrar sesión</a></p><?php
+    echo "</div>";
+    
 ?>
