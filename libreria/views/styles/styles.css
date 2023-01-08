@@ -1974,6 +1974,7 @@ hr{
     .books{
         grid-template-columns: 30%;
         margin-left: 45% !important;
+        padding-left:5%;
     }
 
     .lupaMenu{
