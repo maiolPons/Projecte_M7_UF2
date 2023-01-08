@@ -8,6 +8,6 @@
         <input type="text" name="dni" placeholder="DNI*" required> 
         <input type="password" name="passwd" placeholder="Contraseña*" required> 
         <p>Todos los campos son obligatorios*</p>
-        <input type="submit" name="enviar" value="Crear cuenta"> 
+        <input id="altaUsu" type="submit" name="enviar" value="Crear cuenta"> 
     </form>
 </div>

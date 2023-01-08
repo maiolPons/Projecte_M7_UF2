@@ -1,5 +1,28 @@
+<div class="divMenuVertival" id="supr">
+    <ul class="menuVertival">
+        </li>
+        <li id="first">
+            <img src="pic/usuario.png" alt="">
+            <a class="profile" href="index.php?controller=cliente&action=miPerfil">Mi perfil</a>
+        </li>
+        <li id="second">
+            <img src="pic/news.png" alt="">
+            <a class="messages" href="index.php">Novedades </a>
+        </li>
+        <li id="third">
+            <img src="pic/corazon.png" alt="">
+            <a class="favoritos" href="index.php?controller=libro&action=favoritos">Mis favoritos</a>
+        </li>
+        <li id="fourth">
+            <img src="pic/sent.png" alt="">
+            <a class="pedidos" href="index.php?controller=pedido&action=misPedidos">Mis pedidos</a>
+        </li>
+    </ul>
+</div>
+<div id="tablaP1">
 <?php
 echo "<div class='tablaP'>";
+echo "<h2 style='text-align:center; margin-bottom:3%; border-bottom: 2px solid;padding-bottom:1%;'> Detalle del pedido </h2>";
 echo "<table>"; ?>
 <tr>
     <td></td>
@@ -27,3 +50,4 @@ for($i=0;$i<count($arrayPedido);$i++){
     echo "</table>"; 
     echo "</div>";
 ?>
+</div>

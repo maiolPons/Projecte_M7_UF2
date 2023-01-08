@@ -1,4 +1,4 @@
-<div class="divMenuVertival">
+<div class="divMenuVertival" id="supr" >
     <ul class="menuVertival">
         </li>
         <li id="first">
@@ -27,8 +27,7 @@
     <?php
     }
     else{
-        foreach ($pedidos as $pedido) {
-        echo "<div class='tablaP'>";
+        echo "<div class='tablaP0'>";
             echo "<table>"; ?>
             <tr>
                 <td>ID PEDIDO  </td>
@@ -37,6 +36,8 @@
                 <td>IMPORTE TOTAL</td>
                 <td>DETALLE DEL PEDIDO</td>
             </tr>
+        <?php
+        foreach ($pedidos as $pedido) { ?>
             <tr>
                 <?php $id=$pedido['id']?>
                 <td><?php echo $pedido['id']?></td>
@@ -45,9 +46,10 @@
                 <td><?php echo $pedido['ImporteTotal']?></td>
                 <td><a href="index.php?controller=pedido&action=detalledelPedido&id=<?php echo $id ?>">Detalle</a></td>
             </tr> <?php
+            
+        }
             echo "</table>"; 
         echo "</div>";
-        }
     }  
     ?>
 </div>

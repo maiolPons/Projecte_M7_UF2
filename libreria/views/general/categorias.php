@@ -1,7 +1,7 @@
 <?php
     ?>
     <h1 class="bksh1"><?php echo $nombreCategoria?></h1>
-    <div class="divMenuVertival">
+    <div class="divMenuVertival" >
         <ul class="menuVertical">
             <!---------------- Buscador ---------------->
             <li id="buscador">
