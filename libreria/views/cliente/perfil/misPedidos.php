@@ -27,6 +27,7 @@
     <?php
     }
     else{
+        echo "<h2 style='text-align:center; padding-top:3%;margin-bottom:3%; border-bottom: 2px solid;padding-bottom:1%;'> Mis pedidos </h2>";
         echo "<div class='tablaP0'>";
             echo "<table>"; ?>
             <tr>
