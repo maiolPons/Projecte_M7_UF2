@@ -2541,8 +2541,9 @@ hr{
     }
     #container .element5{
         position: absolute;
-        right: 122px;
+        right: 149px;
         width: 50px;
+        top: 3px;
     }
     #container .element4{
         font-size: 13px;
@@ -2552,20 +2553,29 @@ hr{
     }
     b{
         font-size: 13px;
+        left: -14px;
     }
     .perfil{
         height: 30px !important;
         width: 30px !important;
+        position: relative;
+        bottom: 119px;
+        right: 8px;
     }
     .usuario{
         position: relative;
         left: 41px;
         line-height: 118px !important;
+        width: 150px;
     }
     .zeroRows{
         width: 250px !important;
         margin-top: 0px;
-        padding: 30px;    }
+        padding: 30px;    
+    }
+    .mm{
+        bottom: 177px;
+    }
 
 }
 
