@@ -1555,7 +1555,7 @@ hr{
 .mP{
     background-color: #dfdbdb !important;
     width: 70% !important;
-    margin-left:390px !important;
+    margin-left:350px !important;
     margin-top:100px !important;
     height:700px !important;
 }
@@ -2174,6 +2174,22 @@ hr{
     }
 }
 @media (max-width: 767px){
+    .formAltaUsu{
+        margin-top: 15%;
+        width: 83%;
+        height: 750px;
+    }
+    #altaUsu{
+        padding:5%;
+        width:70%;
+    }
+    .loginAltaUsu{
+        grid-template-columns: 80%;
+    }
+
+    .formAltaUsu h1{
+        font-size:22px;
+    }
     #imagenPrecentacion {
         margin: auto;
     }
@@ -2288,9 +2304,14 @@ hr{
     .modUsu{
         padding-left: 10px;
         padding-right: 10px;
-        padding-bottom: 150px !important;
+        padding-bottom: 450px !important;
         width: 100%;
-        margin-top: 600px !important;
+        /* margin-top: 600px !important; */
+    }
+
+    #modusu{
+        grid-template-columns: 100%;
+
     }
     .imgDet{
         width:50px;
