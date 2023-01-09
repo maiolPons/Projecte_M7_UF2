@@ -1,6 +1,5 @@
-<link href="styles/styles.css" rel="stylesheet" type="text/css">
 <h1 class="favorTitle">Mis favoritos</h1>
-<div class="divMenuVertival">
+<div class="divMenuVertival" id="supr">
     <ul class="menuVertival">
         <li id="buscador">
             <!---------------- Buscador ---------------->

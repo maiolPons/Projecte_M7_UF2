@@ -1,7 +1,7 @@
 <title>LibreriaBDN</title>
 <div id="container">
     <nav>
-      <a href="index.php"><img src="pic/book.png" alt=""></a>
+      <a class="logoPic" href="index.php"><img src="pic/book.png" alt=""></a>
       <div id="logo">
         <a href="index.php">LibreríaBDN</a>
       </div>

@@ -73,7 +73,7 @@
                 <!-- Categoria  -->
                     <p class="categoria"><?php echo $row['nombre']?></p>
                 <!-- Isbn y editorial -->
-                    <p><?php echo $row['editorial']." - ".$row['ISBN']?></p>
+                    <p class="ediIsbn"><?php echo $row['editorial']." - ".$row['ISBN']?></p>
                 </div>
                 <!-- Descripcion -->
                 <div class="divDescriLibro">
@@ -97,7 +97,7 @@
                 
                 <?php 
                 if($row['stock']!=0){
-                    echo '<input type="text" value="1" id="cantidadLibroInput" min="1" max="'.$row['stock'].'">';?>
+                    echo '<input type="text" value="1" id="cantidadLibroInput" min="1" max="'.$row['stock'].'" autofocus>';?>
                     <!-- Añadir a la cesta -->
                     <?php $isbn=$row['ISBN']; ?>
                     <div>

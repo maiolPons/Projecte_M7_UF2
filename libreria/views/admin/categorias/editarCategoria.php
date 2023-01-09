@@ -4,4 +4,6 @@
     <input type="text" name="nombre" value= <?php echo $_GET['nombre']?> >
     <input type="submit" name="envio" value="Editar">
 </form>
+<div class="comeback">
 <a href="index.php?controller=categoria&action=mostrarCategorias">Volver</a>
+</div>

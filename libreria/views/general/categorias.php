@@ -18,7 +18,7 @@
         if (isset($_SESSION['cliente'])){?>
                 <li  id="first">
                     <img src="pic/libr.png" alt="">
-                    <a class="messages" href="index.php">Página Principal</a>
+                    <a class="messages" href="index.php">Principal</a>
                 </li>
                 <li id="second">
                     <img src="pic/news.png" alt="">

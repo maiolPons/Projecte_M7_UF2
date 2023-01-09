@@ -17,8 +17,8 @@
                 <!-- <h2>LOG IN</h2> -->
                 <img src="pic/login.png" alt="">
                 <div class="inputbox">
-                    <input type="text" name="email" placeholder="  EMAIL" required>
-                    <input type="password" name="passwd" placeholder="  PASSWORD" required>
+                    <input type="text" name="email" placeholder="  EMAIL*" required>
+                    <input type="password" name="passwd" placeholder="  PASSWORD*" required>
                 </div>
             </div>
             <div class="divbuttom">

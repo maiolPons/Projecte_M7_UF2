@@ -44,8 +44,15 @@
         <div>
             <p>Categoria</p>
             <select name="categ" id="categ">
-                <option value="<?php echo $row['id'] ?>" selected><?php echo $row['nombre'] ?></option>
                 <?php
+                //Si se desactiva la categoria de un libro
+                if($row['activo'] == 0){
+                    ?><option value="<?php echo $row['id'] ?>" selected>Sin categoría</option><?php
+                }
+                else{?>
+                    <option value="<?php echo $row['id'] ?>" selected><?php echo $row['nombre'] ?></option>
+                    <?php
+                }
                     foreach($filas as $categoria){
                         //Para mostrar solo las categorias activadas
                         if($categoria['activo']==1){

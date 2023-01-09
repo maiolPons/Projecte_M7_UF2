@@ -88,5 +88,11 @@
         <script>swal("","Formato del ISBN es inválido.Debe contener 13 dígitos!","error",{buttons : ["ok"]})</script>
         <?php
     }
+
+    function isbnDuplicado(){
+        ?>
+        <script>swal("","Existe un libro con el mismo ISBN, intenta otra vez!","error",{buttons : ["ok"]})</script>
+        <?php
+    }
 ?>
 
