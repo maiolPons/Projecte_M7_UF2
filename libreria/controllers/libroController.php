@@ -1,4 +1,3 @@
-
 <?php
 
 require_once "models/libro.php";
@@ -77,7 +76,6 @@ class LibroController{
             if(isset($_POST)){
                 require_once "models/libro.php";
                 $libro = new Libro();
-    
                 //----------------------------Imagen------------------------------------------//
                 if (is_uploaded_file ($_FILES['archivo']['tmp_name'])){
                     $nombreDirectorio = "img/";
@@ -89,36 +87,47 @@ class LibroController{
                 }
                 $ruta = $nombreDirectorio.$archivo;
                 //---------------------------------------------------------------------------//
-            
                 //------------------Obtener los datos enviados por el formulario-------------//
                 $libro->setIsbn($_POST['isbn']);
-                $libro->setTitulo($_POST['titulo']);
-                $libro->setAutor($_POST['autor']);
-                $libro->setEditorial($_POST['editorial']);
-                $libro->setDescripcion($_POST['descri']);
-                $libro->setFoto($ruta);
-                $libro->setStock($_POST['stock']);
-                $libro->setPrecioUni($_POST['preU']);
-                $libro->setCategoria($_POST['categ']);
+                $resultado = $libro->isbnDuplicado();
                 
-                if($_POST['dest']=='si'){
-                    $libro->setDestacado(1);
+                //Controlar la entrada duplicada del ISBN 
+                if($resultado==0){
+                    $libro->setTitulo($_POST['titulo']);
+                    $libro->setAutor($_POST['autor']);
+                    $libro->setEditorial($_POST['editorial']);
+                    $libro->setDescripcion($_POST['descri']);
+                    $libro->setFoto($ruta);
+                    $libro->setStock($_POST['stock']);
+                    $libro->setPrecioUni($_POST['preU']);
+                    $libro->setCategoria($_POST['categ']);
+                    
+                    if($_POST['dest']=='si'){
+                        $libro->setDestacado(1);
+                    }
+                    $libro->setNovedades(date('Y-m-d'));
+                    //---------------------------------------------------------------------------//
+                    if(comprobarIsbn($_POST['isbn'])==false){
+                        formatoInvalido();
+                        ?>
+                        <META HTTP-EQUIV="REFRESH" CONTENT="2;URL=index.php?controller=libro&action=formAñadir">
+                        <?php
+                    }
+                    else{
+                        $libro->insertar();
+                        añadirProducto();
+                        ?>
+                        <META HTTP-EQUIV="REFRESH" CONTENT="2;URL=index.php?controller=libro&action=mostrarLibros">
+                        <?php
+                    }
                 }
-                $libro->setNovedades(date('Y-m-d'));
-                //---------------------------------------------------------------------------//
-                if(comprobarIsbn($_POST['isbn'])==false){
+                else{
+                    isbnDuplicado();
                     ?>
-                    <script>swal("","Formato del ISBN es inválido.Debe contener 13 dígitos!","error",{buttons : ["ok"]})</script>
                     <META HTTP-EQUIV="REFRESH" CONTENT="2;URL=index.php?controller=libro&action=formAñadir">
                     <?php
                 }
-                else{
-                    $libro->insertar();
-                    añadirProducto();
-                    ?>
-                    <META HTTP-EQUIV="REFRESH" CONTENT="2;URL=index.php?controller=libro&action=mostrarLibros">
-                    <?php
-                }
+
                 
             }
         }
@@ -459,7 +468,7 @@ class LibroController{
                 $libro->setCategoria($infoLibro["idCategoria"]);
                 $libro->setStock($infoLibro["stock"]);
             }
-    
+
             $flag = true;
             if(!isset($_SESSION["carritoCompra"])){
                 $carritoCompra=array();
@@ -489,9 +498,7 @@ class LibroController{
         }
         catch(Exception $e){
             require_once "views/general/error.php";
-        }
-        
-        
+        } 
     }
 }
 ?> 

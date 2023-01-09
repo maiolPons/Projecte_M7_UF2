@@ -232,5 +232,13 @@ class Libro extends Database{
         $sql = "UPDATE libros SET `stock`= `stock` - $cantidad WHERE ISBN='".$this->getIsbn()."'";
         $this->db->exec($sql);
     }
+
+    //Entrad duplicada de un libro
+    public function isbnDuplicado(){
+        $sql = "SELECT ISBN FROM libros WHERE ISBN='".$this->getIsbn()."'";
+        $resultado = $this->db->query($sql);
+        $filasIsbn = $resultado->rowCount();
+        return $filasIsbn;
+    }
 }
 ?>

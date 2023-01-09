@@ -69,7 +69,7 @@ class PedidoController{
     //muestra formulario para cambiar el estado 
     public function cambiarEstado(){
         try{
-//crear objeto pedido
+        //crear objeto pedido
             require_once "models/pedido.php";
             $pedido = new Pedido();
             $pedido->setId($_GET["idPedido"]);
@@ -112,54 +112,54 @@ class PedidoController{
     }
     
 //*********************************************************************************************************** */
-public function verCarrito(){
-    try{
-        require_once "models/libro.php";
-        $libro = new Libro();
-        $arrayInfo = [];
-        if(isset($_SESSION["carritoCompra"]) && count($_SESSION['carritoCompra'])!=0){
-            for($i = 0; $i < count($_SESSION["carritoCompra"]); $i++){
-                $isbn = $_SESSION["carritoCompra"][$i][0];
-                $libro -> setIsbn($isbn);
-                $rows = $libro -> infoLibro();
-                array_push($arrayInfo , $rows);   
+    public function verCarrito(){
+        try{
+            require_once "models/libro.php";
+            $libro = new Libro();
+            $arrayInfo = [];
+            if(isset($_SESSION["carritoCompra"]) && count($_SESSION['carritoCompra'])!=0){
+                for($i = 0; $i < count($_SESSION["carritoCompra"]); $i++){
+                    $isbn = $_SESSION["carritoCompra"][$i][0];
+                    $libro -> setIsbn($isbn);
+                    $rows = $libro -> infoLibro();
+                    array_push($arrayInfo , $rows);   
 
-                //Mostrar la cantidad actualizada por el usuario
-                if(isset($_POST['cantidadLibroCesta']) && isset($_GET['isbnC'])){
-                    if($_SESSION["carritoCompra"][$i][0] == $_GET['isbnC']){
-                        $_SESSION["carritoCompra"][$i][1] = $_POST['cantidadLibroCesta'];
+                    //Mostrar la cantidad actualizada por el usuario
+                    if(isset($_POST['cantidadLibroCesta']) && isset($_GET['isbnC'])){
+                        if($_SESSION["carritoCompra"][$i][0] == $_GET['isbnC']){
+                            $_SESSION["carritoCompra"][$i][1] = $_POST['cantidadLibroCesta'];
+                        }
                     }
                 }
+                
             }
-            
+            require_once "views/cliente/carrito/cesta.php";
         }
-        require_once "views/cliente/carrito/cesta.php";
+        catch(Exception $e){
+            require_once "views/general/error.php";
+        }
+        
     }
-    catch(Exception $e){
-        require_once "views/general/error.php";
-    }
-    
-}
 
 //*********************************************************************************************************** */
-public function eliminarCarrito(){
-    try{
-        if (isset($_GET['isbn'])) {
-            $isbnC = $_GET['isbn'];
-            for($i = 0; $i < count($_SESSION["carritoCompra"]); $i++){    
-                $isbn = $_SESSION["carritoCompra"][$i][0];
-                if($isbn == $isbnC){
-                    array_splice($_SESSION["carritoCompra"],$i,1);
+    public function eliminarCarrito(){
+        try{
+            if (isset($_GET['isbn'])) {
+                $isbnC = $_GET['isbn'];
+                for($i = 0; $i < count($_SESSION["carritoCompra"]); $i++){    
+                    $isbn = $_SESSION["carritoCompra"][$i][0];
+                    if($isbn == $isbnC){
+                        array_splice($_SESSION["carritoCompra"],$i,1);
+                    }
+                    echo '<meta http-equiv="refresh" content="0;url=index.php?controller=pedido&action=verCarrito" />';
                 }
-                echo '<meta http-equiv="refresh" content="0;url=index.php?controller=pedido&action=verCarrito" />';
             }
         }
+        catch(Exception $e){
+            require_once "views/general/error.php";
+        }
     }
-    catch(Exception $e){
-        require_once "views/general/error.php";
-    }
-}
-    //*********************************************************************************************************** */
+//*********************************************************************************************************** */
     //Diana
     public function misPedidos(){
         require_once "models/pedido.php";
@@ -170,6 +170,7 @@ public function eliminarCarrito(){
         require_once "views/cliente/perfil/misPedidos.php";
     }
 
+//*********************************************************************************************************** */
     public function detalledelPedido(){
         $arrayPedido = array();
         $arrayLibros = array();
@@ -184,7 +185,6 @@ public function eliminarCarrito(){
             array_push($peidoInfo,$id,$info["idCliente"],$info["estado"],$info["fechaPeticion"],$info["ImporteTotal"]);
             array_push($arrayPedido,$peidoInfo);
         }
-        
 
         //crear objeto detalles de pedido
         require_once "models/detallesPedido.php";
@@ -208,7 +208,7 @@ public function eliminarCarrito(){
         require_once "views/cliente/perfil/detalledelPedido.php";
 
     }
-    
+//*********************************************************************************************************** */
     //mostrar pagina para confirmar pedido
     public function comprar(){
         require_once "models/detallesPedido.php";
@@ -233,7 +233,7 @@ public function eliminarCarrito(){
         }
     }
 
-    //comprovaciones i confirmacion de pedido
+//*********************************************************************************************************** */
     public function pagar(){
         try{
             if(isset($_SESSION["carritoCompra"]) && isset($_SESSION["cliente"])){ 
@@ -303,6 +303,7 @@ public function eliminarCarrito(){
         
     }
 
+//*********************************************************************************************************** */
     function noLogin(){
         ?><script>swal("","Hay que loguearse para realizar la compra!","error",{buttons : ["ok"]})</script><?php
         echo '<meta http-equiv="refresh" content="1;url=index.php?controller=pedido&action=verCarrito"/>';

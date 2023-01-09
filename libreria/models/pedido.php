@@ -86,8 +86,7 @@ class Pedido extends Database{
         if($this->getEstado()=="todos"){
             $sql = "SELECT * FROM lineapedidos AS l INNER JOIN pedidos AS p ON l.idPedido = p.id INNER JOIN clientes AS c ON p.idCliente = c.id WHERE p.id LIKE '$query' OR c.dni LIKE '$query' OR c.email LIKE '$query' OR p.importeTotal LIKE '$query' OR p.fechaPeticion LIKE '$query'";
         }else{
-            $sql = "SELECT * FROM lineapedidos AS l INNER JOIN pedidos AS p ON l.idPedido = p.id INNER JOIN clientes AS c ON p.idCliente = c.id WHERE (p.id LIKE '$query' OR c.dni LIKE '$query' OR c.email LIKE '$query' OR p.importeTotal LIKE '$query' OR p.fechaPeticion LIKE '$query') AND p.estado='".$this->getEstado()."'";
-        }
+            $sql = "SELECT * FROM lineapedidos AS l INNER JOIN pedidos AS p ON l.idPedido = p.id INNER JOIN clientes AS c ON p.idCliente = c.id WHERE (p.id LIKE '$query' OR c.dni LIKE '$query' OR c.email LIKE '$query' OR p.importeTotal LIKE '$query' OR p.fechaPeticion LIKE '$query') AND p.estado='".$this->getEstado()."'";        }
         $rows = $this->db->query($sql);
         return $rows;
     }

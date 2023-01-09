@@ -40,7 +40,7 @@ class ClienteController{
             $cliente->setDireccion($_POST['direccion']);
             $cliente->setDni($_POST['dni']);
             $cliente->setContrasenya($_POST['passwd']);
-            if ($cliente->comprobarDuplicados()){
+            if($cliente->comprobarDuplicados()){
                 duplicados();
                 ?>
                 <META HTTP-EQUIV="REFRESH" CONTENT="2;URL=index.php?controller=cliente&action=crearCliente">
