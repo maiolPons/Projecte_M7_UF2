@@ -2333,11 +2333,19 @@ hr{
     #tablaP1{
         text-align: center;
         margin-left: 10%;
+        display: contents;
     }
 
     #tablaP1 h2{
         text-align: center !important;
-        margin-left: 15%;
+    }
+    .tablaP img{
+        width:30px;
+        height:60px;
+    }
+
+    .tablaP{
+        font-size:11px;
     }
 
     .mP{
