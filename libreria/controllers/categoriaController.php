@@ -26,12 +26,12 @@ class categoriaController{
                     $categoria = new Categoria();
                     $categoria ->setNombre($_POST['nombre']);
                     if ($categoria ->anyadirCategoria()==false){
-                        ?><script>alert("Esta categoria ya existe!");</script><?php
+                        ?><script>swal("","Esta categoria ya existe!","error",{buttons : ["ok"]});</script><?php
                         
                     }
                     else{
                         $categoria ->anyadirCategoria();
-                        ?><script>alert("Categoria añadida con exito");</script><?php
+                        ?><script>swal("","Categoria añadida con exito","success",{buttons : ["ok"]})</script><?php
                    
                     }
                 }
