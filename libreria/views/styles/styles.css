@@ -2583,6 +2583,17 @@ hr{
     .mm{
         bottom: 177px;
     }
+     .tb{
+        width:20%;
+    }
+    .mP{
+        background-color: #dfdbdb !important;
+        width: 100% !important;
+        margin-top: 0px !important;
+        height: 600px !important;
+        margin-left: 00px !important;
+    }
+
 
 }
 
