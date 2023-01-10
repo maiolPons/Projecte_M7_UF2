@@ -297,10 +297,9 @@ text-decoration: none;
 
 table{
     border: 1px solid;
-    margin: 10%;
     border-collapse: collapse;
     width: 80%;
-    margin: auto;
+    margin: 110px auto;
 }
 
 td , th{
@@ -1156,7 +1155,7 @@ transform:scale(1.25);
     width: 50%
 }
 .divDescriLibro{
-    margin: 20px;
+    margin: 70px 20px;
     width: 90%;
     background-color: #dfdbdb;
     padding: 20px;
@@ -1203,7 +1202,7 @@ transform:scale(1.25);
 }
 
 .textoDetalle{
-    /* margin-left: 70px; */
+    margin: 77px;
     width: 50%;
 }
 
