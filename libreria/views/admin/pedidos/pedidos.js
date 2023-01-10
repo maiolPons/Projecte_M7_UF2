@@ -4,6 +4,9 @@ function mostrarDetalles(info){
     myWindow.moveTo(( screen.width - myWindow.innerWidth ) / 2,( screen.height - myWindow.innerHeight ) / 2);
     var tableInfo="";
 
+    var fechaDato = info[0][3].split("-");
+    var fechaFinal = fechaDato[2] + "/" + fechaDato[1] + "/" + fechaDato[0];
+
     for(let i =0;i<info[2].length;i++){
         tableInfo +=`<tr><td>${info[2][i][0]}</td><td>${info[2][i][1]}</td><td>${info[2][i][2]}</td><td>${info[2][i][3]}</td><td>${info[2][i][7]}</td><td>${info[2][i][9]}</td></tr>`;
     }
@@ -24,9 +27,9 @@ function mostrarDetalles(info){
             <div id="pedidoAdmin">
                 <h4>Informacion del pedido</h4>
                 <p>Numero del Pedido: `+info[0][0]+`</p>
-                <p>Pedido: `+info[0][2]+`</p>
-                <p>Fecha de compra: `+info[0][3]+`</p>
-                <p>Estado del pedido: `+info[0][4]+`"</p>
+                <p>Importe Total: `+info[0][4]+`</p>
+                <p>Fecha de compra: `+fechaFinal+`</p>
+                <p>Estado del pedido: `+info[0][2]+`"</p>
             </div>
             <div id="clienteAdmin">
                 <h4>Informacion del Cliente</h4>
