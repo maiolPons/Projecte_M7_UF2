@@ -74,10 +74,19 @@ class categoriaController{
                     $categoria = new Categoria();
                     $categoria -> setNombre($_POST['nombre']);
                     $categoria->setId($_GET['id']);
-                    $categoria ->editarCategoria();
-                    ?>
-                        <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=index.php?controller=categoria&action=mostrarCategorias">
-                    <?php
+                    $id=$_GET['id'];
+                    $nombre=$_POST['nombre'];
+                    if ($categoria ->editarCategoria()==false){
+                        ?><script>swal("","Esta categoria ya existe!","error",{buttons : ["ok"]});</script><?php
+                        header('Location: index.php?controller=categoria&action=editarCategoria&id='.$id.'&nombre='.$nombre.'');
+                    }
+                    else{
+                        $categoria ->editarCategoria();
+                        ?><script>swal("","Categoria modificada con exito","success",{buttons : ["ok"]});</script><?php
+                        header('Location: index.php?controller=categoria&action=mostrarCategorias&id='.$id.'&nombre='.$nombre.'');
+                   
+                    }
+
                 }
             }
             else{
