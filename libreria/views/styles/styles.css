@@ -2593,6 +2593,12 @@ hr{
         height: 600px !important;
         margin-left: 00px !important;
     }
+    
+@media (max-width: 767px) and (min-width: 401px){
+    .tb{
+        width:80% !important;
+    }
+}
 
 
 }
