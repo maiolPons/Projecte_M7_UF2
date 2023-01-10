@@ -26,7 +26,7 @@
                         
                     }
                     else{
-                        echo "<a href='#'> < Modificar Pedido</a>";
+                        echo "<a href='index.php?controller=pedido&action=verCarrito'> < Modificar Pedido</a>";
                         echo "<a href='index.php?controller=pedido&action=pagar'>Confirmar Pago > </a>";
                     }
                 echo "</div>";
