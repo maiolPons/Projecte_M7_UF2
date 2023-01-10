@@ -1553,10 +1553,16 @@ hr{
 }
 
 /***************************************************************MIS PEDIDOS**********************************/
+#detalleP{
+    background-color: green;
+    border-radius: 60px;
+    padding: 4%;
+    color: #fff;
+}
 .mP{
     background-color: #dfdbdb !important;
     width: 70% !important;
-    margin-left:350px !important;
+    margin-left:22% !important;
     margin-top:100px !important;
     height:700px !important;
 }
@@ -2003,7 +2009,7 @@ hr{
         padding-right: 10px;
     }
 
-    .mP{
+    mP{
         background-color: #dfdbdb !important;
         width: 70% !important;
         margin-left: 200px !important;
