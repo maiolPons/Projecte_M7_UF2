@@ -893,6 +893,12 @@ input[type="radio"]{
 .loginAltaUsu input:last-child{
     width: 50%;
     margin: 0 auto;
+    background: green;
+    border: none;
+    border-radius: 60px;
+    color: #fff;
+    padding: 20% 120% 20% 20%;
+    cursor: pointer;
 }
 
 /****************************Form alta usu**********************/
