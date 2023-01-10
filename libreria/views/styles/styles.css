@@ -1948,7 +1948,7 @@ hr{
         padding-top: 50px;
     }
     #imagenPrecentacion {
-        margin: auto;
+        margin: 0 auto;
     }
     /*mostrar items en buscador resultado*/
     .mostrarProductos{
@@ -2205,7 +2205,7 @@ hr{
         font-size:22px;
     }
     #imagenPrecentacion {
-        margin: auto;
+        margin: 0 auto;
     }
     /*diseño de los expositores*/
     .expocitoresMenuPrincipal{
@@ -2263,7 +2263,7 @@ hr{
     }
     /*ajustes movil pagina principal*/
     #imagenPrecentacion {
-        margin: auto;
+        margin: 0 auto;
     }
     /*diseño de los expositores*/
     .expocitoresMenuPrincipal{
@@ -2312,7 +2312,7 @@ hr{
     }
 
     #imagenPrecentacion {
-        margin: auto;
+        margin: 0 auto;
     }
 
     .modUsu{
