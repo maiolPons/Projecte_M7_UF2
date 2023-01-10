@@ -332,7 +332,8 @@ td , th{
 .contenedor{
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    margin: 10px 50px;
+    margin-top: 75px;
+    padding-left: 127px;
     /* width: 80%; */
 }
 
