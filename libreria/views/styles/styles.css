@@ -387,7 +387,7 @@ div > .pic{
 }
 .divAñadirLibro{
     border: 1px solid black;
-    width: 50%;
+    width: 40%;
     margin: 100px auto;
     border-radius: 10px;
     background-image: linear-gradient(rgba(132, 202, 132, 0.842),rgb(187, 186, 186));
