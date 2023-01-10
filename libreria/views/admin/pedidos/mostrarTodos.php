@@ -24,12 +24,16 @@ echo "<div id='mostrarTodosAdmin'>";
             if($pedido['idPedido'] != $id){
                 $id=$pedido["idPedido"];
                 $info=self::mostrarDetalles($id);
+
+                $fechaDato = explode("-",$pedido['fechaPeticion']);
+                $fechaFinal = $fechaDato[2] . "/" . $fechaDato[1] . "/" . $fechaDato[0];
+
                 echo "<tr>";
                 echo "<td>". $pedido['idPedido'] . "</td>";
                 echo "<td>".$pedido['dni'] . "</td>";
                 echo "<td>".$pedido['email'] . "</td>";
                 echo "<td>".$pedido['ImporteTotal'] . "</td>";
-                echo "<td>".$pedido['fechaPeticion'] . "</td>";
+                echo "<td>".$fechaFinal . "</td>";
                 echo "<td>".$pedido['estado'] . "</td>";
                 echo '<td><a href="index.php?controller=pedido&action=cambiarEstado&idPedido='.$id.'">Cambiar estado del pedido</a></td>';
                 echo "<td><button onclick='mostrarDetalles(".json_encode($info).")'>Mostrar Detalles</button></td>";
