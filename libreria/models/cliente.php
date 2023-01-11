@@ -136,11 +136,7 @@ class Cliente extends Database{
         $rows = $this->db->query($sql);
     }
 
-
-
     public function salir(){
         session_destroy();
     }
-
-
 }
